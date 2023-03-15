@@ -12,13 +12,18 @@ struct ContentView: View {
 //    @StateObject var viewModel = HomeViewModel()
     @FetchRequest(fetchRequest: FoodEntity.fetchForDate(), animation: .default)
     var foods: FetchedResults<FoodEntity>
+    @FetchRequest(fetchRequest: WaterEntity.fetchForDate(), animation: .default)
+    var water: FetchedResults<WaterEntity>
     var body: some View {
         NavigationStack {
             List{
                 ForEach(MealType.allCases, id: \.self) { mealType in
                     Section {
                         ForEach(foods.filter({$0.mealType == mealType})){ food in
-                            Text(food.foodName ?? "non")
+                            NavigationLink(value: food) {
+                                Text(food.foodName ?? "non")
+                            }
+                           
                                 .swipeActions(edge: .trailing) {
                                     
                                     Button(role: .destructive) {
@@ -26,12 +31,37 @@ struct ContentView: View {
                                     } label: {
                                         Image(systemName: "trash")
                                     }
-                                    
                                 }
                         }
                     } header: {
                         Text(mealType.title)
                     }
+                }
+                
+                Section {
+                    
+                    HStack{
+                        Text(water.first?.friendlyString ?? "0.00 l")
+                        Text("Glasses \(water.first?.glassesCoint ?? 0)")
+                        Spacer()
+                        if let item = water.first{
+                            Button {
+                                WaterEntity.delete(item)
+                            } label: {
+                                Image(systemName: "minus")
+                            }
+                            .buttonStyle(.plain)
+                        }
+                        
+                        Button {
+                            WaterEntity.update(water.first, context: viewContext)
+                        } label: {
+                            Image(systemName: "plus")
+                        }
+                        .buttonStyle(.plain)
+                    }
+                } header: {
+                    Text("Water")
                 }
             }
             .navigationTitle("Today")
@@ -40,6 +70,9 @@ struct ContentView: View {
                      Button(action: addItem) { Label("", systemImage: "plus")}
                  }
              }
+            .navigationDestination(for: FoodEntity.self) { item in
+                UpdateView(item: item)
+            }
         }
     }
 }
@@ -95,5 +128,28 @@ enum MealType: Int16, CaseIterable{
         case .dinner: return "Dinner"
         case .snack: return "Snack"
         }
+    }
+}
+
+
+struct UpdateView: View{
+    @Environment(\.dismiss) var dismiss
+    @ObservedObject var item : FoodEntity
+    @State var name: String = ""
+    var body: some View{
+        Form{
+            TextField("name", text: $item.foodNameEditable)
+            Button("Save") {
+                item.managedObjectContext?.saveContext()
+                dismiss()
+            }
+            Picker("", selection: $item.mealType) {
+                ForEach(MealType.allCases, id:\.self){type in
+                    Text(type.title)
+                        .tag(type)
+                }
+            }
+        }
+        .navigationTitle("Update \(item.foodNameEditable)")
     }
 }

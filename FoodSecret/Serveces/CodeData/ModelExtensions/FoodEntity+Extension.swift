@@ -11,6 +11,10 @@ import CoreData
 
 extension FoodEntity{
     
+    var foodNameEditable: String{
+        get { foodName ?? ""}
+        set { foodName = newValue }
+    }
     
     var mealType: MealType{
         get { .init(rawValue: mealType_) ?? .breakfast }
@@ -26,9 +30,7 @@ extension FoodEntity{
     }
     
     
-    static func datePredicate(before: Date, after: Date)-> NSPredicate? {
-        NSPredicate(format: "createAt >= %@ AND createAt < %@", before as NSDate, after as NSDate)
-    }
+
     
 //    static func update(food: FoodEntity, name: String, context: NSManagedObjectContext){
 //        food.foodName = name
@@ -58,4 +60,9 @@ extension FoodEntity{
             context.saveContext()
         }
     }
+}
+
+
+func datePredicate(before: Date, after: Date)-> NSPredicate? {
+    NSPredicate(format: "createAt >= %@ AND createAt < %@", before as NSDate, after as NSDate)
 }
