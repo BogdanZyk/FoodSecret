@@ -36,7 +36,7 @@ struct MealsSectionView: View {
             .cornerRadius(12)
         }
         .navigationDestination(for: MealType.self) { type in
-            MealsDetailsView(viewType: type)
+            MealsDetailsView(viewType: type, foods: foods.filter({$0.mealType == type}))
         }
     }
 }

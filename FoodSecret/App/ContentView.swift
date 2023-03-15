@@ -80,19 +80,10 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         
-        let result = PersistenceController(inMemory: true)
-        let viewContext = result.viewContext
-        
-        let food = FoodEntity(context: viewContext)
-        food.id = UUID()
-        food.foodName = "Eggs"
-        food.mealType = .breakfast
-        food.createAt = Date.now
-        food.calories = 125.5
-        food.image = "United"
+   
         
        return ContentView()
-            .environment(\.managedObjectContext, viewContext)
+            .environment(\.managedObjectContext, dev.viewContext)
     }
 }
 extension ContentView{

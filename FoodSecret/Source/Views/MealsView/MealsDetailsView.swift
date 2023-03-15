@@ -9,11 +9,13 @@ import SwiftUI
 
 struct MealsDetailsView: View {
     let viewType: MealType
-   // let foods: [FoodEntity]
+    let foods: [FoodEntity]
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack{
-                
+                ForEach(foods){food in
+                    Text(food.foodNameEditable)
+                }
             }
             .padding(.horizontal)
         }
@@ -29,7 +31,7 @@ struct MealsDetailsView: View {
 struct MealsDetailsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            MealsDetailsView(viewType: .dinner)
+            MealsDetailsView(viewType: .dinner, foods: dev.simpleFoods)
         }
     }
 }

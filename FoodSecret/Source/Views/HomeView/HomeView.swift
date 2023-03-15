@@ -41,27 +41,8 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        let result = PersistenceController(inMemory: true)
-        let viewContext = result.viewContext
-        
-        let food1 = FoodEntity(context: viewContext)
-        food1.id = UUID()
-        food1.foodName = "Eggs"
-        food1.mealType = .breakfast
-        food1.createAt = Date.now
-        food1.calories = 125.5
-        food1.image = "United"
-        
-        let food2 = FoodEntity(context: viewContext)
-        food2.id = UUID()
-        food2.foodName = "Cake"
-        food2.mealType = .lunch
-        food2.createAt = Date.now
-        food2.calories = 120
-        food2.image = "United"
-        
-       return HomeView()
-            .environment(\.managedObjectContext, viewContext)
+        HomeView()
+            .environment(\.managedObjectContext, dev.viewContext)
     }
 }
 
@@ -93,3 +74,8 @@ extension HomeView{
         .buttonStyle(.plain)
     }
 }
+
+
+
+
+

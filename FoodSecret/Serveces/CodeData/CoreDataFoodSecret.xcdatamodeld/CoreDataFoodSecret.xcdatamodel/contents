@@ -3,6 +3,7 @@
     <entity name="FoodEntity" representedClassName="FoodEntity" syncable="YES" codeGenerationType="class">
         <attribute name="calories" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="carbohydrate" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="count" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="createAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="fat" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="foodName" optional="YES" attributeType="String"/>
@@ -10,6 +11,7 @@
         <attribute name="image" optional="YES" attributeType="String"/>
         <attribute name="mealType_" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="protein" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
     <entity name="WaterEntity" representedClassName="WaterEntity" syncable="YES" codeGenerationType="class">
         <attribute name="createAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>

@@ -32,6 +32,7 @@
 		5AB741D329C206C100821457 /* MealsDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741D229C206C100821457 /* MealsDetailsView.swift */; };
 		5AB741D629C2096B00821457 /* AddFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741D529C2096B00821457 /* AddFoodView.swift */; };
 		5AB741D829C210D800821457 /* AllMealsFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741D729C210D800821457 /* AllMealsFoodView.swift */; };
+		5AB741DA29C2149B00821457 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741D929C2149B00821457 /* PreviewProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		5AB741D229C206C100821457 /* MealsDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsDetailsView.swift; sourceTree = "<group>"; };
 		5AB741D529C2096B00821457 /* AddFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodView.swift; sourceTree = "<group>"; };
 		5AB741D729C210D800821457 /* AllMealsFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMealsFoodView.swift; sourceTree = "<group>"; };
+		5AB741D929C2149B00821457 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 				5A38A1C929C0807000947AEC /* View+extension.swift */,
 				5A38A1CB29C080F500947AEC /* Date+Ext.swift */,
 				5AB741C429C1DAE100821457 /* Double+ext.swift */,
+				5AB741D929C2149B00821457 /* PreviewProvider.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				5A38A20029C101CC00947AEC /* NutitionixProduct.swift in Sources */,
 				5AB741D629C2096B00821457 /* AddFoodView.swift in Sources */,
 				5A38A1F329C0F0F400947AEC /* NutrientInfo.swift in Sources */,
+				5AB741DA29C2149B00821457 /* PreviewProvider.swift in Sources */,
 				5AB741CA29C1F75E00821457 /* HomeView.swift in Sources */,
 				5AB741BF29C1B3A200821457 /* CoreDataFoodSecret.xcdatamodeld in Sources */,
 				5A38A1F829C0F66200947AEC /* NetworkManager.swift in Sources */,
