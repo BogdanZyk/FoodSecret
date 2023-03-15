@@ -20,6 +20,8 @@
 		5A38A1FA29C0F7AE00947AEC /* NutritionixService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38A1F929C0F7AE00947AEC /* NutritionixService.swift */; };
 		5A38A1FE29C0FB9C00947AEC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38A1FD29C0FB9C00947AEC /* HomeViewModel.swift */; };
 		5A38A20029C101CC00947AEC /* NutitionixProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38A1FF29C101CC00947AEC /* NutitionixProduct.swift */; };
+		5A52A6CC29C27F34002A68E5 /* NukeLazyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52A6CB29C27F34002A68E5 /* NukeLazyImage.swift */; };
+		5A52A6D229C280EE002A68E5 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5A52A6D129C280EE002A68E5 /* NukeUI */; };
 		5AB741B729C1B1FF00821457 /* CoreDataExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741B629C1B1FF00821457 /* CoreDataExt.swift */; };
 		5AB741B929C1B33600821457 /* Persistense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741B829C1B33600821457 /* Persistense.swift */; };
 		5AB741BF29C1B3A200821457 /* CoreDataFoodSecret.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741BD29C1B3A200821457 /* CoreDataFoodSecret.xcdatamodeld */; };
@@ -53,6 +55,7 @@
 		5A38A1F929C0F7AE00947AEC /* NutritionixService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionixService.swift; sourceTree = "<group>"; };
 		5A38A1FD29C0FB9C00947AEC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		5A38A1FF29C101CC00947AEC /* NutitionixProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutitionixProduct.swift; sourceTree = "<group>"; };
+		5A52A6CB29C27F34002A68E5 /* NukeLazyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NukeLazyImage.swift; sourceTree = "<group>"; };
 		5AB741B629C1B1FF00821457 /* CoreDataExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataExt.swift; sourceTree = "<group>"; };
 		5AB741B829C1B33600821457 /* Persistense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistense.swift; sourceTree = "<group>"; };
 		5AB741BE29C1B3A200821457 /* CoreDataFoodSecret.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataFoodSecret.xcdatamodel; sourceTree = "<group>"; };
@@ -75,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A52A6D229C280EE002A68E5 /* NukeUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +259,7 @@
 			children = (
 				5AB741CE29C1FD5600821457 /* CircleProgressView.swift */,
 				5AB741DE29C22DFC00821457 /* MealFoodRowView.swift */,
+				5A52A6CB29C27F34002A68E5 /* NukeLazyImage.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 			);
 			name = FoodSecret;
 			packageProductDependencies = (
+				5A52A6D129C280EE002A68E5 /* NukeUI */,
 			);
 			productName = FoodSecret;
 			productReference = 5A38A1B329C0802600947AEC /* FoodSecret.app */;
@@ -332,6 +338,7 @@
 			);
 			mainGroup = 5A38A1AA29C0802600947AEC;
 			packageReferences = (
+				5A52A6D029C280EE002A68E5 /* XCRemoteSwiftPackageReference "NukeUI" */,
 			);
 			productRefGroup = 5A38A1B429C0802600947AEC /* Products */;
 			projectDirPath = "";
@@ -381,6 +388,7 @@
 				5AB741DF29C22DFC00821457 /* MealFoodRowView.swift in Sources */,
 				5A38A1FA29C0F7AE00947AEC /* NutritionixService.swift in Sources */,
 				5AB741C729C1DC0B00821457 /* WaterEntity+Extensions.swift in Sources */,
+				5A52A6CC29C27F34002A68E5 /* NukeLazyImage.swift in Sources */,
 				5AB741CF29C1FD5600821457 /* CircleProgressView.swift in Sources */,
 				5AB741DD29C21B9E00821457 /* Helper.swift in Sources */,
 				5A38A1CC29C080F500947AEC /* Date+Ext.swift in Sources */,
@@ -593,6 +601,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5A52A6D029C280EE002A68E5 /* XCRemoteSwiftPackageReference "NukeUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/NukeUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.8.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5A52A6D129C280EE002A68E5 /* NukeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A52A6D029C280EE002A68E5 /* XCRemoteSwiftPackageReference "NukeUI" */;
+			productName = NukeUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		5AB741BD29C1B3A200821457 /* CoreDataFoodSecret.xcdatamodeld */ = {

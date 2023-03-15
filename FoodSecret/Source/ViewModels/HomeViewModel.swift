@@ -30,7 +30,7 @@ class HomeViewModel: ObservableObject{
    
     
     init(){
-//        fetch()
+       // fetch()
 //        getNutrient("liquid egg whites")
         
         
@@ -51,7 +51,7 @@ class HomeViewModel: ObservableObject{
             } receiveValue: { names in
                 
                 names.forEach { name in
-                    print(name)
+                    print(name.photo.thumb)
 //                    if let foodName = name.foodName{
 //                        self.getNutrient(foodName)
 //                    }

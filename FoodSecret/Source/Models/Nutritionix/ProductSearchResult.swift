@@ -16,9 +16,11 @@ struct ProductSearchResult: Codable {
 extension ProductSearchResult{
     struct Product: Codable{
         let foodName: String?
+        let photo: Photo
         
         enum CodingKeys: String, CodingKey {
             case foodName = "food_name"
+            case photo
         }
     }
 }

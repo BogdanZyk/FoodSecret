@@ -13,9 +13,6 @@ struct MealsDetailsView: View {
     var foods: FetchedResults<FoodEntity>
     var body: some View {
         List{
-            
-            
-            
             ForEach(foods.filter({$0.mealType == viewType})){food in
                 NavigationLink {
                     UpdateView(item: food)

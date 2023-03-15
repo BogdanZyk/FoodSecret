@@ -11,9 +11,9 @@ struct MealFoodRowView: View {
     let food: FoodEntity
     var body: some View {
         HStack(spacing: 10){
-            RoundedRectangle(cornerRadius: 8)
-                .fill(Color.gray.opacity(0.5))
+            NukeLazyImage(strUrl: food.image)
                 .frame(width: 45, height: 45)
+                .cornerRadius(10)
             Text(food.foodNameEditable)
                 .font(.headline)
             Spacer()

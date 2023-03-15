@@ -45,7 +45,7 @@ class DeveloperPreview {
         food1.mealType = .breakfast
         food1.createAt = Date.now
         food1.calories = 125.5
-        food1.image = "United"
+        food1.image = "https://nix-tag-images.s3.amazonaws.com/538_thumb.jpg"
         
         let food2 = FoodEntity(context: viewContext)
         food2.id = UUID()
@@ -53,7 +53,7 @@ class DeveloperPreview {
         food2.mealType = .snack
         food2.createAt = Date.now
         food2.calories = 545.4
-        food2.image = "United"
+        food2.image = "https://nix-tag-images.s3.amazonaws.com/3148_thumb.jpg"
 
         let food3 = FoodEntity(context: viewContext)
         food3.id = UUID()
@@ -61,7 +61,7 @@ class DeveloperPreview {
         food3.mealType = .lunch
         food3.createAt = Date.now
         food3.calories = 120
-        food3.image = "United"
+        food3.image = "https://nix-tag-images.s3.amazonaws.com/611_thumb.jpg"
 
         return [food1, food2, food3]
     }
