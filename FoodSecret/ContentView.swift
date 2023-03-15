@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject var viewModel = HomeViewModel()
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -24,3 +27,7 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
+/// client id    5f3fbc236bdc46f9bec75207947ae17b
+///secret key   11a3e1963ac84f6385bef1df593f8558

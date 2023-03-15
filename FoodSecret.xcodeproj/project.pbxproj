@@ -11,6 +11,15 @@
 		5A38A1B929C0802600947AEC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38A1B829C0802600947AEC /* ContentView.swift */; };
 		5A38A1BB29C0802800947AEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A38A1BA29C0802800947AEC /* Assets.xcassets */; };
 		5A38A1BE29C0802800947AEC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A38A1BD29C0802800947AEC /* Preview Assets.xcassets */; };
+		5A38A1CA29C0807000947AEC /* View+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38A1C929C0807000947AEC /* View+extension.swift */; };
+		5A38A1CC29C080F500947AEC /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38A1CB29C080F500947AEC /* Date+Ext.swift */; };
+		5A38A1F129C0EFF800947AEC /* ProductSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38A1F029C0EFF800947AEC /* ProductSearchResult.swift */; };
+		5A38A1F329C0F0F400947AEC /* NutrientInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38A1F229C0F0F400947AEC /* NutrientInfo.swift */; };
+		5A38A1F629C0F45F00947AEC /* NutritionixEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38A1F529C0F45F00947AEC /* NutritionixEndpoint.swift */; };
+		5A38A1F829C0F66200947AEC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38A1F729C0F66200947AEC /* NetworkManager.swift */; };
+		5A38A1FA29C0F7AE00947AEC /* NutritionixService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38A1F929C0F7AE00947AEC /* NutritionixService.swift */; };
+		5A38A1FE29C0FB9C00947AEC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38A1FD29C0FB9C00947AEC /* HomeViewModel.swift */; };
+		5A38A20029C101CC00947AEC /* NutitionixProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38A1FF29C101CC00947AEC /* NutitionixProduct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +28,16 @@
 		5A38A1B829C0802600947AEC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5A38A1BA29C0802800947AEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A38A1BD29C0802800947AEC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5A38A1C929C0807000947AEC /* View+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extension.swift"; sourceTree = "<group>"; };
+		5A38A1CB29C080F500947AEC /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		5A38A1EE29C0D9A200947AEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5A38A1F029C0EFF800947AEC /* ProductSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSearchResult.swift; sourceTree = "<group>"; };
+		5A38A1F229C0F0F400947AEC /* NutrientInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientInfo.swift; sourceTree = "<group>"; };
+		5A38A1F529C0F45F00947AEC /* NutritionixEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionixEndpoint.swift; sourceTree = "<group>"; };
+		5A38A1F729C0F66200947AEC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		5A38A1F929C0F7AE00947AEC /* NutritionixService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionixService.swift; sourceTree = "<group>"; };
+		5A38A1FD29C0FB9C00947AEC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		5A38A1FF29C101CC00947AEC /* NutitionixProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutitionixProduct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +70,11 @@
 		5A38A1B529C0802600947AEC /* FoodSecret */ = {
 			isa = PBXGroup;
 			children = (
-				5A38A1B629C0802600947AEC /* FoodSecretApp.swift */,
+				5A38A1EE29C0D9A200947AEC /* Info.plist */,
+				5A38A1C729C0803B00947AEC /* App */,
+				5A38A1C629C0803400947AEC /* Source */,
+				5A38A1C529C0803100947AEC /* Utils */,
+				5A38A1C429C0802C00947AEC /* Serveces */,
 				5A38A1B829C0802600947AEC /* ContentView.swift */,
 				5A38A1BA29C0802800947AEC /* Assets.xcassets */,
 				5A38A1BC29C0802800947AEC /* Preview Content */,
@@ -65,6 +88,84 @@
 				5A38A1BD29C0802800947AEC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5A38A1C429C0802C00947AEC /* Serveces */ = {
+			isa = PBXGroup;
+			children = (
+				5A38A1F429C0F44B00947AEC /* NutritionixAPI */,
+			);
+			path = Serveces;
+			sourceTree = "<group>";
+		};
+		5A38A1C529C0803100947AEC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5A38A1C829C0806300947AEC /* Extension */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		5A38A1C629C0803400947AEC /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				5A38A1FC29C0FB9200947AEC /* ViewModels */,
+				5A38A1FB29C0FB8D00947AEC /* Views */,
+				5A38A1EF29C0EFE700947AEC /* Models */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		5A38A1C729C0803B00947AEC /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5A38A1B629C0802600947AEC /* FoodSecretApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		5A38A1C829C0806300947AEC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5A38A1C929C0807000947AEC /* View+extension.swift */,
+				5A38A1CB29C080F500947AEC /* Date+Ext.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		5A38A1EF29C0EFE700947AEC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5A38A1F029C0EFF800947AEC /* ProductSearchResult.swift */,
+				5A38A1F229C0F0F400947AEC /* NutrientInfo.swift */,
+				5A38A1FF29C101CC00947AEC /* NutitionixProduct.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5A38A1F429C0F44B00947AEC /* NutritionixAPI */ = {
+			isa = PBXGroup;
+			children = (
+				5A38A1F529C0F45F00947AEC /* NutritionixEndpoint.swift */,
+				5A38A1F729C0F66200947AEC /* NetworkManager.swift */,
+				5A38A1F929C0F7AE00947AEC /* NutritionixService.swift */,
+			);
+			path = NutritionixAPI;
+			sourceTree = "<group>";
+		};
+		5A38A1FB29C0FB8D00947AEC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5A38A1FC29C0FB9200947AEC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5A38A1FD29C0FB9C00947AEC /* HomeViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +184,8 @@
 			dependencies = (
 			);
 			name = FoodSecret;
+			packageProductDependencies = (
+			);
 			productName = FoodSecret;
 			productReference = 5A38A1B329C0802600947AEC /* FoodSecret.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +214,8 @@
 				Base,
 			);
 			mainGroup = 5A38A1AA29C0802600947AEC;
+			packageReferences = (
+			);
 			productRefGroup = 5A38A1B429C0802600947AEC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +242,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A38A1F629C0F45F00947AEC /* NutritionixEndpoint.swift in Sources */,
 				5A38A1B929C0802600947AEC /* ContentView.swift in Sources */,
 				5A38A1B729C0802600947AEC /* FoodSecretApp.swift in Sources */,
+				5A38A1FE29C0FB9C00947AEC /* HomeViewModel.swift in Sources */,
+				5A38A20029C101CC00947AEC /* NutitionixProduct.swift in Sources */,
+				5A38A1F329C0F0F400947AEC /* NutrientInfo.swift in Sources */,
+				5A38A1F829C0F66200947AEC /* NetworkManager.swift in Sources */,
+				5A38A1CA29C0807000947AEC /* View+extension.swift in Sources */,
+				5A38A1F129C0EFF800947AEC /* ProductSearchResult.swift in Sources */,
+				5A38A1FA29C0F7AE00947AEC /* NutritionixService.swift in Sources */,
+				5A38A1CC29C080F500947AEC /* Date+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +384,7 @@
 				DEVELOPMENT_TEAM = 92PU6D6MCQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FoodSecret/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +414,7 @@
 				DEVELOPMENT_TEAM = 92PU6D6MCQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FoodSecret/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
