@@ -13,6 +13,9 @@ struct MealsDetailsView: View {
     var foods: FetchedResults<FoodEntity>
     var body: some View {
         List{
+            symmarySection
+                .listRowSeparator(.hidden, edges: .all)
+            
             ForEach(foods.filter({$0.mealType == viewType})){food in
                 NavigationLink {
                     UpdateView(item: food)
@@ -28,6 +31,9 @@ struct MealsDetailsView: View {
                     .font(.title3.weight(.medium))
             }
         }
+        .overlay(alignment: .bottom) {
+            addProductButton
+        }
     }
 }
 
@@ -42,5 +48,39 @@ struct MealsDetailsView_Previews: PreviewProvider {
 
  
 extension MealsDetailsView{
+    @ViewBuilder
+    private var symmarySection: some View{
+        let data = Helper.symmaryNutritionData(for: foods.filter({$0.mealType == viewType}))
+        HStack{
+            summaryLabel(data.cal, "Calories")
+            summaryLabel(data.carbohyd, "Carbs")
+            summaryLabel(data.protein, "Protein")
+            summaryLabel(data.fat, "Fat")
+        }
+        .padding(.bottom)
+    }
     
+    private func summaryLabel(_ title: String, _ subtitle: String) -> some View{
+        VStack{
+            Text(title)
+                .font(.headline)
+            Text(subtitle)
+                .font(.callout)
+        }
+        .hCenter()
+    }
+
+    private var addProductButton: some View{
+        
+        NavigationLink {
+            AddFoodView(forType: viewType)
+        } label: {
+            Text("Add more")
+                .font(.title3.weight(.medium))
+                .foregroundColor(.white)
+                .padding()
+                .hCenter()
+                .background(Color.blue, in: Capsule())
+        } .padding()
+    }
 }

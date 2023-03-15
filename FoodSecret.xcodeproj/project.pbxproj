@@ -22,6 +22,7 @@
 		5A38A20029C101CC00947AEC /* NutitionixProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38A1FF29C101CC00947AEC /* NutitionixProduct.swift */; };
 		5A52A6CC29C27F34002A68E5 /* NukeLazyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52A6CB29C27F34002A68E5 /* NukeLazyImage.swift */; };
 		5A52A6D229C280EE002A68E5 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5A52A6D129C280EE002A68E5 /* NukeUI */; };
+		5A52A6D529C28BEF002A68E5 /* LineProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52A6D429C28BEF002A68E5 /* LineProgressView.swift */; };
 		5AB741B729C1B1FF00821457 /* CoreDataExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741B629C1B1FF00821457 /* CoreDataExt.swift */; };
 		5AB741B929C1B33600821457 /* Persistense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741B829C1B33600821457 /* Persistense.swift */; };
 		5AB741BF29C1B3A200821457 /* CoreDataFoodSecret.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741BD29C1B3A200821457 /* CoreDataFoodSecret.xcdatamodeld */; };
@@ -56,6 +57,7 @@
 		5A38A1FD29C0FB9C00947AEC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		5A38A1FF29C101CC00947AEC /* NutitionixProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutitionixProduct.swift; sourceTree = "<group>"; };
 		5A52A6CB29C27F34002A68E5 /* NukeLazyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NukeLazyImage.swift; sourceTree = "<group>"; };
+		5A52A6D429C28BEF002A68E5 /* LineProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineProgressView.swift; sourceTree = "<group>"; };
 		5AB741B629C1B1FF00821457 /* CoreDataExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataExt.swift; sourceTree = "<group>"; };
 		5AB741B829C1B33600821457 /* Persistense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistense.swift; sourceTree = "<group>"; };
 		5AB741BE29C1B3A200821457 /* CoreDataFoodSecret.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataFoodSecret.xcdatamodel; sourceTree = "<group>"; };
@@ -207,6 +209,15 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		5A52A6D329C28BDB002A68E5 /* ProgressBars */ = {
+			isa = PBXGroup;
+			children = (
+				5AB741CE29C1FD5600821457 /* CircleProgressView.swift */,
+				5A52A6D429C28BEF002A68E5 /* LineProgressView.swift */,
+			);
+			path = ProgressBars;
+			sourceTree = "<group>";
+		};
 		5AB741B429C1B1C400821457 /* CodeData */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,7 +268,7 @@
 		5AB741CD29C1FD3F00821457 /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
-				5AB741CE29C1FD5600821457 /* CircleProgressView.swift */,
+				5A52A6D329C28BDB002A68E5 /* ProgressBars */,
 				5AB741DE29C22DFC00821457 /* MealFoodRowView.swift */,
 				5A52A6CB29C27F34002A68E5 /* NukeLazyImage.swift */,
 			);
@@ -383,6 +394,7 @@
 				5AB741CA29C1F75E00821457 /* HomeView.swift in Sources */,
 				5AB741BF29C1B3A200821457 /* CoreDataFoodSecret.xcdatamodeld in Sources */,
 				5A38A1F829C0F66200947AEC /* NetworkManager.swift in Sources */,
+				5A52A6D529C28BEF002A68E5 /* LineProgressView.swift in Sources */,
 				5A38A1CA29C0807000947AEC /* View+extension.swift in Sources */,
 				5A38A1F129C0EFF800947AEC /* ProductSearchResult.swift in Sources */,
 				5AB741DF29C22DFC00821457 /* MealFoodRowView.swift in Sources */,
