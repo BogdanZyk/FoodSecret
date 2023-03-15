@@ -33,6 +33,7 @@
 		5AB741D629C2096B00821457 /* AddFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741D529C2096B00821457 /* AddFoodView.swift */; };
 		5AB741D829C210D800821457 /* AllMealsFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741D729C210D800821457 /* AllMealsFoodView.swift */; };
 		5AB741DA29C2149B00821457 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741D929C2149B00821457 /* PreviewProvider.swift */; };
+		5AB741DD29C21B9E00821457 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741DC29C21B9E00821457 /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		5AB741D529C2096B00821457 /* AddFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodView.swift; sourceTree = "<group>"; };
 		5AB741D729C210D800821457 /* AllMealsFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMealsFoodView.swift; sourceTree = "<group>"; };
 		5AB741D929C2149B00821457 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
+		5AB741DC29C21B9E00821457 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 		5A38A1C529C0803100947AEC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5AB741DB29C21B9500821457 /* Helpers */,
 				5A38A1C829C0806300947AEC /* Extension */,
 			);
 			path = Utils;
@@ -271,6 +274,14 @@
 			path = AddFoodView;
 			sourceTree = "<group>";
 		};
+		5AB741DB29C21B9500821457 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5AB741DC29C21B9E00821457 /* Helper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -367,6 +378,7 @@
 				5A38A1FA29C0F7AE00947AEC /* NutritionixService.swift in Sources */,
 				5AB741C729C1DC0B00821457 /* WaterEntity+Extensions.swift in Sources */,
 				5AB741CF29C1FD5600821457 /* CircleProgressView.swift in Sources */,
+				5AB741DD29C21B9E00821457 /* Helper.swift in Sources */,
 				5A38A1CC29C080F500947AEC /* Date+Ext.swift in Sources */,
 				5AB741C329C1BD0200821457 /* FoodEntity+Extension.swift in Sources */,
 			);

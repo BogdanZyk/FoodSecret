@@ -29,8 +29,10 @@ extension FoodEntity{
         return request
     }
     
+    static func mealPredicate(_ type: MealType) -> NSPredicate{
+        NSPredicate(format: "mealType_ = %i", type.rawValue)
+    }
     
-
     
 //    static func update(food: FoodEntity, name: String, context: NSManagedObjectContext){
 //        food.foodName = name

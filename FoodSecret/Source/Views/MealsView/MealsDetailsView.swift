@@ -9,12 +9,16 @@ import SwiftUI
 
 struct MealsDetailsView: View {
     let viewType: MealType
-    let foods: [FoodEntity]
+    var foods: FetchedResults<FoodEntity>
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack{
-                ForEach(foods){food in
-                    Text(food.foodNameEditable)
+                ForEach(foods.filter({$0.mealType == viewType})){ food in
+                    NavigationLink {
+                        UpdateView(item: food)
+                    } label: {
+                        Text(food.foodNameEditable)
+                    }
                 }
             }
             .padding(.horizontal)
@@ -25,13 +29,16 @@ struct MealsDetailsView: View {
                     .font(.title3.weight(.medium))
             }
         }
+//        .onAppear{
+//            foods.nsPredicate = FoodEntity.mealPredicate(viewType)
+//        }
     }
 }
 
-struct MealsDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationStack {
-            MealsDetailsView(viewType: .dinner, foods: dev.simpleFoods)
-        }
-    }
-}
+//struct MealsDetailsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NavigationStack {
+//            MealsDetailsView(viewType: .dinner, foods: dev.viewContext.fetch(FoodEntity.fetchForDate()))
+//        }
+//    }
+//}

@@ -158,4 +158,11 @@ enum MealType: Int16, CaseIterable{
         case .snack: return "🍌"
         }
     }
+        
+    
+    func getTotalCallForType(with foods: [FoodEntity]) -> Double{
+        foods.filter({$0.mealType == self})
+            .compactMap({$0.calories}).reduce(0, +)
+    }
+    
 }

@@ -61,7 +61,7 @@ extension HomeView{
     
     
     private var mealsSection: some View{
-        MealsSectionView(foods: Array(foods), homeVM: homeVM)
+        MealsSectionView(foods: foods, homeVM: homeVM)
     }
     
     

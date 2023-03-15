@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MealsSectionView: View {
-    let foods: [FoodEntity]
+    var foods: FetchedResults<FoodEntity>
     @ObservedObject var homeVM: HomeViewModel
     var body: some View {
         VStack(alignment: .leading, spacing: 10){
@@ -17,7 +17,7 @@ struct MealsSectionView: View {
                     .font(.title3.bold())
                 Spacer()
                 NavigationLink {
-                    AllMealsFoodView()
+                    AllMealsFoodView(foods: foods)
                 } label: {
                     Text("More")
                         .font(.subheadline.weight(.medium))
@@ -36,7 +36,7 @@ struct MealsSectionView: View {
             .cornerRadius(12)
         }
         .navigationDestination(for: MealType.self) { type in
-            MealsDetailsView(viewType: type, foods: foods.filter({$0.mealType == type}))
+            MealsDetailsView(viewType: type, foods: foods)
         }
     }
 }
