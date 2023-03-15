@@ -20,6 +20,10 @@
 		5A38A1FA29C0F7AE00947AEC /* NutritionixService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38A1F929C0F7AE00947AEC /* NutritionixService.swift */; };
 		5A38A1FE29C0FB9C00947AEC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38A1FD29C0FB9C00947AEC /* HomeViewModel.swift */; };
 		5A38A20029C101CC00947AEC /* NutitionixProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38A1FF29C101CC00947AEC /* NutitionixProduct.swift */; };
+		5AB741B729C1B1FF00821457 /* CoreDataExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741B629C1B1FF00821457 /* CoreDataExt.swift */; };
+		5AB741B929C1B33600821457 /* Persistense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741B829C1B33600821457 /* Persistense.swift */; };
+		5AB741BF29C1B3A200821457 /* CoreDataFoodSecret.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741BD29C1B3A200821457 /* CoreDataFoodSecret.xcdatamodeld */; };
+		5AB741C329C1BD0200821457 /* FoodEntity+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741C229C1BD0200821457 /* FoodEntity+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		5A38A1F929C0F7AE00947AEC /* NutritionixService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionixService.swift; sourceTree = "<group>"; };
 		5A38A1FD29C0FB9C00947AEC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		5A38A1FF29C101CC00947AEC /* NutitionixProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutitionixProduct.swift; sourceTree = "<group>"; };
+		5AB741B629C1B1FF00821457 /* CoreDataExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataExt.swift; sourceTree = "<group>"; };
+		5AB741B829C1B33600821457 /* Persistense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistense.swift; sourceTree = "<group>"; };
+		5AB741BE29C1B3A200821457 /* CoreDataFoodSecret.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataFoodSecret.xcdatamodel; sourceTree = "<group>"; };
+		5AB741C229C1BD0200821457 /* FoodEntity+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodEntity+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +83,6 @@
 				5A38A1C629C0803400947AEC /* Source */,
 				5A38A1C529C0803100947AEC /* Utils */,
 				5A38A1C429C0802C00947AEC /* Serveces */,
-				5A38A1B829C0802600947AEC /* ContentView.swift */,
 				5A38A1BA29C0802800947AEC /* Assets.xcassets */,
 				5A38A1BC29C0802800947AEC /* Preview Content */,
 			);
@@ -93,6 +100,7 @@
 		5A38A1C429C0802C00947AEC /* Serveces */ = {
 			isa = PBXGroup;
 			children = (
+				5AB741B429C1B1C400821457 /* CodeData */,
 				5A38A1F429C0F44B00947AEC /* NutritionixAPI */,
 			);
 			path = Serveces;
@@ -119,6 +127,7 @@
 		5A38A1C729C0803B00947AEC /* App */ = {
 			isa = PBXGroup;
 			children = (
+				5A38A1B829C0802600947AEC /* ContentView.swift */,
 				5A38A1B629C0802600947AEC /* FoodSecretApp.swift */,
 			);
 			path = App;
@@ -136,9 +145,7 @@
 		5A38A1EF29C0EFE700947AEC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5A38A1F029C0EFF800947AEC /* ProductSearchResult.swift */,
-				5A38A1F229C0F0F400947AEC /* NutrientInfo.swift */,
-				5A38A1FF29C101CC00947AEC /* NutitionixProduct.swift */,
+				5AB741C029C1B72800821457 /* Nutritionix */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -166,6 +173,43 @@
 				5A38A1FD29C0FB9C00947AEC /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5AB741B429C1B1C400821457 /* CodeData */ = {
+			isa = PBXGroup;
+			children = (
+				5AB741C129C1BCF600821457 /* ModelExtensions */,
+				5AB741B529C1B1C900821457 /* Persistence */,
+				5AB741BD29C1B3A200821457 /* CoreDataFoodSecret.xcdatamodeld */,
+			);
+			path = CodeData;
+			sourceTree = "<group>";
+		};
+		5AB741B529C1B1C900821457 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				5AB741B629C1B1FF00821457 /* CoreDataExt.swift */,
+				5AB741B829C1B33600821457 /* Persistense.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		5AB741C029C1B72800821457 /* Nutritionix */ = {
+			isa = PBXGroup;
+			children = (
+				5A38A1F029C0EFF800947AEC /* ProductSearchResult.swift */,
+				5A38A1FF29C101CC00947AEC /* NutitionixProduct.swift */,
+				5A38A1F229C0F0F400947AEC /* NutrientInfo.swift */,
+			);
+			path = Nutritionix;
+			sourceTree = "<group>";
+		};
+		5AB741C129C1BCF600821457 /* ModelExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				5AB741C229C1BD0200821457 /* FoodEntity+Extension.swift */,
+			);
+			path = ModelExtensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,14 +289,18 @@
 				5A38A1F629C0F45F00947AEC /* NutritionixEndpoint.swift in Sources */,
 				5A38A1B929C0802600947AEC /* ContentView.swift in Sources */,
 				5A38A1B729C0802600947AEC /* FoodSecretApp.swift in Sources */,
+				5AB741B929C1B33600821457 /* Persistense.swift in Sources */,
 				5A38A1FE29C0FB9C00947AEC /* HomeViewModel.swift in Sources */,
+				5AB741B729C1B1FF00821457 /* CoreDataExt.swift in Sources */,
 				5A38A20029C101CC00947AEC /* NutitionixProduct.swift in Sources */,
 				5A38A1F329C0F0F400947AEC /* NutrientInfo.swift in Sources */,
+				5AB741BF29C1B3A200821457 /* CoreDataFoodSecret.xcdatamodeld in Sources */,
 				5A38A1F829C0F66200947AEC /* NetworkManager.swift in Sources */,
 				5A38A1CA29C0807000947AEC /* View+extension.swift in Sources */,
 				5A38A1F129C0EFF800947AEC /* ProductSearchResult.swift in Sources */,
 				5A38A1FA29C0F7AE00947AEC /* NutritionixService.swift in Sources */,
 				5A38A1CC29C080F500947AEC /* Date+Ext.swift in Sources */,
+				5AB741C329C1BD0200821457 /* FoodEntity+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +503,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5AB741BD29C1B3A200821457 /* CoreDataFoodSecret.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5AB741BE29C1B3A200821457 /* CoreDataFoodSecret.xcdatamodel */,
+			);
+			currentVersion = 5AB741BE29C1B3A200821457 /* CoreDataFoodSecret.xcdatamodel */;
+			path = CoreDataFoodSecret.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5A38A1AB29C0802600947AEC /* Project object */;
 }
