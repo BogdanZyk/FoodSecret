@@ -53,7 +53,10 @@ extension HomeView{
         ZStack {
             RoundedRectangle(cornerRadius: 12)
                 .fill(Color(.systemGray6))
-               Text("Summary")
+            VStack {
+                Text("Summary")
+                Symmary(foods: foods)
+            }
         }
         .frame(height: 200)
         .padding(.top)
@@ -75,7 +78,14 @@ extension HomeView{
     }
 }
 
-
+struct Symmary: View{
+    var foods: FetchedResults<FoodEntity>
+    var body: some View{
+        VStack {
+            Text(foods.compactMap({$0.calories}).reduce(0, +).toCalories)
+        }
+    }
+}
 
 
 

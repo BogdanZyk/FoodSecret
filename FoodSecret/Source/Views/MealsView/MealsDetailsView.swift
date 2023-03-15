@@ -9,36 +9,41 @@ import SwiftUI
 
 struct MealsDetailsView: View {
     let viewType: MealType
+    @FetchRequest(fetchRequest: FoodEntity.fetchForDate(), animation: .default)
     var foods: FetchedResults<FoodEntity>
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            VStack{
-                ForEach(foods.filter({$0.mealType == viewType})){ food in
-                    NavigationLink {
-                        UpdateView(item: food)
-                    } label: {
-                        Text(food.foodNameEditable)
-                    }
+        List{
+            
+            
+            
+            ForEach(foods.filter({$0.mealType == viewType})){food in
+                NavigationLink {
+                    UpdateView(item: food)
+                } label: {
+                    MealFoodRowView(food: food)
                 }
             }
-            .padding(.horizontal)
         }
+        .listStyle(.plain)
         .toolbar {
             ToolbarItem(placement: .principal) {
                 Text(viewType.title)
                     .font(.title3.weight(.medium))
             }
         }
-//        .onAppear{
-//            foods.nsPredicate = FoodEntity.mealPredicate(viewType)
-//        }
     }
 }
 
-//struct MealsDetailsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NavigationStack {
-//            MealsDetailsView(viewType: .dinner, foods: dev.viewContext.fetch(FoodEntity.fetchForDate()))
-//        }
-//    }
-//}
+struct MealsDetailsView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationStack {
+            MealsDetailsView(viewType: .lunch)
+        }
+        .environment(\.managedObjectContext, dev.viewContext)
+    }
+}
+
+ 
+extension MealsDetailsView{
+    
+}

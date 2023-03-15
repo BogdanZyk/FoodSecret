@@ -14,19 +14,18 @@ struct AllMealsFoodView: View {
         List {
             ForEach(MealType.allCases, id: \.self){type in
                 Section {
-                    ForEach(Array(foods).filter({$0.mealType == type})){food in
+                    ForEach(foods.filter({$0.mealType == type})){food in
                         NavigationLink {
                             UpdateView(item: food)
                         } label: {
-                            Text(food.foodNameEditable)
-                                .font(.headline)
+                            MealFoodRowView(food: food)
                         }
                     }
                 } header: {
                     HStack{
                         Text(type.title)
                         Spacer()
-                        Text("\(type.getTotalCallForType(with: Array(foods)).friendlyString) call")
+                        Text("\(type.getTotalCallForType(with: Array(foods)).toCalories)")
                     }
                 }
             }

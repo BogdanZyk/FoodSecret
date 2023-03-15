@@ -13,7 +13,7 @@ extension WaterEntity{
     
     
     var friendlyString: String{
-        value.friendlyString
+        value.twoNumString
     }
     
     var glassesCoint: Int{

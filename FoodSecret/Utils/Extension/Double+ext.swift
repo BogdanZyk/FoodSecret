@@ -10,8 +10,8 @@ import Foundation
 extension Double{
     
     
-    var friendlyString: String {
-        String(format: "%.2f", self)
+    var twoNumString: String {
+        String(format: "%.1f", self)
     }
 
     var numberOfWaterGlasses: Int{
@@ -21,5 +21,13 @@ extension Double{
     func calculatePercentage(for total: Double) -> CGFloat{
         if self >= total {return 1}
         return self / total
+    }
+    
+    var toCalories: String{
+        "\(Int(self)) cal"
+    }
+    
+    var toWeight: String{
+        twoNumString + " g"
     }
 }

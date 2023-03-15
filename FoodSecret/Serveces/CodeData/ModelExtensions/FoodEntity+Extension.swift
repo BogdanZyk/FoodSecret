@@ -16,6 +16,14 @@ extension FoodEntity{
         set { foodName = newValue }
     }
     
+    var represCalories: String{
+        calories.toCalories
+    }
+    
+    var represWeight: String{
+        weight.toWeight
+    }
+    
     var mealType: MealType{
         get { .init(rawValue: mealType_) ?? .breakfast }
         set { mealType_ = newValue.rawValue }

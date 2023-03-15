@@ -36,7 +36,7 @@ struct MealsSectionView: View {
             .cornerRadius(12)
         }
         .navigationDestination(for: MealType.self) { type in
-            MealsDetailsView(viewType: type, foods: foods)
+            MealsDetailsView(viewType: type)
         }
     }
 }
@@ -64,8 +64,8 @@ extension MealsSectionView{
                 VStack(alignment: .leading) {
                     Text(type.title)
                         .font(.headline)
-                    Text("\(totalCall.friendlyString)/775 cal")
-                        .font(.subheadline.weight(.light))
+                    Text("\(Int(totalCall))/775 cal")
+                        .font(.caption.weight(.light))
                 }
                 Spacer()
                 Button {
