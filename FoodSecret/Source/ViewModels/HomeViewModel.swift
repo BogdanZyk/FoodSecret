@@ -11,12 +11,29 @@ import Combine
 class HomeViewModel: ObservableObject{
     
     
+    @Published var showAddFoodView: Bool = false
+    @Published var selectedMealType: MealType = .dinner
     let service = NutritionixService()
     var cancellable = Set<AnyCancellable>()
     
+    
+    
+    func showAddFood(_ type: MealType){
+        selectedMealType = type
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1){
+            self.showAddFoodView.toggle()
+        }
+    }
+    
+    
+    
+   
+    
     init(){
-        fetch()
-        getNutrient("liquid egg whites")
+//        fetch()
+//        getNutrient("liquid egg whites")
+        
+        
     }
     
     

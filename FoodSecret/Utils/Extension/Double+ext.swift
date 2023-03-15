@@ -17,4 +17,9 @@ extension Double{
     var numberOfWaterGlasses: Int{
         Int(self / 0.25)
     }
+    
+    func calculatePercentage(for total: Double) -> CGFloat{
+        if self >= total {return 1}
+        return self / total
+    }
 }

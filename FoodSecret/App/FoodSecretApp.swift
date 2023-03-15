@@ -11,7 +11,7 @@ import SwiftUI
 struct FoodSecretApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
                 .environment(\.managedObjectContext,
                             PersistenceController.shared.viewContext)
         }

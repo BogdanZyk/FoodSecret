@@ -118,18 +118,7 @@ extension ContentView{
 }
 
 
-enum MealType: Int16, CaseIterable{
-    case breakfast, lunch, dinner, snack
-    
-    var title: String{
-        switch self {
-        case .breakfast: return "Breakfast"
-        case .lunch: return "Lunch"
-        case .dinner: return "Dinner"
-        case .snack: return "Snack"
-        }
-    }
-}
+
 
 
 struct UpdateView: View{
@@ -151,5 +140,31 @@ struct UpdateView: View{
             }
         }
         .navigationTitle("Update \(item.foodNameEditable)")
+    }
+}
+
+
+
+
+
+enum MealType: Int16, CaseIterable{
+    case breakfast, lunch, dinner, snack
+    
+    var title: String{
+        switch self {
+        case .breakfast: return "Breakfast"
+        case .lunch: return "Lunch"
+        case .dinner: return "Dinner"
+        case .snack: return "Snack"
+        }
+    }
+    
+    var emoji: String{
+        switch self {
+        case .breakfast: return "☕️"
+        case .lunch: return "🍲"
+        case .dinner: return "🍝"
+        case .snack: return "🍌"
+        }
     }
 }

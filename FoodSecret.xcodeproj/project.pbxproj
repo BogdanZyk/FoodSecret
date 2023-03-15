@@ -26,6 +26,12 @@
 		5AB741C329C1BD0200821457 /* FoodEntity+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741C229C1BD0200821457 /* FoodEntity+Extension.swift */; };
 		5AB741C529C1DAE100821457 /* Double+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741C429C1DAE100821457 /* Double+ext.swift */; };
 		5AB741C729C1DC0B00821457 /* WaterEntity+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741C629C1DC0B00821457 /* WaterEntity+Extensions.swift */; };
+		5AB741CA29C1F75E00821457 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741C929C1F75E00821457 /* HomeView.swift */; };
+		5AB741CC29C1F9EF00821457 /* MealsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741CB29C1F9EF00821457 /* MealsSectionView.swift */; };
+		5AB741CF29C1FD5600821457 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741CE29C1FD5600821457 /* CircleProgressView.swift */; };
+		5AB741D329C206C100821457 /* MealsDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741D229C206C100821457 /* MealsDetailsView.swift */; };
+		5AB741D629C2096B00821457 /* AddFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741D529C2096B00821457 /* AddFoodView.swift */; };
+		5AB741D829C210D800821457 /* AllMealsFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741D729C210D800821457 /* AllMealsFoodView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +56,12 @@
 		5AB741C229C1BD0200821457 /* FoodEntity+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodEntity+Extension.swift"; sourceTree = "<group>"; };
 		5AB741C429C1DAE100821457 /* Double+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+ext.swift"; sourceTree = "<group>"; };
 		5AB741C629C1DC0B00821457 /* WaterEntity+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WaterEntity+Extensions.swift"; sourceTree = "<group>"; };
+		5AB741C929C1F75E00821457 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		5AB741CB29C1F9EF00821457 /* MealsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsSectionView.swift; sourceTree = "<group>"; };
+		5AB741CE29C1FD5600821457 /* CircleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
+		5AB741D229C206C100821457 /* MealsDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsDetailsView.swift; sourceTree = "<group>"; };
+		5AB741D529C2096B00821457 /* AddFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodView.swift; sourceTree = "<group>"; };
+		5AB741D729C210D800821457 /* AllMealsFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMealsFoodView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +180,9 @@
 		5A38A1FB29C0FB8D00947AEC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5AB741D029C2068600821457 /* MealsView */,
+				5AB741CD29C1FD3F00821457 /* ViewComponents */,
+				5AB741C829C1F73F00821457 /* HomeView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -216,6 +231,41 @@
 				5AB741C629C1DC0B00821457 /* WaterEntity+Extensions.swift */,
 			);
 			path = ModelExtensions;
+			sourceTree = "<group>";
+		};
+		5AB741C829C1F73F00821457 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				5AB741D429C2095100821457 /* AddFoodView */,
+				5AB741C929C1F75E00821457 /* HomeView.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		5AB741CD29C1FD3F00821457 /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				5AB741CE29C1FD5600821457 /* CircleProgressView.swift */,
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
+		5AB741D029C2068600821457 /* MealsView */ = {
+			isa = PBXGroup;
+			children = (
+				5AB741CB29C1F9EF00821457 /* MealsSectionView.swift */,
+				5AB741D229C206C100821457 /* MealsDetailsView.swift */,
+				5AB741D729C210D800821457 /* AllMealsFoodView.swift */,
+			);
+			path = MealsView;
+			sourceTree = "<group>";
+		};
+		5AB741D429C2095100821457 /* AddFoodView */ = {
+			isa = PBXGroup;
+			children = (
+				5AB741D529C2096B00821457 /* AddFoodView.swift */,
+			);
+			path = AddFoodView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,21 +342,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AB741D329C206C100821457 /* MealsDetailsView.swift in Sources */,
 				5A38A1F629C0F45F00947AEC /* NutritionixEndpoint.swift in Sources */,
 				5A38A1B929C0802600947AEC /* ContentView.swift in Sources */,
 				5AB741C529C1DAE100821457 /* Double+ext.swift in Sources */,
 				5A38A1B729C0802600947AEC /* FoodSecretApp.swift in Sources */,
+				5AB741CC29C1F9EF00821457 /* MealsSectionView.swift in Sources */,
 				5AB741B929C1B33600821457 /* Persistense.swift in Sources */,
+				5AB741D829C210D800821457 /* AllMealsFoodView.swift in Sources */,
 				5A38A1FE29C0FB9C00947AEC /* HomeViewModel.swift in Sources */,
 				5AB741B729C1B1FF00821457 /* CoreDataExt.swift in Sources */,
 				5A38A20029C101CC00947AEC /* NutitionixProduct.swift in Sources */,
+				5AB741D629C2096B00821457 /* AddFoodView.swift in Sources */,
 				5A38A1F329C0F0F400947AEC /* NutrientInfo.swift in Sources */,
+				5AB741CA29C1F75E00821457 /* HomeView.swift in Sources */,
 				5AB741BF29C1B3A200821457 /* CoreDataFoodSecret.xcdatamodeld in Sources */,
 				5A38A1F829C0F66200947AEC /* NetworkManager.swift in Sources */,
 				5A38A1CA29C0807000947AEC /* View+extension.swift in Sources */,
 				5A38A1F129C0EFF800947AEC /* ProductSearchResult.swift in Sources */,
 				5A38A1FA29C0F7AE00947AEC /* NutritionixService.swift in Sources */,
 				5AB741C729C1DC0B00821457 /* WaterEntity+Extensions.swift in Sources */,
+				5AB741CF29C1FD5600821457 /* CircleProgressView.swift in Sources */,
 				5A38A1CC29C080F500947AEC /* Date+Ext.swift in Sources */,
 				5AB741C329C1BD0200821457 /* FoodEntity+Extension.swift in Sources */,
 			);
