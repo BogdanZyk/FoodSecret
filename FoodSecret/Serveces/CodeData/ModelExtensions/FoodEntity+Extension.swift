@@ -41,21 +41,26 @@ extension FoodEntity{
         NSPredicate(format: "mealType_ = %i", type.rawValue)
     }
     
-    
-//    static func update(food: FoodEntity, name: String, context: NSManagedObjectContext){
-//        food.foodName = name
-//        context.saveContext()
-//    }
-    
-    
-//    static func withId(_ id: UUID, in context: NSManagedObjectContext) -> FoodEntity?{
-//        let request = NSFetchRequest<FoodEntity>(entityName: "FoodEntity")
-//        request.fetchLimit = 1
-//        request.predicate = NSPredicate(format: "id = %@", id as CVarArg)
-//        let result = try? context.fetch(request)
-//
-//        return result?.first
-//    }
+    static func create(for product: Food,
+                       mealType: MealType,
+                       count: Int16,
+                       context: NSManagedObjectContext){
+        
+        let food = FoodEntity(context: context)
+        food.id = UUID()
+        food.foodName = product.foodName ?? "No name"
+        food.fat = product.nfSaturatedFat ?? 0
+        food.protein = product.nfProtein ?? 0
+        food.carbohydrate = product.nfTotalCarbohydrate ?? 0
+        food.calories = product.nfCalories ?? 0
+        food.weight = Double(product.servingWeightGrams ?? 0)
+        food.createAt = Date.now
+        food.image = product.photo.thumb
+        food.mealType = mealType
+        food.count = count
+        
+        context.saveContext()
+    }
     
     static func delete(_ item: FoodEntity){
         if let context = item.managedObjectContext{

@@ -73,8 +73,8 @@ extension MealsSectionView{
                 } label: {
                     Image(systemName: "plus.circle.fill")
                         .font(.title3)
+                        .foregroundColor(Color(uiColor: .systemTeal))
                 }
-                .buttonStyle(.plain)
             }
             .foregroundColor(Color(uiColor: .black))
         }

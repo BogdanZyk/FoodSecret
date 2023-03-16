@@ -6,19 +6,6 @@
         "reference" : "systemCyanColor"
       },
       "idiom" : "universal"
-    },
-    {
-      "appearances" : [
-        {
-          "appearance" : "luminosity",
-          "value" : "dark"
-        }
-      ],
-      "color" : {
-        "platform" : "ios",
-        "reference" : "systemCyanColor"
-      },
-      "idiom" : "universal"
     }
   ],
   "info" : {

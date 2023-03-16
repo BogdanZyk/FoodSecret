@@ -9,8 +9,9 @@ import SwiftUI
 
 struct SearchFoodView: View {
     @StateObject var viewModel = SearhFoodViewModel()
+    @State private var sheetItem: SheetType?
     let forType: MealType
-    @State var showSheet: Bool = false
+   
     var body: some View {
         ZStack {
             switch viewModel.searchState{
@@ -24,6 +25,7 @@ struct SearchFoodView: View {
                 waitView
             }
         }
+        .animation(.easeInOut, value: viewModel.searchState)
         .searchable(text: $viewModel.query, placement: .navigationBarDrawer(displayMode: .always), prompt: .none)
         .navigationTitle("\(forType.title)")
         .navigationBarTitleDisplayMode(.inline)
@@ -32,9 +34,14 @@ struct SearchFoodView: View {
                 createProductButton
             }
         }
-        .sheet(isPresented: $showSheet) {
-            Text("Sheet")
-                .presentationDetents([.medium])
+        .sheet(item: $sheetItem) { type in
+            switch type{
+            case .add:
+                Text("Add new food")
+            case .select(let name):
+                DetailsProductView(name, mealType: forType)
+                    .presentationDetents([.medium, .large])
+            }
         }
     }
 }
@@ -53,13 +60,19 @@ extension SearchFoodView{
     private var listSection: some View{
         List{
             ForEach(viewModel.foods){food in
-                HStack{
-                    NukeLazyImage(strUrl: food.photo.thumb, resizeHeight: 100, resizingMode: .center, loadPriority: .normal)
-                        .frame(width: 40, height: 40)
-                        .cornerRadius(12)
-                    Text(food.foodName ?? "non")
-                        .lineLimit(1)
-                        .font(.headline)
+                Button {
+                    if let name = food.foodName{
+                        sheetItem = .select(name)
+                    }
+                } label: {
+                    HStack{
+                        NukeLazyImage(strUrl: food.photo.thumb, resizeHeight: 100, resizingMode: .center, loadPriority: .normal)
+                            .frame(width: 40, height: 40)
+                            .cornerRadius(12)
+                        Text(food.foodName ?? "non")
+                            .lineLimit(1)
+                            .font(.headline)
+                    }
                 }
             }
         }
@@ -85,7 +98,7 @@ extension SearchFoodView{
     
     private var createProductButton: some View{
         Button {
-            showSheet.toggle()
+            sheetItem = .add
         } label: {
             Image(systemName: "plus.circle.fill")
         }
@@ -95,10 +108,24 @@ extension SearchFoodView{
     
     private var createButton: some View{
         Button {
-            
+            sheetItem = .add
         } label: {
             Text("Create new product")
                 .font(.title3.weight(.medium))
+        }
+    }
+}
+
+extension SearchFoodView{
+    enum SheetType: Identifiable{
+        case add
+        case select(String)
+        
+        var id: Int{
+            switch self{
+            case .add: return 0
+            case .select(_): return 1
+            }
         }
     }
 }

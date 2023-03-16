@@ -40,6 +40,7 @@ class SearhFoodViewModel: ObservableObject{
     private func search(_ query: String){
         searchState = .loading
         service.search(query)
+            .receive(on: DispatchQueue.main)
             .map({$0.common + $0.branded})
             .sink { [weak self] completion in
                 guard let self = self else {return}

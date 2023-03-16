@@ -43,7 +43,7 @@ struct Food: Codable {
 struct NutrientParams: Codable{
     let query: String
     var claims: Bool = true
-    var useBrandedFoods: Bool = false
+    var useBrandedFoods: Bool = true
     
     enum CodingKeys: String, CodingKey {
         case query, claims

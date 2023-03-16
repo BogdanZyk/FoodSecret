@@ -50,19 +50,7 @@ struct HomeView_Previews: PreviewProvider {
 extension HomeView{
     
     private var summarySection: some View{
-        
         HomeSymmaryView(foods: foods)
-        
-//        ZStack {
-//            RoundedRectangle(cornerRadius: 12)
-//                .fill(Color(.systemGray6))
-//            VStack {
-//                Text("Summary")
-//
-//            }
-//        }
-//        .frame(height: 200)
-//        .padding(.top)
     }
     
     
@@ -77,7 +65,6 @@ extension HomeView{
         } label: {
             Image(systemName: "calendar")
         }
-        .buttonStyle(.plain)
     }
 }
 
@@ -90,7 +77,7 @@ struct HomeSymmaryView: View{
     
     var body: some View{
         VStack(spacing: 20) {
-            ProgressCircleView(persentage: summaryData.cal.calculatePercentage(for: 4500), size: .large, animate: true, circleOutline: Color(UIColor.systemBlue), circleTrack: Color(UIColor.systemTeal)) {
+            ProgressCircleView(persentage: summaryData.cal.calculatePercentage(for: 4500), size: .large, animate: true, circleOutline: Color(UIColor.systemTeal), circleTrack: Color(UIColor.systemTeal).opacity(0.3)) {
                 Text("")
             }
             .frame(width: 100)
@@ -110,11 +97,11 @@ struct HomeSymmaryView: View{
 extension HomeSymmaryView{
     
     
-    private func lineProgress(_ value: CGFloat, title: String, total: Int) -> some View{
+    private func lineProgress(_ value: Double, title: String, total: Int) -> some View{
         VStack(spacing: 6){
             Text(title)
                 .font(.caption)
-            LineProgressView(value: value, animate: true)
+            LineProgressView(value: CGFloat(value.calculatePercentage(for: Double(total))), animate: true)
                 .frame(height: 6)
             Text("\(Int(value))/\(total)")
                 .font(.caption.weight(.medium))

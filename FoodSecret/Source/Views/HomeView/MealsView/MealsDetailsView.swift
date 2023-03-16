@@ -52,23 +52,15 @@ extension MealsDetailsView{
     private var symmarySection: some View{
         let data = Helper.symmaryNutritionDataString(for: foods.filter({$0.mealType == viewType}))
         HStack{
-            summaryLabel(data.cal, "Calories")
-            summaryLabel(data.carbohyd, "Carbs")
-            summaryLabel(data.protein, "Protein")
-            summaryLabel(data.fat, "Fat")
+            ProductNutrionLabel(title: data.cal, subtitle: "Calories")
+            ProductNutrionLabel(title: data.carbohyd, subtitle: "Carbs")
+            ProductNutrionLabel(title: data.protein, subtitle: "Protein")
+            ProductNutrionLabel(title: data.fat, subtitle: "Fat")
         }
         .padding(.bottom)
     }
     
-    private func summaryLabel(_ title: String, _ subtitle: String) -> some View{
-        VStack{
-            Text(title)
-                .font(.headline)
-            Text(subtitle)
-                .font(.callout)
-        }
-        .hCenter()
-    }
+
 
     private var addProductButton: some View{
         
@@ -80,7 +72,22 @@ extension MealsDetailsView{
                 .foregroundColor(.white)
                 .padding()
                 .hCenter()
-                .background(Color.blue, in: Capsule())
+                .background(Color.accentColor, in: Capsule())
         } .padding()
+    }
+}
+
+
+struct ProductNutrionLabel: View{
+    let title: String
+    let subtitle: String
+    var body: some View{
+        VStack{
+            Text(title)
+                .font(.headline)
+            Text(subtitle)
+                .font(.callout)
+        }
+        .hCenter()
     }
 }

@@ -24,8 +24,10 @@ struct LineProgressView: View {
         }
         .onAppear{
             if animate{
-                withAnimation(.spring(response: 3)) {
-                    animateValue = value
+                DispatchQueue.main.async {
+                    withAnimation(.spring(response: 3)) {
+                        animateValue = value
+                    }
                 }
             }
         }
