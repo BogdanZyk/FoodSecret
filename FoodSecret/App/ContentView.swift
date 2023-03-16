@@ -8,18 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) var viewContext
-//    @StateObject var viewModel = HomeViewModel()
-    @FetchRequest(fetchRequest: FoodEntity.fetchForDate(), animation: .default)
-    var foods: FetchedResults<FoodEntity>
-    @FetchRequest(fetchRequest: WaterEntity.fetchForDate(), animation: .default)
-    var water: FetchedResults<WaterEntity>
+    @EnvironmentObject var viewModel: RootViewModel
     var body: some View {
         NavigationStack {
             List{
                 ForEach(MealType.allCases, id: \.self) { mealType in
                     Section {
-                        ForEach(foods.filter({$0.mealType == mealType})){ food in
+                        ForEach(viewModel.foodForMeals(mealType)){ food in
                             NavigationLink(value: food) {
                                 Text(food.foodName ?? "non")
                             }
@@ -27,7 +22,7 @@ struct ContentView: View {
                                 .swipeActions(edge: .trailing) {
                                     
                                     Button(role: .destructive) {
-                                        FoodEntity.delete(food)
+                                        viewModel.removeFood(food)
                                     } label: {
                                         Image(systemName: "trash")
                                     }
@@ -41,10 +36,10 @@ struct ContentView: View {
                 Section {
                     
                     HStack{
-                        Text(water.first?.friendlyString ?? "0.00 l")
-                        Text("Glasses \(water.first?.glassesCoint ?? 0)")
+                        Text(viewModel.water?.friendlyString ?? "0.00 l")
+                        Text("Glasses \(viewModel.water?.glassesCoint ?? 0)")
                         Spacer()
-                        if let item = water.first{
+                        if let item = viewModel.water{
                             Button {
                                 WaterEntity.delete(item)
                             } label: {
@@ -54,7 +49,7 @@ struct ContentView: View {
                         }
                         
                         Button {
-                            WaterEntity.update(water.first, context: viewContext)
+                            viewModel.updateWater()
                         } label: {
                             Image(systemName: "plus")
                         }
@@ -72,6 +67,7 @@ struct ContentView: View {
              }
             .navigationDestination(for: FoodEntity.self) { item in
                 UpdateView(item: item)
+                    .environmentObject(viewModel)
             }
         }
     }
@@ -79,31 +75,14 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        
-   
-        
-       return ContentView()
-            .environment(\.managedObjectContext, dev.viewContext)
+        ContentView()
+            .environmentObject(RootViewModel(mainContext: dev.viewContext))
     }
 }
 extension ContentView{
     
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            FoodEntity.delete(at: offsets, for: Array(foods))
-        }
-    }
-    
     private func addItem() {
-          withAnimation {
-              let newItem = FoodEntity(context: viewContext)
-              newItem.id = UUID()
-              newItem.foodName = "Eggs \(Int.random(in: 1...1000))"
-              newItem.createAt = Date.now
-              newItem.calories = 125.5
-              newItem.mealType = .init(rawValue: Int16.random(in: 0...3)) ?? .breakfast
-              viewContext.saveContext()
-          }
+        viewModel.createFood()
       }
     
 }
@@ -114,6 +93,7 @@ extension ContentView{
 
 struct UpdateView: View{
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var rootVM: RootViewModel
     @ObservedObject var item : FoodEntity
     @State var name: String = ""
     var body: some View{
@@ -121,6 +101,7 @@ struct UpdateView: View{
             TextField("name", text: $item.foodNameEditable)
             Button("Save") {
                 item.managedObjectContext?.saveContext()
+                rootVM.fetchFoods()
                 dismiss()
             }
             Picker("", selection: $item.mealType) {

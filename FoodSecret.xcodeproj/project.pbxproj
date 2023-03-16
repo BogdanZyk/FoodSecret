@@ -23,6 +23,7 @@
 		5A4EA61929C344C300CCAF47 /* ProductEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4EA61829C344C300CCAF47 /* ProductEditorView.swift */; };
 		5A4EA61B29C344CE00CCAF47 /* ProductEditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4EA61A29C344CE00CCAF47 /* ProductEditorViewModel.swift */; };
 		5A4EA61D29C3473500CCAF47 /* Notificationcenter+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4EA61C29C3473500CCAF47 /* Notificationcenter+Ext.swift */; };
+		5A4EA61F29C3620B00CCAF47 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4EA61E29C3620B00CCAF47 /* RootViewModel.swift */; };
 		5A52A6CC29C27F34002A68E5 /* NukeLazyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52A6CB29C27F34002A68E5 /* NukeLazyImage.swift */; };
 		5A52A6D229C280EE002A68E5 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5A52A6D129C280EE002A68E5 /* NukeUI */; };
 		5A52A6D529C28BEF002A68E5 /* LineProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52A6D429C28BEF002A68E5 /* LineProgressView.swift */; };
@@ -65,6 +66,7 @@
 		5A4EA61829C344C300CCAF47 /* ProductEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductEditorView.swift; sourceTree = "<group>"; };
 		5A4EA61A29C344CE00CCAF47 /* ProductEditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductEditorViewModel.swift; sourceTree = "<group>"; };
 		5A4EA61C29C3473500CCAF47 /* Notificationcenter+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notificationcenter+Ext.swift"; sourceTree = "<group>"; };
+		5A4EA61E29C3620B00CCAF47 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		5A52A6CB29C27F34002A68E5 /* NukeLazyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NukeLazyImage.swift; sourceTree = "<group>"; };
 		5A52A6D429C28BEF002A68E5 /* LineProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineProgressView.swift; sourceTree = "<group>"; };
 		5A52A6D629C31440002A68E5 /* SearhFoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearhFoodViewModel.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			children = (
 				5A38A1B829C0802600947AEC /* ContentView.swift */,
 				5A38A1B629C0802600947AEC /* FoodSecretApp.swift */,
+				5A4EA61E29C3620B00CCAF47 /* RootViewModel.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				5A38A20029C101CC00947AEC /* NutitionixProduct.swift in Sources */,
 				5A52A6D729C31440002A68E5 /* SearhFoodViewModel.swift in Sources */,
 				5AB741D629C2096B00821457 /* SearchFoodView.swift in Sources */,
+				5A4EA61F29C3620B00CCAF47 /* RootViewModel.swift in Sources */,
 				5A38A1F329C0F0F400947AEC /* NutrientInfo.swift in Sources */,
 				5AB741DA29C2149B00821457 /* PreviewProvider.swift in Sources */,
 				5AB741CA29C1F75E00821457 /* HomeView.swift in Sources */,
