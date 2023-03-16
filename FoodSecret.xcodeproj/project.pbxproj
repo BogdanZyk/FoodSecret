@@ -196,7 +196,6 @@
 		5A38A1FB29C0FB8D00947AEC /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5AB741D029C2068600821457 /* MealsView */,
 				5AB741CD29C1FD3F00821457 /* ViewComponents */,
 				5AB741C829C1F73F00821457 /* HomeView */,
 			);
@@ -219,6 +218,21 @@
 				5A52A6D429C28BEF002A68E5 /* LineProgressView.swift */,
 			);
 			path = ProgressBars;
+			sourceTree = "<group>";
+		};
+		5A52A6D829C321C1002A68E5 /* SearchFoodView */ = {
+			isa = PBXGroup;
+			children = (
+				5AB741D529C2096B00821457 /* SearchFoodView.swift */,
+			);
+			path = SearchFoodView;
+			sourceTree = "<group>";
+		};
+		5A52A6D929C321D6002A68E5 /* CreateFoodView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CreateFoodView;
 			sourceTree = "<group>";
 		};
 		5AB741B429C1B1C400821457 /* CodeData */ = {
@@ -262,7 +276,9 @@
 		5AB741C829C1F73F00821457 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
-				5AB741D429C2095100821457 /* AddFoodView */,
+				5AB741D029C2068600821457 /* MealsView */,
+				5A52A6D929C321D6002A68E5 /* CreateFoodView */,
+				5A52A6D829C321C1002A68E5 /* SearchFoodView */,
 				5AB741C929C1F75E00821457 /* HomeView.swift */,
 			);
 			path = HomeView;
@@ -286,14 +302,6 @@
 				5AB741D729C210D800821457 /* AllMealsFoodView.swift */,
 			);
 			path = MealsView;
-			sourceTree = "<group>";
-		};
-		5AB741D429C2095100821457 /* AddFoodView */ = {
-			isa = PBXGroup;
-			children = (
-				5AB741D529C2096B00821457 /* SearchFoodView.swift */,
-			);
-			path = AddFoodView;
 			sourceTree = "<group>";
 		};
 		5AB741DB29C21B9500821457 /* Helpers */ = {

@@ -19,7 +19,7 @@ struct SearchFoodView: View {
             case .load:
                 listSection
             case .empty:
-                Text("Empty result")
+                emptyView
             case .waiting:
                 waitView
             }
@@ -66,10 +66,21 @@ extension SearchFoodView{
         .listStyle(.plain)
     }
     
+    private var emptyView: some View{
+        VStack(spacing: 20){
+            Text("Nothing was found.\nChange the search filter or create your own product.")
+                .multilineTextAlignment(.center)
+                .font(.title3.bold())
+           createButton
+        }
+    }
     
     private var waitView: some View{
-        Text("Find a product, or create your own")
-            .font(.title3.bold())
+        VStack(spacing: 20) {
+            Text("Find a product, or create your own")
+                .font(.title3.bold())
+            createButton
+        }
     }
     
     private var createProductButton: some View{
@@ -79,5 +90,15 @@ extension SearchFoodView{
             Image(systemName: "plus.circle.fill")
         }
         .foregroundColor(Color(uiColor: .systemCyan))
+    }
+    
+    
+    private var createButton: some View{
+        Button {
+            
+        } label: {
+            Text("Create new product")
+                .font(.title3.weight(.medium))
+        }
     }
 }

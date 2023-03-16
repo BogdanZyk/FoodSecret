@@ -12,14 +12,7 @@ import Combine
 protocol NutritionixServiceProtocol: AnyObject{
 
     func search(_ query: String) -> AnyPublisher<ProductSearchResult, Error>
-    
-//    func getDialogId() -> AnyPublisher<DialogIdResponse, Error>
-//
-//    func getDialogHistoryForId(_ dialogId: Int) -> AnyPublisher<MessageResponse, Error>
-//
-//    func sendMessage(_ params: MessageRequest) -> AnyPublisher<SendMessageResponse, Error>
-//
-//    func updateDataWidget(_ params: UpdateDataWidgetRequest) -> AnyPublisher<Data, Error>
+    func getNutrientInfo(for params: NutrientParams) -> AnyPublisher<NutrientInfo, Error>
 }
 
 
