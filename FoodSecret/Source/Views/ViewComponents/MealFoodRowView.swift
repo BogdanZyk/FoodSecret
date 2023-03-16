@@ -14,7 +14,7 @@ struct MealFoodRowView: View {
             NukeLazyImage(strUrl: food.image)
                 .frame(width: 45, height: 45)
                 .cornerRadius(10)
-            Text(food.foodNameEditable)
+            Text(food.foodNameEditable.capitalized)
                 .font(.headline)
             Spacer()
             Text(food.represCalories)

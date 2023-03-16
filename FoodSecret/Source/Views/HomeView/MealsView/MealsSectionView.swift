@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MealsSectionView: View {
+    @Environment(\.colorScheme) private var colorScheme
     var foods: FetchedResults<FoodEntity>
     @ObservedObject var homeVM: HomeViewModel
     var body: some View {
@@ -76,7 +77,7 @@ extension MealsSectionView{
                         .foregroundColor(Color(uiColor: .systemTeal))
                 }
             }
-            .foregroundColor(Color(uiColor: .black))
+            .foregroundColor(colorScheme == .dark ? .white : .black)
         }
     }
     

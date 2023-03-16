@@ -12,6 +12,7 @@ struct ProductEditorView: View {
     @Environment(\.dismiss) var dismiss
     let mealType: MealType
     @StateObject private var viewModel = ProductEditorViewModel()
+    @FocusState private var isFocused: Bool
     var body: some View {
         VStack(spacing: 16){
             headerView
@@ -22,6 +23,11 @@ struct ProductEditorView: View {
         }
         .padding()
         .ignoresSafeArea(.keyboard, edges: .bottom)
+        .onAppear{
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1){
+                isFocused = true
+            }
+        }
     }
 }
 
@@ -61,6 +67,7 @@ extension ProductEditorView{
                 .font(.headline.bold())
             TextField("Enter product name", text: $viewModel.customProduct.name)
                 .font(.title2.weight(.medium))
+                .focused($isFocused)
         }
     }
     
