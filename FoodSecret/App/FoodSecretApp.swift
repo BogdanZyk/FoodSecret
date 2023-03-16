@@ -9,11 +9,11 @@ import SwiftUI
 
 @main
 struct FoodSecretApp: App {
+    @StateObject var rootViewModel = RootViewModel(mainContext: PersistenceController.shared.viewContext)
     var body: some Scene {
         WindowGroup {
             HomeView()
-                .environment(\.managedObjectContext,
-                            PersistenceController.shared.viewContext)
+                .environmentObject(rootViewModel)
         }
     }
 }

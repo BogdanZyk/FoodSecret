@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProductEditorView: View {
-    @Environment(\.managedObjectContext) var viewContext
+    @EnvironmentObject var rootVM: RootViewModel
     @Environment(\.dismiss) var dismiss
     let mealType: MealType
     @StateObject private var viewModel = ProductEditorViewModel()
@@ -34,6 +34,7 @@ struct ProductEditorView: View {
 struct ProductEditorView_Previews: PreviewProvider {
     static var previews: some View {
         ProductEditorView(mealType: .breakfast)
+            .environmentObject(RootViewModel(mainContext: dev.viewContext))
     }
 }
 
@@ -51,7 +52,9 @@ extension ProductEditorView{
             Spacer()
             
             Button {
-                viewModel.addProduct(viewContext, mealType: mealType)
+                let food = viewModel.createFood(mealType: mealType)
+                rootVM.addFood(for: food, userFood: true, mealType: mealType)
+                nc.post(name: .addNewProduct)
                 dismiss()
             } label: {
                 Text("Save")

@@ -21,12 +21,6 @@ class DetailsProductViewModel: ObservableObject{
         fetchInfo(for: productName)
     }
     
-    func addProduct(_ context: NSManagedObjectContext, mealType: MealType){
-        guard let product else { return }
-        FoodEntity.create(for: product, mealType: mealType, count: 1, userFood: false, context: context)
-        nc.post(name: .addNewProduct)
-    }
-    
     private func fetchInfo(for productName: String){
         service.getNutrientInfo(for: .init(query: productName))
             .receive(on: DispatchQueue.main)

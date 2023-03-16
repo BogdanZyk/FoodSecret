@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MealFoodRowView: View {
     let food: FoodEntity
+    let onDelete: (FoodEntity) -> ()
     var body: some View {
         HStack(spacing: 10){
             NukeLazyImage(strUrl: food.image)
@@ -22,7 +23,7 @@ struct MealFoodRowView: View {
         }
         .swipeActions(edge: .trailing) {
             Button(role: .destructive) {
-                FoodEntity.delete(food)
+               onDelete(food)
             } label: {
                 Image(systemName: "trash")
             }
@@ -33,7 +34,7 @@ struct MealFoodRowView: View {
 struct FoodRowView_Previews: PreviewProvider {
     static var previews: some View {
         List {
-            MealFoodRowView(food: dev.simpleFoods[0])
+            MealFoodRowView(food: dev.simpleFoods[0], onDelete: {_ in})
         }
         
         .listStyle(.plain)

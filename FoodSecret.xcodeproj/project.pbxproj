@@ -18,12 +18,12 @@
 		5A38A1F629C0F45F00947AEC /* NutritionixEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38A1F529C0F45F00947AEC /* NutritionixEndpoint.swift */; };
 		5A38A1F829C0F66200947AEC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38A1F729C0F66200947AEC /* NetworkManager.swift */; };
 		5A38A1FA29C0F7AE00947AEC /* NutritionixService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38A1F929C0F7AE00947AEC /* NutritionixService.swift */; };
-		5A38A1FE29C0FB9C00947AEC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38A1FD29C0FB9C00947AEC /* HomeViewModel.swift */; };
 		5A38A20029C101CC00947AEC /* NutitionixProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38A1FF29C101CC00947AEC /* NutitionixProduct.swift */; };
 		5A4EA61929C344C300CCAF47 /* ProductEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4EA61829C344C300CCAF47 /* ProductEditorView.swift */; };
 		5A4EA61B29C344CE00CCAF47 /* ProductEditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4EA61A29C344CE00CCAF47 /* ProductEditorViewModel.swift */; };
 		5A4EA61D29C3473500CCAF47 /* Notificationcenter+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4EA61C29C3473500CCAF47 /* Notificationcenter+Ext.swift */; };
 		5A4EA61F29C3620B00CCAF47 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4EA61E29C3620B00CCAF47 /* RootViewModel.swift */; };
+		5A4EA62129C3705D00CCAF47 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4EA62029C3705D00CCAF47 /* CoreDataManager.swift */; };
 		5A52A6CC29C27F34002A68E5 /* NukeLazyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52A6CB29C27F34002A68E5 /* NukeLazyImage.swift */; };
 		5A52A6D229C280EE002A68E5 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5A52A6D129C280EE002A68E5 /* NukeUI */; };
 		5A52A6D529C28BEF002A68E5 /* LineProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52A6D429C28BEF002A68E5 /* LineProgressView.swift */; };
@@ -61,12 +61,12 @@
 		5A38A1F529C0F45F00947AEC /* NutritionixEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionixEndpoint.swift; sourceTree = "<group>"; };
 		5A38A1F729C0F66200947AEC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		5A38A1F929C0F7AE00947AEC /* NutritionixService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionixService.swift; sourceTree = "<group>"; };
-		5A38A1FD29C0FB9C00947AEC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		5A38A1FF29C101CC00947AEC /* NutitionixProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutitionixProduct.swift; sourceTree = "<group>"; };
 		5A4EA61829C344C300CCAF47 /* ProductEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductEditorView.swift; sourceTree = "<group>"; };
 		5A4EA61A29C344CE00CCAF47 /* ProductEditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductEditorViewModel.swift; sourceTree = "<group>"; };
 		5A4EA61C29C3473500CCAF47 /* Notificationcenter+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notificationcenter+Ext.swift"; sourceTree = "<group>"; };
 		5A4EA61E29C3620B00CCAF47 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		5A4EA62029C3705D00CCAF47 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		5A52A6CB29C27F34002A68E5 /* NukeLazyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NukeLazyImage.swift; sourceTree = "<group>"; };
 		5A52A6D429C28BEF002A68E5 /* LineProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineProgressView.swift; sourceTree = "<group>"; };
 		5A52A6D629C31440002A68E5 /* SearhFoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearhFoodViewModel.swift; sourceTree = "<group>"; };
@@ -172,7 +172,6 @@
 			children = (
 				5A38A1B829C0802600947AEC /* ContentView.swift */,
 				5A38A1B629C0802600947AEC /* FoodSecretApp.swift */,
-				5A4EA61E29C3620B00CCAF47 /* RootViewModel.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -219,7 +218,7 @@
 		5A38A1FC29C0FB9200947AEC /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				5A38A1FD29C0FB9C00947AEC /* HomeViewModel.swift */,
+				5A4EA61E29C3620B00CCAF47 /* RootViewModel.swift */,
 				5A52A6D629C31440002A68E5 /* SearhFoodViewModel.swift */,
 				5A52A6DE29C323CC002A68E5 /* DetailsProductViewModel.swift */,
 				5A4EA61A29C344CE00CCAF47 /* ProductEditorViewModel.swift */,
@@ -275,6 +274,7 @@
 			children = (
 				5AB741B629C1B1FF00821457 /* CoreDataExt.swift */,
 				5AB741B829C1B33600821457 /* Persistense.swift */,
+				5A4EA62029C3705D00CCAF47 /* CoreDataManager.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -424,7 +424,6 @@
 				5AB741B929C1B33600821457 /* Persistense.swift in Sources */,
 				5A4EA61B29C344CE00CCAF47 /* ProductEditorViewModel.swift in Sources */,
 				5AB741D829C210D800821457 /* AllMealsFoodView.swift in Sources */,
-				5A38A1FE29C0FB9C00947AEC /* HomeViewModel.swift in Sources */,
 				5AB741B729C1B1FF00821457 /* CoreDataExt.swift in Sources */,
 				5A38A20029C101CC00947AEC /* NutitionixProduct.swift in Sources */,
 				5A52A6D729C31440002A68E5 /* SearhFoodViewModel.swift in Sources */,
@@ -448,6 +447,7 @@
 				5A52A6DD29C3222D002A68E5 /* DetailsProductView.swift in Sources */,
 				5AB741DD29C21B9E00821457 /* Helper.swift in Sources */,
 				5A38A1CC29C080F500947AEC /* Date+Ext.swift in Sources */,
+				5A4EA62129C3705D00CCAF47 /* CoreDataManager.swift in Sources */,
 				5AB741C329C1BD0200821457 /* FoodEntity+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

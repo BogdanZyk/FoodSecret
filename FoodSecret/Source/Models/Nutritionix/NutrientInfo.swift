@@ -18,7 +18,7 @@ struct Food: Codable {
     let foodName: String?
     let servingQty: Int?
     let servingWeightGrams: Int?
-    let nfCalories, nfTotalFat, nfSaturatedFat: Double?
+    let nfCalories, nfTotalFat: Double?
     let nfTotalCarbohydrate: Double?
     let nfSugars, nfProtein: Double?
     let photo: Photo
@@ -31,7 +31,6 @@ struct Food: Codable {
         case servingWeightGrams = "serving_weight_grams"
         case nfCalories = "nf_calories"
         case nfTotalFat = "nf_total_fat"
-        case nfSaturatedFat = "nf_saturated_fat"
         case nfTotalCarbohydrate = "nf_total_carbohydrate"
         case nfSugars = "nf_sugars"
         case nfProtein = "nf_protein"

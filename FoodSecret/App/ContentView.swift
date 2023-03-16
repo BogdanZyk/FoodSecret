@@ -82,7 +82,7 @@ struct ContentView_Previews: PreviewProvider {
 extension ContentView{
     
     private func addItem() {
-        viewModel.createFood()
+       // viewModel.createFood()
       }
     
 }

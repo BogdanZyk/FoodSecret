@@ -8,19 +8,21 @@
 import SwiftUI
 
 struct MealsDetailsView: View {
+    @EnvironmentObject var rootVM: RootViewModel
     let viewType: MealType
-    @FetchRequest(fetchRequest: FoodEntity.fetchForDate(), animation: .default)
-    var foods: FetchedResults<FoodEntity>
+    var foods: [FoodEntity]{
+        rootVM.foodForMeals(viewType)
+    }
     var body: some View {
         List{
             symmarySection
                 .listRowSeparator(.hidden, edges: .all)
             
-            ForEach(foods.filter({$0.mealType == viewType})){food in
+            ForEach(foods){food in
                 NavigationLink {
                     UpdateView(item: food)
                 } label: {
-                    MealFoodRowView(food: food)
+                    MealFoodRowView(food: food, onDelete: rootVM.removeFood)
                 }
             }
         }
@@ -42,7 +44,7 @@ struct MealsDetailsView_Previews: PreviewProvider {
         NavigationStack {
             MealsDetailsView(viewType: .lunch)
         }
-        .environment(\.managedObjectContext, dev.viewContext)
+        .environmentObject(RootViewModel(mainContext: dev.viewContext))
     }
 }
 
@@ -50,7 +52,7 @@ struct MealsDetailsView_Previews: PreviewProvider {
 extension MealsDetailsView{
     @ViewBuilder
     private var symmarySection: some View{
-        let data = Helper.symmaryNutritionDataString(for: foods.filter({$0.mealType == viewType}))
+        let data = Helper.symmaryNutritionDataString(for: foods)
         HStack{
             ProductNutrionLabel(title: data.cal, subtitle: "Calories")
             ProductNutrionLabel(title: data.carbohyd, subtitle: "Carbs")

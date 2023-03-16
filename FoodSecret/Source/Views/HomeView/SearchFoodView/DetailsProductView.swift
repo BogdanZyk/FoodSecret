@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DetailsProductView: View {
-    @Environment(\.managedObjectContext) var viewContext
+    @EnvironmentObject var rootVM: RootViewModel
     @Environment(\.dismiss) var dismiss
     @StateObject private var viewModel: DetailsProductViewModel
     let mealType: MealType
@@ -50,7 +50,7 @@ struct DetailsProductView: View {
 struct DetailsProductView_Previews: PreviewProvider {
     static var previews: some View {
         DetailsProductView("eggo", mealType: .breakfast)
-            .environment(\.managedObjectContext, dev.viewContext)
+            .environmentObject(RootViewModel(mainContext: dev.viewContext))
     }
 }
 
@@ -68,8 +68,11 @@ extension DetailsProductView{
     
     private var addButtonView: some View{
         Button {
-            viewModel.addProduct(viewContext, mealType: mealType)
-            dismiss()
+            if let food = viewModel.product{
+                rootVM.addFood(for: food, userFood: false, mealType: mealType)
+                nc.post(name: .addNewProduct)
+                dismiss()
+            }
         } label: {
             Text("Add food")
                 .font(.title3.weight(.bold))

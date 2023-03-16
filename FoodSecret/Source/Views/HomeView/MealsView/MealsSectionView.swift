@@ -9,8 +9,7 @@ import SwiftUI
 
 struct MealsSectionView: View {
     @Environment(\.colorScheme) private var colorScheme
-    var foods: FetchedResults<FoodEntity>
-    @ObservedObject var homeVM: HomeViewModel
+    @EnvironmentObject var rootVM: RootViewModel
     var body: some View {
         VStack(alignment: .leading, spacing: 10){
             HStack{
@@ -18,7 +17,7 @@ struct MealsSectionView: View {
                     .font(.title3.bold())
                 Spacer()
                 NavigationLink {
-                    AllMealsFoodView(foods: foods)
+                    AllMealsFoodView()
                 } label: {
                     Text("More")
                         .font(.subheadline.weight(.medium))
@@ -42,23 +41,23 @@ struct MealsSectionView: View {
     }
 }
 
-//struct MealsSectionView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MealsSectionView(homeVM: HomeViewModel())
-//            .padding()
-//    }
-//}
+struct MealsSectionView_Previews: PreviewProvider {
+    static var previews: some View {
+        MealsSectionView()
+            .environmentObject(RootViewModel(mainContext: dev.viewContext))
+    }
+}
 
 
 extension MealsSectionView{
     
     @ViewBuilder
     private func rowView(_ type: MealType) -> some View{
-        let foodsForType = foods.filter({$0.mealType == type})
+        let foodsForType = rootVM.foodForMeals(type)
         let totalCall = totalCall(foodsForType)
         NavigationLink(value: type) {
             HStack(spacing: 16) {
-                ProgressCircleView(persentage: totalCall.calculatePercentage(for: 775), size: .small, animate: false, circleOutline: .green, circleTrack: .gray.opacity(0.3)) {
+                ProgressCircleView(persentage: totalCall.calculatePercentage(for: 775), size: .small, circleOutline: .green, circleTrack: .gray.opacity(0.3)) {
                     Text(type.emoji)
                         .font(.system(size: 25))
                 }
@@ -70,7 +69,7 @@ extension MealsSectionView{
                 }
                 Spacer()
                 Button {
-                    homeVM.showAddFood(type)
+                    rootVM.showAddFoodView(type)
                 } label: {
                     Image(systemName: "plus.circle.fill")
                         .font(.title3)

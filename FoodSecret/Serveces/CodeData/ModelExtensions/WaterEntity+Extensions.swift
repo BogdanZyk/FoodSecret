@@ -20,10 +20,10 @@ extension WaterEntity{
         value.numberOfWaterGlasses
     }
     
-    static func fetchForDate() -> NSFetchRequest<WaterEntity> {
+    static func fetchForDate(for date: Date) -> NSFetchRequest<WaterEntity> {
         let request = NSFetchRequest<WaterEntity>(entityName: "WaterEntity")
         request.fetchLimit = 1
-        let datePredicate = datePredicate(before: Date().noon, after: Date.tomorrow)
+        let datePredicate = datePredicate(before: date.noon, after: date.dayAfter)
         request.sortDescriptors = [NSSortDescriptor(key: "createAt", ascending: true)]
         request.predicate = datePredicate
         return request

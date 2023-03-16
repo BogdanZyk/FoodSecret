@@ -29,10 +29,10 @@ extension FoodEntity{
         set { mealType_ = newValue.rawValue }
     }
     
-    static func fetchForDate() -> NSFetchRequest<FoodEntity> {
+    static func fetchForDate(for date: Date) -> NSFetchRequest<FoodEntity> {
         let request = NSFetchRequest<FoodEntity>(entityName: "FoodEntity")
         request.sortDescriptors = [NSSortDescriptor(key: "createAt", ascending: true)]
-        let datePredicate = datePredicate(before: Date().noon, after: Date.tomorrow)
+        let datePredicate = datePredicate(before: date.noon, after: date.dayAfter)
         request.predicate = datePredicate
         return request
     }
@@ -50,7 +50,7 @@ extension FoodEntity{
         let food = FoodEntity(context: context)
         food.id = UUID()
         food.foodName = product.foodName ?? "No name"
-        food.fat = product.nfSaturatedFat ?? 0
+        food.fat = product.nfTotalFat ?? 0
         food.protein = product.nfProtein ?? 0
         food.carbohydrate = product.nfTotalCarbohydrate ?? 0
         food.calories = product.nfCalories ?? 0

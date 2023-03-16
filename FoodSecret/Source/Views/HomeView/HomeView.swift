@@ -8,12 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject var homeVM = HomeViewModel()
+    @EnvironmentObject var rootVM: RootViewModel
     @State private var showCalendarView: Bool = false
-    
-    @FetchRequest(fetchRequest: FoodEntity.fetchForDate(), animation: .default)
-    var foods: FetchedResults<FoodEntity>
-    
     var body: some View {
         NavigationStack{
             ScrollView(.vertical, showsIndicators: false) {
@@ -23,17 +19,22 @@ struct HomeView: View {
                 }
                 .padding(.horizontal)
             }
-            .navigationTitle("Today")
+            .navigationTitle(rootVM.selectedDate.dayDifferenceStr)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     calengarButton
                 }
             }
             .sheet(isPresented: $showCalendarView) {
-                Text("Calendar")
+                DatePicker("Select date", selection: $rootVM.selectedDate, displayedComponents: .date)
+                    .onChange(of: rootVM.selectedDate) { newValue in
+                        showCalendarView = false
+                        rootVM.fetchCoreData()
+                    }
+                    .datePickerStyle(.graphical)
             }
-            .navigationDestination(isPresented: $homeVM.showAddFoodView) {
-                SearchFoodView(forType: homeVM.selectedMealType)
+            .navigationDestination(isPresented: $rootVM.showAddFoodView) {
+                SearchFoodView(forType: rootVM.selectedMealType)
             }
         }
     }
@@ -42,7 +43,7 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
-            .environment(\.managedObjectContext, dev.viewContext)
+            .environmentObject(RootViewModel(mainContext: dev.viewContext))
     }
 }
 
@@ -50,12 +51,12 @@ struct HomeView_Previews: PreviewProvider {
 extension HomeView{
     
     private var summarySection: some View{
-        HomeSymmaryView(foods: foods)
+        HomeSymmaryView(foods: rootVM.foods)
     }
     
     
     private var mealsSection: some View{
-        MealsSectionView(foods: foods, homeVM: homeVM)
+        MealsSectionView()
     }
     
     
@@ -69,15 +70,15 @@ extension HomeView{
 }
 
 struct HomeSymmaryView: View{
-    var foods: FetchedResults<FoodEntity>
     
+    let foods: [FoodEntity]
     var summaryData: (cal: Double, carbohyd: Double, protein: Double, fat: Double){
-        Helper.symmaryNutritionData(for: Array(foods))
+        Helper.symmaryNutritionData(for: foods)
     }
     
     var body: some View{
         VStack(spacing: 20) {
-            ProgressCircleView(persentage: summaryData.cal.calculatePercentage(for: 4500), size: .large, animate: true, circleOutline: Color(UIColor.systemTeal), circleTrack: Color(UIColor.systemTeal).opacity(0.3)) {
+            ProgressCircleView(persentage: summaryData.cal.calculatePercentage(for: 4500), size: .large, circleOutline: Color(UIColor.systemTeal), circleTrack: Color(UIColor.systemTeal).opacity(0.3)) {
                 Text("")
             }
             .frame(width: 100)
@@ -101,7 +102,7 @@ extension HomeSymmaryView{
         VStack(spacing: 6){
             Text(title)
                 .font(.caption)
-            LineProgressView(value: CGFloat(value.calculatePercentage(for: Double(total))), animate: true)
+            LineProgressView(value: CGFloat(value.calculatePercentage(for: Double(total))))
                 .frame(height: 6)
             Text("\(Int(value))/\(total)")
                 .font(.caption.weight(.medium))
