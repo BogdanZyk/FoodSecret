@@ -73,7 +73,7 @@ extension MealsDetailsView{
     private var addProductButton: some View{
         
         NavigationLink {
-            AddFoodView(forType: viewType)
+            SearchFoodView(forType: viewType)
         } label: {
             Text("Add more")
                 .font(.title3.weight(.medium))

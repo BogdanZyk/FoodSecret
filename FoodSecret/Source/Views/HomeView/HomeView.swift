@@ -33,7 +33,7 @@ struct HomeView: View {
                 Text("Calendar")
             }
             .navigationDestination(isPresented: $homeVM.showAddFoodView) {
-                AddFoodView(forType: homeVM.selectedMealType)
+                SearchFoodView(forType: homeVM.selectedMealType)
             }
         }
     }
