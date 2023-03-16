@@ -23,6 +23,7 @@
 		5A52A6CC29C27F34002A68E5 /* NukeLazyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52A6CB29C27F34002A68E5 /* NukeLazyImage.swift */; };
 		5A52A6D229C280EE002A68E5 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5A52A6D129C280EE002A68E5 /* NukeUI */; };
 		5A52A6D529C28BEF002A68E5 /* LineProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52A6D429C28BEF002A68E5 /* LineProgressView.swift */; };
+		5A52A6D729C31440002A68E5 /* SearhFoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52A6D629C31440002A68E5 /* SearhFoodViewModel.swift */; };
 		5AB741B729C1B1FF00821457 /* CoreDataExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741B629C1B1FF00821457 /* CoreDataExt.swift */; };
 		5AB741B929C1B33600821457 /* Persistense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741B829C1B33600821457 /* Persistense.swift */; };
 		5AB741BF29C1B3A200821457 /* CoreDataFoodSecret.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741BD29C1B3A200821457 /* CoreDataFoodSecret.xcdatamodeld */; };
@@ -58,6 +59,7 @@
 		5A38A1FF29C101CC00947AEC /* NutitionixProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutitionixProduct.swift; sourceTree = "<group>"; };
 		5A52A6CB29C27F34002A68E5 /* NukeLazyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NukeLazyImage.swift; sourceTree = "<group>"; };
 		5A52A6D429C28BEF002A68E5 /* LineProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineProgressView.swift; sourceTree = "<group>"; };
+		5A52A6D629C31440002A68E5 /* SearhFoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearhFoodViewModel.swift; sourceTree = "<group>"; };
 		5AB741B629C1B1FF00821457 /* CoreDataExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataExt.swift; sourceTree = "<group>"; };
 		5AB741B829C1B33600821457 /* Persistense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistense.swift; sourceTree = "<group>"; };
 		5AB741BE29C1B3A200821457 /* CoreDataFoodSecret.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataFoodSecret.xcdatamodel; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				5A38A1FD29C0FB9C00947AEC /* HomeViewModel.swift */,
+				5A52A6D629C31440002A68E5 /* SearhFoodViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				5A38A1FE29C0FB9C00947AEC /* HomeViewModel.swift in Sources */,
 				5AB741B729C1B1FF00821457 /* CoreDataExt.swift in Sources */,
 				5A38A20029C101CC00947AEC /* NutitionixProduct.swift in Sources */,
+				5A52A6D729C31440002A68E5 /* SearhFoodViewModel.swift in Sources */,
 				5AB741D629C2096B00821457 /* AddFoodView.swift in Sources */,
 				5A38A1F329C0F0F400947AEC /* NutrientInfo.swift in Sources */,
 				5AB741DA29C2149B00821457 /* PreviewProvider.swift in Sources */,

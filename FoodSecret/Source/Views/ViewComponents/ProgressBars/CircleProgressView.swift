@@ -51,9 +51,12 @@ struct ProgressCircleView<Label: View>: View {
         }
         .onAppear{
             if animate{
-                withAnimation(.spring(response: 3)) {
-                    animatePersantage = persentage
+                DispatchQueue.main.async {
+                    withAnimation(.spring(response: 3)) {
+                        animatePersantage = persentage
+                    }
                 }
+                
             }
         }
         .frame(minWidth: size.frameSize, maxHeight: size.frameSize)
@@ -81,7 +84,7 @@ extension ProgressCircleView{
             case .small:
                 return 8
             case .medium, .large:
-                return 15
+                return 12
             }
         }
     }

@@ -50,16 +50,19 @@ struct HomeView_Previews: PreviewProvider {
 extension HomeView{
     
     private var summarySection: some View{
-        ZStack {
-            RoundedRectangle(cornerRadius: 12)
-                .fill(Color(.systemGray6))
-            VStack {
-                Text("Summary")
-                Symmary(foods: foods)
-            }
-        }
-        .frame(height: 200)
-        .padding(.top)
+        
+        HomeSymmaryView(foods: foods)
+        
+//        ZStack {
+//            RoundedRectangle(cornerRadius: 12)
+//                .fill(Color(.systemGray6))
+//            VStack {
+//                Text("Summary")
+//
+//            }
+//        }
+//        .frame(height: 200)
+//        .padding(.top)
     }
     
     
@@ -78,13 +81,46 @@ extension HomeView{
     }
 }
 
-struct Symmary: View{
+struct HomeSymmaryView: View{
     var foods: FetchedResults<FoodEntity>
+    
+    var summaryData: (cal: Double, carbohyd: Double, protein: Double, fat: Double){
+        Helper.symmaryNutritionData(for: Array(foods))
+    }
+    
     var body: some View{
-        VStack {
-            Text(foods.compactMap({$0.calories}).reduce(0, +).toCalories)
+        VStack(spacing: 20) {
+            ProgressCircleView(persentage: summaryData.cal.calculatePercentage(for: 4500), size: .large, animate: true, circleOutline: Color(UIColor.systemBlue), circleTrack: Color(UIColor.systemTeal)) {
+                Text("")
+            }
+            .frame(width: 100)
+            .padding(.top, 6)
+            HStack(spacing: 10){
+                lineProgress(summaryData.carbohyd, title: "Carbs", total: 315)
+                lineProgress(summaryData.protein, title: "Protein", total: 315)
+                lineProgress(summaryData.fat, title: "Fat", total: 315)
+            }
+           
+        }
+        .padding()
+        .background(Color(.systemGray6), in: RoundedRectangle(cornerRadius: 12))
+    }
+}
+
+extension HomeSymmaryView{
+    
+    
+    private func lineProgress(_ value: CGFloat, title: String, total: Int) -> some View{
+        VStack(spacing: 6){
+            Text(title)
+                .font(.caption)
+            LineProgressView(value: value, animate: true)
+                .frame(height: 6)
+            Text("\(Int(value))/\(total)")
+                .font(.caption.weight(.medium))
         }
     }
+    
 }
 
 

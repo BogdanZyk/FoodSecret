@@ -50,7 +50,7 @@ struct MealsDetailsView_Previews: PreviewProvider {
 extension MealsDetailsView{
     @ViewBuilder
     private var symmarySection: some View{
-        let data = Helper.symmaryNutritionData(for: foods.filter({$0.mealType == viewType}))
+        let data = Helper.symmaryNutritionDataString(for: foods.filter({$0.mealType == viewType}))
         HStack{
             summaryLabel(data.cal, "Calories")
             summaryLabel(data.carbohyd, "Carbs")

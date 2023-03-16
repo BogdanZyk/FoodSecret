@@ -10,12 +10,8 @@ import Foundation
 
 class Helper{
     
-    
-    static func getTotalCall(for foods: [FoodEntity]) -> Double{
-        foods.compactMap({$0.calories}).reduce(0, +)
-    }
-    
-    static func symmaryNutritionData(for foods: [FoodEntity]) -> (cal: String, carbohyd: String, protein: String, fat: String){
+        
+    static func symmaryNutritionData(for foods: [FoodEntity]) -> (cal: Double, carbohyd: Double, protein: Double, fat: Double){
         var cal = 0.0, carb = 0.0, protein = 0.0, fat = 0.0
         foods.forEach { food in
             cal += food.calories
@@ -23,6 +19,12 @@ class Helper{
             protein += food.protein
             fat += food.fat
         }
-        return (cal.toCalories, carb.toWeight, protein.toWeight, fat.toWeight)
+        return (cal, carb, protein, fat)
+    }
+    
+    static func symmaryNutritionDataString(for foods: [FoodEntity]) -> (cal: String, carbohyd: String, protein: String, fat: String){
+        let symmary = symmaryNutritionData(for: foods)
+        
+        return (symmary.cal.toCalories, symmary.carbohyd.toWeight, symmary.protein.toWeight, symmary.fat.toWeight)
     }
 }
