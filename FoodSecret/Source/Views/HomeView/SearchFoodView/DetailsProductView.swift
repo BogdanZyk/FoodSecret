@@ -20,9 +20,8 @@ struct DetailsProductView: View {
     var body: some View {
         VStack(spacing: 0) {
             if let food = viewModel.product{
-                NukeLazyImage(strUrl: food.photo.thumb, resizeHeight: 300, resizingMode: .aspectFit, loadPriority: .high)
+                NukeLazyImage(strUrl: food.photo.thumb, resizeHeight: 400, resizingMode: .aspectFit, loadPriority: .high)
                     .frame(height: 200)
-                    .padding(.horizontal)
                 VStack(alignment: .leading, spacing: 10){
                     Text(food.foodName ?? "non")
                         .font(.title2.bold())

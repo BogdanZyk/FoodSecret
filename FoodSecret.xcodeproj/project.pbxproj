@@ -24,6 +24,7 @@
 		5A4EA61D29C3473500CCAF47 /* Notificationcenter+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4EA61C29C3473500CCAF47 /* Notificationcenter+Ext.swift */; };
 		5A4EA61F29C3620B00CCAF47 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4EA61E29C3620B00CCAF47 /* RootViewModel.swift */; };
 		5A4EA62129C3705D00CCAF47 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4EA62029C3705D00CCAF47 /* CoreDataManager.swift */; };
+		5A4EA62429C3808F00CCAF47 /* HomeSymmaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4EA62329C3808F00CCAF47 /* HomeSymmaryView.swift */; };
 		5A52A6CC29C27F34002A68E5 /* NukeLazyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52A6CB29C27F34002A68E5 /* NukeLazyImage.swift */; };
 		5A52A6D229C280EE002A68E5 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5A52A6D129C280EE002A68E5 /* NukeUI */; };
 		5A52A6D529C28BEF002A68E5 /* LineProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52A6D429C28BEF002A68E5 /* LineProgressView.swift */; };
@@ -67,6 +68,7 @@
 		5A4EA61C29C3473500CCAF47 /* Notificationcenter+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notificationcenter+Ext.swift"; sourceTree = "<group>"; };
 		5A4EA61E29C3620B00CCAF47 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		5A4EA62029C3705D00CCAF47 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		5A4EA62329C3808F00CCAF47 /* HomeSymmaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSymmaryView.swift; sourceTree = "<group>"; };
 		5A52A6CB29C27F34002A68E5 /* NukeLazyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NukeLazyImage.swift; sourceTree = "<group>"; };
 		5A52A6D429C28BEF002A68E5 /* LineProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineProgressView.swift; sourceTree = "<group>"; };
 		5A52A6D629C31440002A68E5 /* SearhFoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearhFoodViewModel.swift; sourceTree = "<group>"; };
@@ -234,6 +236,14 @@
 			path = ProductEditorView;
 			sourceTree = "<group>";
 		};
+		5A4EA62229C3808700CCAF47 /* HomeSymmaryView */ = {
+			isa = PBXGroup;
+			children = (
+				5A4EA62329C3808F00CCAF47 /* HomeSymmaryView.swift */,
+			);
+			path = HomeSymmaryView;
+			sourceTree = "<group>";
+		};
 		5A52A6D329C28BDB002A68E5 /* ProgressBars */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +311,7 @@
 		5AB741C829C1F73F00821457 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
+				5A4EA62229C3808700CCAF47 /* HomeSymmaryView */,
 				5A4EA61729C3448F00CCAF47 /* ProductEditorView */,
 				5AB741D029C2068600821457 /* MealsView */,
 				5A52A6D829C321C1002A68E5 /* SearchFoodView */,
@@ -444,6 +455,7 @@
 				5AB741C729C1DC0B00821457 /* WaterEntity+Extensions.swift in Sources */,
 				5A52A6CC29C27F34002A68E5 /* NukeLazyImage.swift in Sources */,
 				5AB741CF29C1FD5600821457 /* CircleProgressView.swift in Sources */,
+				5A4EA62429C3808F00CCAF47 /* HomeSymmaryView.swift in Sources */,
 				5A52A6DD29C3222D002A68E5 /* DetailsProductView.swift in Sources */,
 				5AB741DD29C21B9E00821457 /* Helper.swift in Sources */,
 				5A38A1CC29C080F500947AEC /* Date+Ext.swift in Sources */,
