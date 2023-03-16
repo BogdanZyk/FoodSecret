@@ -16,11 +16,22 @@ class SearhFoodViewModel: ObservableObject{
     @Published var searchState: SearchState = .waiting
     @Published var foods = [ProductSearchResult.Product]()
     @Published var query: String = ""
+    @Published var showNewProductBanner: Bool = false
     
     init(){
         startSearchSubscription()
+        setupNcPublisher()
     }
     
+    private func setupNcPublisher(){
+        nc.publisher(for: .addNewProduct)
+            .delay(for: 0.5, scheduler: RunLoop.main)
+            .sink {[weak self] _ in
+                guard let self = self else {return}
+                self.showNewProductBanner.toggle()
+            }
+            .store(in: &cancellable)
+    }
     
     private func startSearchSubscription(){
         $query

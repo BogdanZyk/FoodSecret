@@ -24,7 +24,6 @@ final class NutritionixService: NutritionixServiceProtocol{
     
     func search(_ query: String) -> AnyPublisher<ProductSearchResult, Error> {
         let endpoint = NutritionixEndpoint.search(query)
-        print(endpoint.url.absoluteString)
         var request = URLRequest(url: endpoint.url)
         request.allHTTPHeaderFields = headers
         return networkManager.execute(type: ProductSearchResult.self, urlRequest: request)

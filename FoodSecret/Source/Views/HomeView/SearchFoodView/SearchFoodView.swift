@@ -43,6 +43,9 @@ struct SearchFoodView: View {
                     .presentationDetents([.medium, .large])
             }
         }
+        .overlay {
+            productAddedBunner
+        }
     }
 }
 
@@ -113,6 +116,30 @@ extension SearchFoodView{
             Text("Create new product")
                 .font(.title3.weight(.medium))
         }
+    }
+    
+    private var productAddedBunner: some View{
+        Group{
+            if viewModel.showNewProductBanner{
+                VStack{
+                    Image(systemName: "checkmark.circle.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 40, height: 40)
+                        .foregroundColor(Color(.systemGreen))
+                    Text("Food item has been saved!")
+                        .font(.title3.bold())
+                }
+                .padding()
+                .background(Color(.systemGray6), in: RoundedRectangle(cornerRadius: 12))
+                .onAppear{
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+                        viewModel.showNewProductBanner = false
+                    }
+                }
+            }
+        }
+        .animation(.easeInOut, value: viewModel.showNewProductBanner)
     }
 }
 
