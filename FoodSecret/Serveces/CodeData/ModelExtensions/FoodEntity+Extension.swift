@@ -44,6 +44,7 @@ extension FoodEntity{
     static func create(for product: Food,
                        mealType: MealType,
                        count: Int16,
+                       userFood: Bool,
                        context: NSManagedObjectContext){
         
         let food = FoodEntity(context: context)
@@ -57,6 +58,7 @@ extension FoodEntity{
         food.createAt = Date.now
         food.image = product.photo.thumb
         food.mealType = mealType
+        food.userFood = userFood
         food.count = count
         
         context.saveContext()

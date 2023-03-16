@@ -37,7 +37,7 @@ struct SearchFoodView: View {
         .sheet(item: $sheetItem) { type in
             switch type{
             case .add:
-                Text("Add new food")
+                ProductEditorView(mealType: forType)
             case .select(let name):
                 DetailsProductView(name, mealType: forType)
                     .presentationDetents([.medium, .large])

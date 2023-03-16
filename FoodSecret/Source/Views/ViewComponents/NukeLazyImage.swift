@@ -48,7 +48,10 @@ struct NukeLazyImage: View{
                 .priority(loadPriority)
                 .pipeline(imagePipeline)
             }else{
-                Color.secondary.opacity(0.5)
+                Image(systemName: "fork.knife")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+               // Color.secondary.opacity(0.5)
             }
         }
     }

@@ -23,7 +23,7 @@ class DetailsProductViewModel: ObservableObject{
     
     func addProduct(_ context: NSManagedObjectContext, mealType: MealType){
         guard let product else { return }
-        FoodEntity.create(for: product, mealType: mealType, count: 1, context: context)
+        FoodEntity.create(for: product, mealType: mealType, count: 1, userFood: false, context: context)
         nc.post(name: .addNewProduct)
     }
     

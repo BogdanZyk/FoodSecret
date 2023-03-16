@@ -250,13 +250,6 @@
 			path = SearchFoodView;
 			sourceTree = "<group>";
 		};
-		5A52A6D929C321D6002A68E5 /* CreateFoodView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CreateFoodView;
-			sourceTree = "<group>";
-		};
 		5A52A6E029C32B27002A68E5 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,7 +300,6 @@
 			children = (
 				5A4EA61729C3448F00CCAF47 /* ProductEditorView */,
 				5AB741D029C2068600821457 /* MealsView */,
-				5A52A6D929C321D6002A68E5 /* CreateFoodView */,
 				5A52A6D829C321C1002A68E5 /* SearchFoodView */,
 				5AB741C929C1F75E00821457 /* HomeView.swift */,
 			);
