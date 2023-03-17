@@ -20,7 +20,7 @@ struct HomeSymmaryView: View{
     
     var body: some View{
         VStack(spacing: 20) {
-            ProgressCircleView(persentage: summaryData.cal.calculatePercentage(for: rootVM.halfInfo.totalCallories), size: .large, circleOutline: Color(UIColor.systemTeal), circleTrack: Color(UIColor.systemTeal).opacity(0.3)) {
+            ProgressCircleView(persentage: summaryData.cal.calculatePercentage(for: rootVM.halfInfo.totalCallories), size: .large, circleOutline: Color.accentColor, circleTrack: Color(UIColor.systemTeal).opacity(0.3)) {
                 VStack {
                     Text(leftCallories)
                         .font(.headline.bold())

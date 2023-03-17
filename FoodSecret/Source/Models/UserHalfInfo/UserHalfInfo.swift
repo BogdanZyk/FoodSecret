@@ -67,6 +67,10 @@ struct UserHalfInfo: Codable, Equatable{
         macronutrients.calcMacronutrientsInGramm(totalCallories)
     }
     
+    func totalCalloriesForType(for type: MealType) -> Double{
+        totalCallories * type.calDistributionPersent
+    }
+    
     
     static func == (lhs: UserHalfInfo, rhs: UserHalfInfo) -> Bool {
         lhs.totalCallories == rhs.totalCallories

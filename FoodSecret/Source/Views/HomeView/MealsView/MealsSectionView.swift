@@ -54,17 +54,18 @@ extension MealsSectionView{
     @ViewBuilder
     private func rowView(_ type: MealType) -> some View{
         let foodsForType = rootVM.foodForMeals(type)
-        let totalCall = totalCall(foodsForType)
+        let usedCal = totalCall(foodsForType)
+        let totalCal = rootVM.halfInfo.totalCalloriesForType(for: type)
         NavigationLink(value: type) {
             HStack(spacing: 16) {
-                ProgressCircleView(persentage: totalCall.calculatePercentage(for: 775), size: .small, circleOutline: .green, circleTrack: .gray.opacity(0.3)) {
+                ProgressCircleView(persentage: usedCal.calculatePercentage(for: totalCal), size: .small, circleOutline: .green, circleTrack: .gray.opacity(0.3)) {
                     Text(type.emoji)
                         .font(.system(size: 25))
                 }
                 VStack(alignment: .leading) {
                     Text(type.title)
                         .font(.headline)
-                    Text("\(Int(totalCall))/775 cal")
+                    Text("\(Int(usedCal))/ \(Int(totalCal)) cal")
                         .font(.caption.weight(.light))
                 }
                 Spacer()

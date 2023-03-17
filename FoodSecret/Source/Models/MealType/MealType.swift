@@ -27,6 +27,15 @@ enum MealType: Int16, CaseIterable{
         case .snack: return "🍌"
         }
     }
+    
+    var calDistributionPersent: Double{
+        switch self {
+        case .breakfast: return  0.20
+        case .lunch: return 0.35
+        case .dinner: return 0.3
+        case .snack: return 0.15
+        }
+    }
         
     
     func getTotalCallForType(with foods: [FoodEntity]) -> Double{

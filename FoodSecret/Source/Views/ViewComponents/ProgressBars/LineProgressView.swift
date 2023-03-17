@@ -13,11 +13,10 @@ struct LineProgressView: View {
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
                 Rectangle().frame(width: geometry.size.width , height: geometry.size.height)
-                    .opacity(0.3)
-                    .foregroundColor(Color(UIColor.systemTeal))
+                    .foregroundColor(Color(UIColor.systemTeal).opacity(0.3))
                 
                 Rectangle().frame(width: min(value * geometry.size.width, geometry.size.width), height: geometry.size.height)
-                    .foregroundColor(Color(UIColor.systemBlue))
+                    .foregroundColor(Color.accentColor)
             }.cornerRadius(45.0)
         }
         .animation(.spring(response: 3), value: value)

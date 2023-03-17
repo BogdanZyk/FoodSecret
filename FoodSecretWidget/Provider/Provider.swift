@@ -32,7 +32,7 @@ struct Provider: IntentTimelineProvider {
         let entry: WidgetEntry = createWidgetEntry(currentDate, configuration: configuration)
        
 
-        let refreshDate = Calendar.current.date(byAdding: .minute, value: 60, to: currentDate)!
+        let refreshDate = Calendar.current.date(byAdding: .minute, value: 15, to: currentDate)!
         let timeline = Timeline(entries: [entry], policy: .after(refreshDate))
         completion(timeline)
     }
