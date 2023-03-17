@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct MealsSectionView: View {
-    @Environment(\.colorScheme) private var colorScheme
     @EnvironmentObject var rootVM: RootViewModel
     var body: some View {
         VStack(alignment: .leading, spacing: 10){
@@ -77,7 +76,7 @@ extension MealsSectionView{
                         .foregroundColor(Color(uiColor: .systemTeal))
                 }
             }
-            .foregroundColor(colorScheme == .dark ? .white : .black)
+            .foregroundColor(.primaryFont)
         }
     }
     

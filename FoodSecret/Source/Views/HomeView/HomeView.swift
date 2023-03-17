@@ -12,11 +12,13 @@ struct HomeView: View {
     @State private var showCalendarView: Bool = false
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            VStack(spacing: 16){
+            VStack(spacing: 32){
                 summarySection
                 mealsSection
+                waterSectionView
             }
             .padding(.horizontal)
+            .padding(.bottom, 30)
         }
         .navigationTitle(rootVM.selectedDate.dayDifferenceStr)
         .toolbar {
@@ -57,6 +59,9 @@ extension HomeView{
         MealsSectionView()
     }
     
+    private var waterSectionView: some View{
+        WaterSectionView()
+    }
     
     private var calengarButton: some View{
         Button {

@@ -49,7 +49,7 @@ struct ContentView: View {
                         }
                         
                         Button {
-                            viewModel.updateWater()
+                            //viewModel.updateWater()
                         } label: {
                             Image(systemName: "plus")
                         }

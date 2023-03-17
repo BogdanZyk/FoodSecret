@@ -29,9 +29,13 @@ extension WaterEntity{
         return request
     }
     
-    static func update(_ item: WaterEntity?, context: NSManagedObjectContext){
+    static func update(_ item: WaterEntity?, value: Double, context: NSManagedObjectContext){
         let water = createIfNeeded(item, context: context)
-        water.value += 0.25
+        if water.value > 0, value < 0{
+            water.value += value
+        }else{
+            water.value += value
+        }
         context.saveContext()
     }
     

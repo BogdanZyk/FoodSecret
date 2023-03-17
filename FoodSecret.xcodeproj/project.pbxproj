@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A36305629C4FE7E008E7E05 /* WaterSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36305529C4FE7E008E7E05 /* WaterSectionView.swift */; };
+		5A36305829C4FF9F008E7E05 /* GlassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36305729C4FF9F008E7E05 /* GlassView.swift */; };
+		5A36306129C51F03008E7E05 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36306029C51F03008E7E05 /* Color.swift */; };
+		5A36306429C52254008E7E05 /* CustomDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36306329C52254008E7E05 /* CustomDatePicker.swift */; };
 		5A38A1B729C0802600947AEC /* FoodSecretApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38A1B629C0802600947AEC /* FoodSecretApp.swift */; };
 		5A38A1B929C0802600947AEC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38A1B829C0802600947AEC /* ContentView.swift */; };
 		5A38A1BB29C0802800947AEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A38A1BA29C0802800947AEC /* Assets.xcassets */; };
@@ -112,6 +116,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5A36305529C4FE7E008E7E05 /* WaterSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterSectionView.swift; sourceTree = "<group>"; };
+		5A36305729C4FF9F008E7E05 /* GlassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassView.swift; sourceTree = "<group>"; };
+		5A36306029C51F03008E7E05 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		5A36306329C52254008E7E05 /* CustomDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePicker.swift; sourceTree = "<group>"; };
 		5A38A1B329C0802600947AEC /* FoodSecret.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodSecret.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A38A1B629C0802600947AEC /* FoodSecretApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSecretApp.swift; sourceTree = "<group>"; };
 		5A38A1B829C0802600947AEC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -200,6 +208,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A36305429C4FE6D008E7E05 /* WaterSectionView */ = {
+			isa = PBXGroup;
+			children = (
+				5A36305529C4FE7E008E7E05 /* WaterSectionView.swift */,
+				5A36305729C4FF9F008E7E05 /* GlassView.swift */,
+			);
+			path = WaterSectionView;
+			sourceTree = "<group>";
+		};
+		5A36306229C52245008E7E05 /* DatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				5A36306329C52254008E7E05 /* CustomDatePicker.swift */,
+			);
+			path = DatePicker;
+			sourceTree = "<group>";
+		};
 		5A38A1AA29C0802600947AEC = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +315,7 @@
 				5AB741D929C2149B00821457 /* PreviewProvider.swift */,
 				5A4EA61C29C3473500CCAF47 /* Notificationcenter+Ext.swift */,
 				5A8B706129C461EF00379520 /* UserDefaults.swift */,
+				5A36306029C51F03008E7E05 /* Color.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -520,6 +546,7 @@
 		5AB741C829C1F73F00821457 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
+				5A36305429C4FE6D008E7E05 /* WaterSectionView */,
 				5A4EA62229C3808700CCAF47 /* HomeSymmaryView */,
 				5A4EA61729C3448F00CCAF47 /* ProductEditorView */,
 				5AB741D029C2068600821457 /* MealsView */,
@@ -532,6 +559,7 @@
 		5AB741CD29C1FD3F00821457 /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				5A36306229C52245008E7E05 /* DatePicker */,
 				5A556EFE29C46BC3002DAD54 /* TextFields */,
 				5A52A6E029C32B27002A68E5 /* Buttons */,
 				5A52A6D329C28BDB002A68E5 /* ProgressBars */,
@@ -674,6 +702,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A36306429C52254008E7E05 /* CustomDatePicker.swift in Sources */,
 				5AB741D329C206C100821457 /* MealsDetailsView.swift in Sources */,
 				5A38A1F629C0F45F00947AEC /* NutritionixEndpoint.swift in Sources */,
 				5A556F0029C46BD4002DAD54 /* NumberTextField.swift in Sources */,
@@ -690,6 +719,8 @@
 				5AB741D829C210D800821457 /* AllMealsFoodView.swift in Sources */,
 				5A556F0929C497A5002DAD54 /* RootView+TabView.swift in Sources */,
 				5AB741B729C1B1FF00821457 /* CoreDataExt.swift in Sources */,
+				5A36305629C4FE7E008E7E05 /* WaterSectionView.swift in Sources */,
+				5A36306129C51F03008E7E05 /* Color.swift in Sources */,
 				5A556F0729C484FD002DAD54 /* RootView.swift in Sources */,
 				5A38A20029C101CC00947AEC /* NutitionixProduct.swift in Sources */,
 				5A556F0229C46D09002DAD54 /* EditInfoView.swift in Sources */,
@@ -722,6 +753,7 @@
 				5AB741DD29C21B9E00821457 /* Helper.swift in Sources */,
 				5A38A1CC29C080F500947AEC /* Date+Ext.swift in Sources */,
 				5A4EA62129C3705D00CCAF47 /* CoreDataManager.swift in Sources */,
+				5A36305829C4FF9F008E7E05 /* GlassView.swift in Sources */,
 				5AB741C329C1BD0200821457 /* FoodEntity+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

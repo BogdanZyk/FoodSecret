@@ -69,8 +69,8 @@ extension RootViewModel{
     }
     
     
-    func updateWater(){
-        dataManager.updateWater(for: water)
+    func updateWater(value: Double){
+        dataManager.updateWater(for: water, value: value)
         fetchWater()
     }
     

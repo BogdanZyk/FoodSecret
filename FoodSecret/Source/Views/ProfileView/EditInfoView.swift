@@ -67,7 +67,6 @@ extension EditInfoView{
                 }
             } label: {
                 Text("Goal")
-                    .foregroundColor(.black)
                     .font(.headline)
             }
             .pickerStyle(.navigationLink)
@@ -81,7 +80,6 @@ extension EditInfoView{
                 }
             } label: {
                 Text("Gender")
-                    .foregroundColor(.black)
                     .font(.headline)
             }
             .pickerStyle(.navigationLink)
@@ -95,12 +93,12 @@ extension EditInfoView{
                 }
             } label: {
                 Text("Goal")
-                    .foregroundColor(.black)
                     .font(.headline)
             }
             .pickerStyle(.navigationLink)
             .listStyle(.plain)
         }
+        .foregroundColor(.primaryFont)
         .padding(.vertical)
     }
     

@@ -47,8 +47,8 @@ struct CoreDataManager {
         WaterEntity.delete(water)
     }
     
-    func updateWater(for water: WaterEntity?){
-        WaterEntity.update(water, context: mainContext)
+    func updateWater(for water: WaterEntity?, value: Double){
+        WaterEntity.update(water, value: value, context: mainContext)
     }
     
     func updateFood(for food: FoodEntity){
