@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-import SwiftUI
 
 struct ProgressCircleView<Label: View>: View {
     var label: (() -> Label)?
@@ -51,7 +50,7 @@ struct ProgressCircleView<Label: View>: View {
 
 extension ProgressCircleView{
     enum Size{
-        case small, medium, large
+        case small, medium, large, verySmall
         
         
         var frameSize: CGFloat?{
@@ -62,6 +61,8 @@ extension ProgressCircleView{
                 return 90
             case .large:
                 return nil
+            case .verySmall:
+                return 30
             }
         }
         
@@ -71,6 +72,8 @@ extension ProgressCircleView{
                 return 8
             case .medium, .large:
                 return 12
+            case .verySmall:
+                return 6
             }
         }
     }
