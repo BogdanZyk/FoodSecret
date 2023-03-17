@@ -11,20 +11,16 @@ import SwiftUI
 
 
 struct FoodSecretWidgetEntryView : View {
-    @Environment(\.widgetFamily) var family
+    let type: WidgetType
     var entry: Provider.Entry
     var body: some View {
         VStack(spacing: 10) {
-            Text(entry.date.formatted(date: .abbreviated, time: .shortened))
-                .font(.caption2.bold())
-                .foregroundColor(.secondary)
-            if entry.usedMacronutrients != nil{
-                MacronutrientsCirclesProgressView(entry: entry)
-            }else{
-                MacronutrientsCirclesProgressView(entry: WidgetEntry.placeholder())
-                    .redacted(reason: .placeholder)
+            switch type{
+            case .macronutrients:
+                macronutrientsTypeView
+            case .calSymmary:
+                summaryType
             }
-            Spacer()
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -36,13 +32,76 @@ struct FoodSecretWidgetEntryView : View {
 
 struct FitzWidgets_Previews: PreviewProvider {
     static var previews: some View {
-        FoodSecretWidgetEntryView(entry: WidgetEntry(date: Date(), configuration: ConfigurationIntent.init()))
-            .previewContext(WidgetPreviewContext(family: .systemMedium))
+        Group {
+            FoodSecretWidgetEntryView(type: .calSymmary, entry: WidgetEntry(date: Date(), configuration: ConfigurationIntent.init()))
+                .previewContext(WidgetPreviewContext(family: .systemMedium))
+            
+            FoodSecretWidgetEntryView(type: .calSymmary, entry: WidgetEntry.placeholder())
+                .previewContext(WidgetPreviewContext(family: .systemMedium))
+        }
     }
 }
 
 
 
+//MARK: - Macronutrient type
+extension FoodSecretWidgetEntryView{
+    @ViewBuilder
+    private var macronutrientsTypeView: some View{
+        Text(entry.date.formatted(date: .abbreviated, time: .shortened))
+            .font(.caption2.bold())
+            .foregroundColor(.secondary)
+        if entry.usedMacronutrients != nil{
+            MacronutrientsCirclesProgressView(entry: entry)
+        }else{
+            MacronutrientsCirclesProgressView(entry: WidgetEntry.placeholder())
+                .redacted(reason: .placeholder)
+        }
+        Spacer()
+    }
+}
+
+//MARK: - Summary type
+
+extension FoodSecretWidgetEntryView{
+    @ViewBuilder
+    private var summaryType: some View{
+        if entry.usedMacronutrients != nil{
+            SymmaryCalloriesProgressView(entry: entry)
+        }else{
+            SymmaryCalloriesProgressView(entry: WidgetEntry.placeholder())
+                .redacted(reason: .placeholder)
+        }
+    }
+}
+
+struct SymmaryCalloriesProgressView: View{
+    var entry: Provider.Entry
+
+    var body: some View{
+        
+        if let usedData = entry.usedMacronutrients, let totalData = entry.totalMacronutrients{
+            let leftCal = totalData.callories - usedData.callories
+            HStack(spacing: 50){
+                VStack {
+                    Text("\(usedData.callories) cal")
+                        .font(.title2.weight(.medium))
+                    Text("Eaten")
+                        .font(.body.weight(.light))
+                }
+                ProgressCircleView(persentage: Double(usedData.callories).calculatePercentage(for: Double(totalData.callories)), size: .large, circleOutline: Color(.systemCyan), circleTrack: Color.secondary.opacity(0.5)) {
+                    VStack {
+                        Text("\(leftCal)")
+                            .font(.title3.bold())
+                        Text("left cal")
+                            .font(.body.weight(.light))
+                    }
+                }
+            }
+            .padding()
+        }
+    }
+}
 
 
 struct MacronutrientsCirclesProgressView: View{

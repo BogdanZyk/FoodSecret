@@ -13,39 +13,42 @@ import CoreData
 
 struct FoodSecretWidget: Widget {
     var viewContext: NSManagedObjectContext?
-    let kind: String = "FoodSecretWidget"
-
+    var kind: String { widgetType.kind }
+    var widgetType: WidgetType = .macronutrients
     var body: some WidgetConfiguration {
         
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider(context: viewContext!)) { entry in
-            FoodSecretWidgetEntryView(entry: entry)
+            FoodSecretWidgetEntryView(type: widgetType, entry: entry)
         }
-        .configurationDisplayName("My Widget 1")
-        .description("This is an example widget.")
+        .configurationDisplayName(widgetType.rawValue)
+        .description(widgetType.description)
         .supportedFamilies([.systemMedium])
     }
 }
 
 struct FoodSecretWidget_Previews: PreviewProvider {
     static var previews: some View {
-        FoodSecretWidgetEntryView(entry: WidgetEntry(date: Date(), configuration: ConfigurationIntent()))
+        FoodSecretWidgetEntryView(type: .macronutrients, entry: WidgetEntry(date: Date(), configuration: ConfigurationIntent()))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
 
 
 
-struct FoodSecretWidget2: Widget {
-    var viewContext: NSManagedObjectContext?
-    let kind: String = "FoodSecretWidget"
 
-    var body: some WidgetConfiguration {
-        
-        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider(context: viewContext!)) { entry in
-            FoodSecretWidgetEntryView(entry: entry)
+
+enum WidgetType: String, CaseIterable{
+    case macronutrients = "Macronutrients"
+    case calSymmary = "Symmary"
+    
+    var kind: String {"FoodSecretWidget" + self.rawValue}
+    
+    var description: String{
+        switch self {
+        case .macronutrients:
+            return "Monitor your calorie and nutrient intake"
+        case .calSymmary:
+            return "View how many calories you've consumed and how many you have left"
         }
-        .configurationDisplayName("My Widget 2")
-        .description("This is an example widget 2.")
-        .supportedFamilies([.systemMedium, .systemSmall])
     }
 }

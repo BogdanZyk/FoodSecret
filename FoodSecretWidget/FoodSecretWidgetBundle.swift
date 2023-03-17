@@ -12,7 +12,7 @@ import SwiftUI
 struct FoodSecretWidgetBundle: WidgetBundle {
     let context = PersistenceController.shared.viewContext
     var body: some Widget {
-        FoodSecretWidget(viewContext: context)
-        FoodSecretWidget2(viewContext: context)
+        FoodSecretWidget(viewContext: context, widgetType: .macronutrients)
+        FoodSecretWidget(viewContext: context, widgetType: .calSymmary)
     }
 }
