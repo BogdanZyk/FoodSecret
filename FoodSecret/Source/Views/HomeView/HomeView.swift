@@ -27,12 +27,8 @@ struct HomeView: View {
             }
         }
         .sheet(isPresented: $showCalendarView) {
-            DatePicker("Select date", selection: $rootVM.selectedDate, displayedComponents: .date)
-                .onChange(of: rootVM.selectedDate) { newValue in
-                    showCalendarView = false
-                    rootVM.fetchCoreData()
-                }
-                .datePickerStyle(.graphical)
+            DatePickerSheetView()
+                .environmentObject(rootVM)
         }
         .navigationDestination(isPresented: $rootVM.showAddFoodView) {
             SearchFoodView(forType: rootVM.selectedMealType)

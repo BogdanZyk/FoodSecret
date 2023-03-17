@@ -9,23 +9,19 @@ import SwiftUI
 
 
 struct CustomDatePickerView: View {
-    let dayofTheWeek: [String] = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
-    @State private var currentDate: Date = Date()
+    @Binding var selectedDate: Date
     @State private var currentMonth: Int = 0
     var body: some View {
-        VStack(alignment: .leading, spacing: 10){
-            mounthSection
-           // divider
-            //userStats
-            divider
-            daysSection
-            dates
-                
+        GeometryReader { proxy in
+            VStack(alignment: .leading, spacing: 10){
+                mounthSection
+                daysSection
+                dates
+            }
+            .foregroundColor(.primaryFont)
+            .frame(width: proxy.size.width, height: proxy.size.height, alignment: .top)
         }
-        
-        .foregroundColor(.primaryFont)
-//        .padding(16)
-//        .background(Color.secondary, in: RoundedRectangle(cornerRadius: 20))
+        .frame(height: 340)
     }
 }
 
@@ -33,7 +29,8 @@ struct CustomCalendarView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
            // Color.black
-            CustomDatePickerView()
+            CustomDatePickerView(selectedDate: .constant(.tomorrow))
+               
                 .padding()
         }
     }
@@ -43,63 +40,29 @@ struct CustomCalendarView_Previews: PreviewProvider {
 extension CustomDatePickerView{
     private var mounthSection: some View{
         HStack{
-            Text("\(extractDate())")
-                .font(.title3)
-                .bold()
-            Spacer()
             HStack(spacing: 0){
                 Button {
-                    withAnimation {
-                        currentMonth -= 1
-                    }
+                    currentMonth -= 1
                 } label: {
                     Image(systemName: "chevron.left")
                         .padding(10)
+                        .foregroundColor(.accentColor)
                 }
+                
+                Text(extractMonthDate())
+                    .font(.title3)
+                    .bold()
+                    .hCenter()
                 Button{
-                    withAnimation {
-                        currentMonth += 1
-                    }
+                    currentMonth += 1
                 } label: {
                     Image(systemName: "chevron.right")
                         .padding(10)
+                        .foregroundColor(.accentColor)
                 }
             }
             .font(.subheadline.bold())
-            .onChange(of: currentMonth) { newValue in
-                currentDate = getCurrentMonth()
-            }
         }
-    }
-    
-    private var userStats: some View{
-        HStack{
-            Spacer()
-            statsView(title: "total", value: "100")
-            Spacer()
-            statsView(title: "longest", value: "70")
-            Spacer()
-            statsView(title: "current", value: "54")
-            Spacer()
-        }
-        .hCenter()
-    }
-    
-    private func statsView(title: String, value: String) -> some View{
-        VStack(spacing: 18) {
-            Text(title)
-                //.font(.urbRegular(size: 16))
-            HStack{
-                Text(value)
-                    .font(.title3).bold()
-                Text("days")
-                    //.font(.urbRegular(size: 16))
-            }
-            
-        }
-    }
-    private var divider: some View{
-        Divider().background(.white.opacity(0.5))
     }
 }
 
@@ -107,13 +70,19 @@ extension CustomDatePickerView{
 extension CustomDatePickerView{
     private var daysSection: some View{
         HStack{
-            ForEach(dayofTheWeek, id: \.self) { day in
+            ForEach(daysOfWeek, id: \.self) { day in
                 Text(day)
                     .font(.headline.bold())
-                    .foregroundColor(.white.opacity(0.6))
+                    .foregroundColor(.secondary)
                     .hCenter()
             }
         }
+    }
+    
+    private var daysOfWeek: [String]{
+        let formatter = DateFormatter()
+        formatter.locale = .init(identifier: "en")
+        return formatter.shortWeekdaySymbols
     }
     
     
@@ -122,7 +91,10 @@ extension CustomDatePickerView{
         let columns = Array(repeating: GridItem(.flexible()), count: 7)
         LazyVGrid(columns: columns, spacing: 10) {
             ForEach(extractDate()) { value in
-                daysViewComponent(value.day, isToday: isSameDate(value.date))
+                daysViewComponent(value.day, date: value.date)
+                    .onTapGesture {
+                        selectedDate = value.date
+                    }
             }
         }
         .padding(.top)
@@ -130,24 +102,20 @@ extension CustomDatePickerView{
     
     private func isSameDate(_ date: Date) -> Bool {
         let calendar = Calendar.current
-       return calendar.isDateInToday(date)
+        return calendar.isDateInToday(date)
     }
     
-    
-    //MOCKS user MOOD State
-    private func daysViewComponent(_ day: Int, isToday: Bool) -> some View{
-        //let randomDays: [Int] = Array(0...6)
-       return VStack{
+    @ViewBuilder
+    private func daysViewComponent(_ day: Int, date: Date) -> some View{
+        let isToday = isSameDate(date)
+         VStack{
             if day != -1{
                 Text("\(day)")
-                    //.font(.urbMedium(size: 18))
+                    .font(.title3)
                     .frame(width: 25, height: 25)
-                    .background(Color.white.opacity(isToday ? 0.2 : 0), in: RoundedRectangle(cornerRadius: 5))
-//                    .overlay{
-//                        if randomDays.contains(day){
-//                            Text("\(MoodType.allCases.randomElement()?.rawValue ?? MoodType.love.rawValue)")
-//                        }
-//                    }
+                    .foregroundColor(isToday ? .white : (date == selectedDate ? .blue : .primaryFont))
+                    .padding(5)
+                    .background(isToday ? Color.accentColor : .clear, in: Circle())
             }
         }
     }
@@ -175,10 +143,10 @@ extension CustomDatePickerView{
         return currentMounth
     }
     
-    private func extractDate() -> String{
+    private func extractMonthDate() -> String{
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM YYYY"
-        return formatter.string(from: currentDate)
+        return formatter.string(from: getCurrentMonth())
     }
 }
 
