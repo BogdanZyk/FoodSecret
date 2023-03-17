@@ -8,24 +8,33 @@
 import SwiftUI
 
 struct HomeSymmaryView: View{
-    
+    @EnvironmentObject var rootVM: RootViewModel
     let foods: [FoodEntity]
     var summaryData: (cal: Double, carbohyd: Double, protein: Double, fat: Double){
         Helper.symmaryNutritionData(for: foods)
     }
     
+    var leftCallories: String{
+        "\(Int(rootVM.halfInfo.totalCallories - summaryData.cal))"
+    }
+    
     var body: some View{
         VStack(spacing: 20) {
-            ProgressCircleView(persentage: summaryData.cal.calculatePercentage(for: 4500), size: .large, circleOutline: Color(UIColor.systemTeal), circleTrack: Color(UIColor.systemTeal).opacity(0.3)) {
-                Text(summaryData.cal.toCalories)
-                    .font(.subheadline.bold())
+            ProgressCircleView(persentage: summaryData.cal.calculatePercentage(for: rootVM.halfInfo.totalCallories), size: .large, circleOutline: Color(UIColor.systemTeal), circleTrack: Color(UIColor.systemTeal).opacity(0.3)) {
+                VStack {
+                    Text(leftCallories)
+                        .font(.headline.bold())
+                    Text("cal left")
+                        .font(.caption)
+                }
             }
-            .frame(width: 100)
+            .frame(width: 110)
             .padding(.top, 6)
             HStack(spacing: 10){
-                lineProgress(summaryData.carbohyd, title: "Carbs", total: 315)
-                lineProgress(summaryData.protein, title: "Protein", total: 315)
-                lineProgress(summaryData.fat, title: "Fat", total: 315)
+                let macronut = rootVM.halfInfo.macronutrientsInGramm
+                lineProgress(summaryData.carbohyd, title: "Carbs", total: macronut.carb)
+                lineProgress(summaryData.protein, title: "Protein", total: macronut.protein)
+                lineProgress(summaryData.fat, title: "Fat", total: macronut.fat)
             }
            
         }
@@ -38,6 +47,7 @@ struct HomeSymmaryView_Previews: PreviewProvider {
     static var previews: some View {
         HomeSymmaryView(foods: dev.simpleFoods)
             .padding()
+            .environmentObject(RootViewModel(mainContext: dev.viewContext))
     }
 }
 
@@ -54,7 +64,7 @@ extension HomeSymmaryView{
                 .font(.caption)
             LineProgressView(value: CGFloat(value.calculatePercentage(for: Double(total))))
                 .frame(height: 6)
-            Text("\(Int(value))/\(total)")
+            Text("\(Int(value)) / \(total) g")
                 .font(.caption.weight(.medium))
         }
     }

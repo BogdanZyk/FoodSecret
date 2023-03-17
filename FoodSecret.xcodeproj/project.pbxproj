@@ -34,6 +34,8 @@
 		5A556F0029C46BD4002DAD54 /* NumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A556EFF29C46BD4002DAD54 /* NumberTextField.swift */; };
 		5A556F0229C46D09002DAD54 /* EditInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A556F0129C46D09002DAD54 /* EditInfoView.swift */; };
 		5A556F0429C47BEB002DAD54 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A556F0329C47BEB002DAD54 /* ButtonStyle.swift */; };
+		5A556F0729C484FD002DAD54 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A556F0629C484FD002DAD54 /* RootView.swift */; };
+		5A556F0929C497A5002DAD54 /* RootView+TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A556F0829C497A5002DAD54 /* RootView+TabView.swift */; };
 		5A8B706029C4611900379520 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B705F29C4611900379520 /* UserSettings.swift */; };
 		5A8B706229C461EF00379520 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B706129C461EF00379520 /* UserDefaults.swift */; };
 		5A8B706429C4621200379520 /* UserHalfInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B706329C4621200379520 /* UserHalfInfo.swift */; };
@@ -85,6 +87,8 @@
 		5A556EFF29C46BD4002DAD54 /* NumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberTextField.swift; sourceTree = "<group>"; };
 		5A556F0129C46D09002DAD54 /* EditInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoView.swift; sourceTree = "<group>"; };
 		5A556F0329C47BEB002DAD54 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		5A556F0629C484FD002DAD54 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		5A556F0829C497A5002DAD54 /* RootView+TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootView+TabView.swift"; sourceTree = "<group>"; };
 		5A8B705F29C4611900379520 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		5A8B706129C461EF00379520 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		5A8B706329C4621200379520 /* UserHalfInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHalfInfo.swift; sourceTree = "<group>"; };
@@ -229,6 +233,8 @@
 		5A38A1FB29C0FB8D00947AEC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5A8B705E29C4610B00379520 /* ProfileView */,
+				5A556F0529C484E5002DAD54 /* RootView */,
 				5AB741CD29C1FD3F00821457 /* ViewComponents */,
 				5AB741C829C1F73F00821457 /* HomeView */,
 			);
@@ -297,6 +303,15 @@
 			path = TextFields;
 			sourceTree = "<group>";
 		};
+		5A556F0529C484E5002DAD54 /* RootView */ = {
+			isa = PBXGroup;
+			children = (
+				5A556F0629C484FD002DAD54 /* RootView.swift */,
+				5A556F0829C497A5002DAD54 /* RootView+TabView.swift */,
+			);
+			path = RootView;
+			sourceTree = "<group>";
+		};
 		5A8B705E29C4610B00379520 /* ProfileView */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,7 +372,6 @@
 		5AB741C829C1F73F00821457 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
-				5A8B705E29C4610B00379520 /* ProfileView */,
 				5A4EA62229C3808700CCAF47 /* HomeSymmaryView */,
 				5A4EA61729C3448F00CCAF47 /* ProductEditorView */,
 				5AB741D029C2068600821457 /* MealsView */,
@@ -486,7 +500,9 @@
 				5AB741B929C1B33600821457 /* Persistense.swift in Sources */,
 				5A4EA61B29C344CE00CCAF47 /* ProductEditorViewModel.swift in Sources */,
 				5AB741D829C210D800821457 /* AllMealsFoodView.swift in Sources */,
+				5A556F0929C497A5002DAD54 /* RootView+TabView.swift in Sources */,
 				5AB741B729C1B1FF00821457 /* CoreDataExt.swift in Sources */,
+				5A556F0729C484FD002DAD54 /* RootView.swift in Sources */,
 				5A38A20029C101CC00947AEC /* NutitionixProduct.swift in Sources */,
 				5A556F0229C46D09002DAD54 /* EditInfoView.swift in Sources */,
 				5A52A6D729C31440002A68E5 /* SearhFoodViewModel.swift in Sources */,

@@ -11,31 +11,29 @@ struct HomeView: View {
     @EnvironmentObject var rootVM: RootViewModel
     @State private var showCalendarView: Bool = false
     var body: some View {
-        NavigationStack{
-            ScrollView(.vertical, showsIndicators: false) {
-                VStack(spacing: 16){
-                    summarySection
-                    mealsSection
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack(spacing: 16){
+                summarySection
+                mealsSection
+            }
+            .padding(.horizontal)
+        }
+        .navigationTitle(rootVM.selectedDate.dayDifferenceStr)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                calengarButton
+            }
+        }
+        .sheet(isPresented: $showCalendarView) {
+            DatePicker("Select date", selection: $rootVM.selectedDate, displayedComponents: .date)
+                .onChange(of: rootVM.selectedDate) { newValue in
+                    showCalendarView = false
+                    rootVM.fetchCoreData()
                 }
-                .padding(.horizontal)
-            }
-            .navigationTitle(rootVM.selectedDate.dayDifferenceStr)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    calengarButton
-                }
-            }
-            .sheet(isPresented: $showCalendarView) {
-                DatePicker("Select date", selection: $rootVM.selectedDate, displayedComponents: .date)
-                    .onChange(of: rootVM.selectedDate) { newValue in
-                        showCalendarView = false
-                        rootVM.fetchCoreData()
-                    }
-                    .datePickerStyle(.graphical)
-            }
-            .navigationDestination(isPresented: $rootVM.showAddFoodView) {
-                SearchFoodView(forType: rootVM.selectedMealType)
-            }
+                .datePickerStyle(.graphical)
+        }
+        .navigationDestination(isPresented: $rootVM.showAddFoodView) {
+            SearchFoodView(forType: rootVM.selectedMealType)
         }
     }
 }

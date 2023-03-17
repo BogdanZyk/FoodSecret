@@ -16,6 +16,11 @@ class RootViewModel: ObservableObject{
     @Published var showAddFoodView: Bool = false
     @Published var selectedMealType: MealType = .dinner
     @Published var selectedDate: Date = .now
+    @Published var curretTab: Tab = .home
+    
+    var halfInfo: UserHalfInfo{
+        UserSettings.HalfInfo.info
+    }
     
     private var cancellable = Set<AnyCancellable>()
     private let dataManager: CoreDataManager
@@ -25,6 +30,9 @@ class RootViewModel: ObservableObject{
         fetchCoreData()
     }
     
+    var navTitle: String{
+        curretTab.getNavTitle(selectedDate.dayDifferenceStr)
+    }
 
     func showAddFoodView(_ type: MealType){
         selectedMealType = type
@@ -78,3 +86,29 @@ extension RootViewModel{
 }
 
 
+enum Tab: String, CaseIterable{
+    
+    case home = "Home"
+    case recepies = "Recepies"
+    case profile = "Profile"
+    
+    
+    var imageName: String{
+        switch self {
+        case .home: return "house"
+        case .recepies: return "book.closed"
+        case .profile: return "person.crop.circle"
+        }
+    }
+    
+    var fillImageName: String{
+        imageName + ".fill"
+    }
+    
+    func getNavTitle(_ title: String) -> String{
+        switch self {
+        case .home: return title
+        case .recepies, .profile: return rawValue
+        }
+    }
+}

@@ -12,7 +12,7 @@ struct FoodSecretApp: App {
     @StateObject var rootViewModel = RootViewModel(mainContext: PersistenceController.shared.viewContext)
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            RootView()
                 .environmentObject(rootViewModel)
         }
     }
