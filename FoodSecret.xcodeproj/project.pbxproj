@@ -31,6 +31,14 @@
 		5A52A6D729C31440002A68E5 /* SearhFoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52A6D629C31440002A68E5 /* SearhFoodViewModel.swift */; };
 		5A52A6DD29C3222D002A68E5 /* DetailsProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52A6DC29C3222D002A68E5 /* DetailsProductView.swift */; };
 		5A52A6DF29C323CC002A68E5 /* DetailsProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52A6DE29C323CC002A68E5 /* DetailsProductViewModel.swift */; };
+		5A556F0029C46BD4002DAD54 /* NumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A556EFF29C46BD4002DAD54 /* NumberTextField.swift */; };
+		5A556F0229C46D09002DAD54 /* EditInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A556F0129C46D09002DAD54 /* EditInfoView.swift */; };
+		5A556F0429C47BEB002DAD54 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A556F0329C47BEB002DAD54 /* ButtonStyle.swift */; };
+		5A8B706029C4611900379520 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B705F29C4611900379520 /* UserSettings.swift */; };
+		5A8B706229C461EF00379520 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B706129C461EF00379520 /* UserDefaults.swift */; };
+		5A8B706429C4621200379520 /* UserHalfInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B706329C4621200379520 /* UserHalfInfo.swift */; };
+		5A8B706729C4653200379520 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B706629C4653200379520 /* ProfileView.swift */; };
+		5A8B706929C4656E00379520 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B706829C4656E00379520 /* ProfileViewModel.swift */; };
 		5AB741B729C1B1FF00821457 /* CoreDataExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741B629C1B1FF00821457 /* CoreDataExt.swift */; };
 		5AB741B929C1B33600821457 /* Persistense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741B829C1B33600821457 /* Persistense.swift */; };
 		5AB741BF29C1B3A200821457 /* CoreDataFoodSecret.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741BD29C1B3A200821457 /* CoreDataFoodSecret.xcdatamodeld */; };
@@ -74,6 +82,14 @@
 		5A52A6D629C31440002A68E5 /* SearhFoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearhFoodViewModel.swift; sourceTree = "<group>"; };
 		5A52A6DC29C3222D002A68E5 /* DetailsProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsProductView.swift; sourceTree = "<group>"; };
 		5A52A6DE29C323CC002A68E5 /* DetailsProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsProductViewModel.swift; sourceTree = "<group>"; };
+		5A556EFF29C46BD4002DAD54 /* NumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberTextField.swift; sourceTree = "<group>"; };
+		5A556F0129C46D09002DAD54 /* EditInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoView.swift; sourceTree = "<group>"; };
+		5A556F0329C47BEB002DAD54 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		5A8B705F29C4611900379520 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		5A8B706129C461EF00379520 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		5A8B706329C4621200379520 /* UserHalfInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHalfInfo.swift; sourceTree = "<group>"; };
+		5A8B706629C4653200379520 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		5A8B706829C4656E00379520 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		5AB741B629C1B1FF00821457 /* CoreDataExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataExt.swift; sourceTree = "<group>"; };
 		5AB741B829C1B33600821457 /* Persistense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistense.swift; sourceTree = "<group>"; };
 		5AB741BE29C1B3A200821457 /* CoreDataFoodSecret.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataFoodSecret.xcdatamodel; sourceTree = "<group>"; };
@@ -186,6 +202,7 @@
 				5AB741C429C1DAE100821457 /* Double+ext.swift */,
 				5AB741D929C2149B00821457 /* PreviewProvider.swift */,
 				5A4EA61C29C3473500CCAF47 /* Notificationcenter+Ext.swift */,
+				5A8B706129C461EF00379520 /* UserDefaults.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -193,6 +210,7 @@
 		5A38A1EF29C0EFE700947AEC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5A8B706529C4621800379520 /* UserHalfInfo */,
 				5AB741C029C1B72800821457 /* Nutritionix */,
 			);
 			path = Models;
@@ -224,6 +242,7 @@
 				5A52A6D629C31440002A68E5 /* SearhFoodViewModel.swift */,
 				5A52A6DE29C323CC002A68E5 /* DetailsProductViewModel.swift */,
 				5A4EA61A29C344CE00CCAF47 /* ProductEditorViewModel.swift */,
+				5A8B706829C4656E00379520 /* ProfileViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -265,8 +284,35 @@
 		5A52A6E029C32B27002A68E5 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				5A556F0329C47BEB002DAD54 /* ButtonStyle.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		5A556EFE29C46BC3002DAD54 /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				5A556EFF29C46BD4002DAD54 /* NumberTextField.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
+		5A8B705E29C4610B00379520 /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				5A8B705F29C4611900379520 /* UserSettings.swift */,
+				5A8B706629C4653200379520 /* ProfileView.swift */,
+				5A556F0129C46D09002DAD54 /* EditInfoView.swift */,
+			);
+			path = ProfileView;
+			sourceTree = "<group>";
+		};
+		5A8B706529C4621800379520 /* UserHalfInfo */ = {
+			isa = PBXGroup;
+			children = (
+				5A8B706329C4621200379520 /* UserHalfInfo.swift */,
+			);
+			path = UserHalfInfo;
 			sourceTree = "<group>";
 		};
 		5AB741B429C1B1C400821457 /* CodeData */ = {
@@ -311,6 +357,7 @@
 		5AB741C829C1F73F00821457 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
+				5A8B705E29C4610B00379520 /* ProfileView */,
 				5A4EA62229C3808700CCAF47 /* HomeSymmaryView */,
 				5A4EA61729C3448F00CCAF47 /* ProductEditorView */,
 				5AB741D029C2068600821457 /* MealsView */,
@@ -323,6 +370,7 @@
 		5AB741CD29C1FD3F00821457 /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				5A556EFE29C46BC3002DAD54 /* TextFields */,
 				5A52A6E029C32B27002A68E5 /* Buttons */,
 				5A52A6D329C28BDB002A68E5 /* ProgressBars */,
 				5AB741DE29C22DFC00821457 /* MealFoodRowView.swift */,
@@ -427,16 +475,20 @@
 			files = (
 				5AB741D329C206C100821457 /* MealsDetailsView.swift in Sources */,
 				5A38A1F629C0F45F00947AEC /* NutritionixEndpoint.swift in Sources */,
+				5A556F0029C46BD4002DAD54 /* NumberTextField.swift in Sources */,
 				5A52A6DF29C323CC002A68E5 /* DetailsProductViewModel.swift in Sources */,
 				5A38A1B929C0802600947AEC /* ContentView.swift in Sources */,
 				5AB741C529C1DAE100821457 /* Double+ext.swift in Sources */,
+				5A8B706029C4611900379520 /* UserSettings.swift in Sources */,
 				5A38A1B729C0802600947AEC /* FoodSecretApp.swift in Sources */,
 				5AB741CC29C1F9EF00821457 /* MealsSectionView.swift in Sources */,
+				5A556F0429C47BEB002DAD54 /* ButtonStyle.swift in Sources */,
 				5AB741B929C1B33600821457 /* Persistense.swift in Sources */,
 				5A4EA61B29C344CE00CCAF47 /* ProductEditorViewModel.swift in Sources */,
 				5AB741D829C210D800821457 /* AllMealsFoodView.swift in Sources */,
 				5AB741B729C1B1FF00821457 /* CoreDataExt.swift in Sources */,
 				5A38A20029C101CC00947AEC /* NutitionixProduct.swift in Sources */,
+				5A556F0229C46D09002DAD54 /* EditInfoView.swift in Sources */,
 				5A52A6D729C31440002A68E5 /* SearhFoodViewModel.swift in Sources */,
 				5AB741D629C2096B00821457 /* SearchFoodView.swift in Sources */,
 				5A4EA61F29C3620B00CCAF47 /* RootViewModel.swift in Sources */,
@@ -447,7 +499,9 @@
 				5A38A1F829C0F66200947AEC /* NetworkManager.swift in Sources */,
 				5A52A6D529C28BEF002A68E5 /* LineProgressView.swift in Sources */,
 				5A38A1CA29C0807000947AEC /* View+extension.swift in Sources */,
+				5A8B706929C4656E00379520 /* ProfileViewModel.swift in Sources */,
 				5A4EA61929C344C300CCAF47 /* ProductEditorView.swift in Sources */,
+				5A8B706429C4621200379520 /* UserHalfInfo.swift in Sources */,
 				5A4EA61D29C3473500CCAF47 /* Notificationcenter+Ext.swift in Sources */,
 				5A38A1F129C0EFF800947AEC /* ProductSearchResult.swift in Sources */,
 				5AB741DF29C22DFC00821457 /* MealFoodRowView.swift in Sources */,
@@ -455,7 +509,9 @@
 				5AB741C729C1DC0B00821457 /* WaterEntity+Extensions.swift in Sources */,
 				5A52A6CC29C27F34002A68E5 /* NukeLazyImage.swift in Sources */,
 				5AB741CF29C1FD5600821457 /* CircleProgressView.swift in Sources */,
+				5A8B706729C4653200379520 /* ProfileView.swift in Sources */,
 				5A4EA62429C3808F00CCAF47 /* HomeSymmaryView.swift in Sources */,
+				5A8B706229C461EF00379520 /* UserDefaults.swift in Sources */,
 				5A52A6DD29C3222D002A68E5 /* DetailsProductView.swift in Sources */,
 				5AB741DD29C21B9E00821457 /* Helper.swift in Sources */,
 				5A38A1CC29C080F500947AEC /* Date+Ext.swift in Sources */,

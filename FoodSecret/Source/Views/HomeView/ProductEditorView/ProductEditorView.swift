@@ -75,42 +75,17 @@ extension ProductEditorView{
     }
     
     private var calloriesTextField: some View{
-        CustomTextField(value: $viewModel.customProduct.callories, promt: "0g", label: "Calories")
+        NumberTextField(value: $viewModel.customProduct.callories, promt: "0g", label: "Calories")
             .padding(.vertical)
     }
    
     private var nutritionInfoSection: some View{
         HStack(spacing: 16){
-            CustomTextField(value: $viewModel.customProduct.protein, promt: "0g", label: "Protein")
-            CustomTextField(value: $viewModel.customProduct.carbohydrate, promt: "0g", label: "Carbs")
-            CustomTextField(value: $viewModel.customProduct.fats, promt: "0g", label: "Fat")
+            NumberTextField(value: $viewModel.customProduct.protein, promt: "0g", label: "Protein")
+            NumberTextField(value: $viewModel.customProduct.carbohydrate, promt: "0g", label: "Carbs")
+            NumberTextField(value: $viewModel.customProduct.fats, promt: "0g", label: "Fat")
         }
     }
 }
 
-extension ProductEditorView{
-    
-    struct CustomTextField: View{
-        @Binding var value: Double
-        let promt: String
-        let label: String
-        let formatter: NumberFormatter = {
-            let formatter = NumberFormatter()
-            formatter.numberStyle = .decimal
-            return formatter
-        }()
-        
-        var body: some View{
-            VStack(alignment: .leading) {
-                Text(label)
-                    .font(.headline)
-                TextField(promt, value: $value, formatter: formatter)
-                    .font(.title3.weight(.medium))
-                    .keyboardType(.decimalPad)
-                Divider()
-            }
-        }
-    }
-    
-}
 
