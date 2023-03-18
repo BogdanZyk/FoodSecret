@@ -81,7 +81,7 @@ extension RootView{
     private var overlayView: some View{
         Group{
             if rootVM.showMealsMenu{
-                Color.black.opacity(0.5).ignoresSafeArea()
+                Color.black.opacity(0.65).ignoresSafeArea()
                     .onTapGesture {
                         rootVM.showMealsMenu.toggle()
                     }

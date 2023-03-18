@@ -15,11 +15,12 @@ struct MealFoodRowView: View {
             NukeLazyImage(strUrl: food.image)
                 .frame(width: 45, height: 45)
                 .cornerRadius(10)
-            VStack(alignment: .leading, spacing: 0) {
+            VStack(alignment: .leading, spacing: 2) {
                 Text(food.foodNameEditable.capitalized)
                     .font(.headline)
                 Text(food.weight.toWeight)
                     .font(.callout)
+                    .foregroundColor(.secondary)
             }
             Spacer()
             Text(food.represCalories)

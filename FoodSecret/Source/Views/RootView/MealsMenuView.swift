@@ -23,20 +23,20 @@ struct MealMenuView: View{
             ForEach(menuButtons.indices, id: \.self) { index in
                 HStack(spacing: 15){
                     Text(menuButtons[index].title)
-                        .foregroundColor(.black)
-                        .font(.subheadline)
+                        .foregroundColor(.primaryFont)
+                        .font(.subheadline.weight(.medium))
                         .padding(.horizontal)
                         .padding(.vertical, 8)
-                        .background(Color.white, in: RoundedRectangle(cornerRadius: 12))
+                        .background(Color(.systemGray6), in: RoundedRectangle(cornerRadius: 12))
                     
                     Text(menuButtons[index].emoji)
                         .font(.system(size: 23))
                         .padding(6)
-                        .background(Color.white, in: Circle())
+                        .background(Color(.systemGray6), in: Circle())
                 }
                 .scaleEffect(menuButtons[index].isAnimate ? 1 : 0.01)
                 .onAppear{
-                    withAnimation(.spring().delay(Double(index) * 0.08)){
+                    withAnimation(.spring().delay(Double(index) * 0.06)){
                         menuButtons[(menuButtons.count - 1) - index].isAnimate = true
                     }
                 }

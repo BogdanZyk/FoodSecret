@@ -22,15 +22,15 @@ struct GlassView: View {
                     .scaleEffect(0.85)
                 if isLast{
                     Image(systemName: "plus")
-                        .foregroundColor(.secondary)
+                        .foregroundColor(.gray)
                         .vCenter()
                 }
             }
             .frame(width: proxy.size.width, height: maxHeight)
             .overlay(alignment: .trailing) {
                 Trapezoid()
-                    .fill(Color.gray.opacity(0.1))
-                    .frame(width: 15)
+                    .fill(Color.gray.opacity(0.2))
+                    .frame(width: proxy.size.width / 2)
             }
         }
         .animation(.spring(), value: progressHeight)
