@@ -43,7 +43,7 @@ extension RootView{
                     .overlay {
                         Group{
                             if rootVM.showMealsMenu{
-                                Color.secondary.opacity(0.5).ignoresSafeArea()
+                                Color.black.opacity(0.5).ignoresSafeArea()
                             }
                         }
                         .animation(.easeInOut(duration: 0.2), value: rootVM.showMealsMenu)
@@ -81,7 +81,7 @@ extension RootView{
     private var overlayView: some View{
         Group{
             if rootVM.showMealsMenu{
-                Color.secondary.opacity(0.5).ignoresSafeArea()
+                Color.black.opacity(0.5).ignoresSafeArea()
                     .onTapGesture {
                         rootVM.showMealsMenu.toggle()
                     }
@@ -100,14 +100,13 @@ extension RootView{
                     ZStack {
                         Circle()
                             .fill(Color.accentColor)
+                            .shadow(color: .black.opacity(0.1), radius: 5)
                         Image(systemName: "plus")
                             .foregroundColor(.white)
                             .imageScale(.large)
                             .rotationEffect(.degrees(rootVM.showMealsMenu ? 45 : 0))
                     }
                     .frame(width: 55, height: 55)
-                    
-                    //.padding(.bottom, 45)
                     .onTapGesture {
                         rootVM.showMealsMenu.toggle()
                     }

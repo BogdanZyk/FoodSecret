@@ -23,6 +23,7 @@ struct MealMenuView: View{
             ForEach(menuButtons.indices, id: \.self) { index in
                 HStack(spacing: 15){
                     Text(menuButtons[index].title)
+                        .foregroundColor(.black)
                         .font(.subheadline)
                         .padding(.horizontal)
                         .padding(.vertical, 8)
