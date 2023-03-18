@@ -25,7 +25,7 @@ struct SearchFoodView: View {
                 waitView
             }
         }
-        .animation(.easeInOut, value: viewModel.searchState)
+        .animation(.easeInOut(duration: 0.2), value: viewModel.searchState)
         .searchable(text: $viewModel.query, placement: .navigationBarDrawer(displayMode: .always), prompt: .none)
         .navigationTitle("\(forType.title)")
         .navigationBarTitleDisplayMode(.inline)
@@ -40,7 +40,6 @@ struct SearchFoodView: View {
                 ProductEditorView(mealType: forType)
             case .select(let name):
                 DetailsProductView(name, mealType: forType)
-                    .presentationDetents([.medium, .large])
             }
         }
         .overlay {

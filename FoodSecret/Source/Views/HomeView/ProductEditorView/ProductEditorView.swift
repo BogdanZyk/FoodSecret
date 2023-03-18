@@ -53,7 +53,7 @@ extension ProductEditorView{
             
             Button {
                 let food = viewModel.createFood(mealType: mealType)
-                rootVM.addFood(for: food, userFood: true, mealType: mealType)
+                rootVM.addFood(for: food, userFood: true, weight: viewModel.customProduct.weight, mealType: mealType)
                 nc.post(name: .addNewProduct)
                 dismiss()
             } label: {
@@ -75,8 +75,11 @@ extension ProductEditorView{
     }
     
     private var calloriesTextField: some View{
-        NumberTextField(value: $viewModel.customProduct.callories, promt: "0g", label: "Calories")
-            .padding(.vertical)
+        HStack {
+            NumberTextField(value: $viewModel.customProduct.callories, promt: "0g", label: "Calories")
+            NumberTextField(value: $viewModel.customProduct.weight, promt: "0g", label: "Weight")
+        }
+        .padding(.vertical)
     }
    
     private var nutritionInfoSection: some View{

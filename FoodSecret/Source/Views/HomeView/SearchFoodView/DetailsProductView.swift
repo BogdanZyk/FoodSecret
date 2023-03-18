@@ -11,75 +11,180 @@ struct DetailsProductView: View {
     @EnvironmentObject var rootVM: RootViewModel
     @Environment(\.dismiss) var dismiss
     @StateObject private var viewModel: DetailsProductViewModel
+    @State private var selectedMealtype: MealType
     let mealType: MealType
-    init(_ productName: String, mealType: MealType){
+    
+    private var isUpdateView: Bool
+    
+    init(_ productName: String, foodEntity: FoodEntity? = nil, mealType: MealType){
+        self.isUpdateView = foodEntity != nil
         self.mealType = mealType
-        _viewModel = StateObject(wrappedValue: DetailsProductViewModel(productName))
+        self._selectedMealtype = State(wrappedValue: mealType)
+        _viewModel = StateObject(wrappedValue: DetailsProductViewModel(productName, foodEntity: foodEntity))
     }
     
     var body: some View {
-        VStack(spacing: 0) {
-            if let food = viewModel.product{
-                NukeLazyImage(strUrl: food.photo.thumb, resizeHeight: 400, resizingMode: .aspectFit, loadPriority: .high)
-                    .frame(height: 200)
-                VStack(alignment: .leading, spacing: 10){
-                    Text(food.foodName ?? "non")
-                        .font(.title2.bold())
-                    VStack(alignment: .leading, spacing: 6) {
-                        Text("Clams")
-                            .font(.headline)
-                        Text(food.claims.joined(separator: ", "))
-                            .font(.subheadline)
+        ScrollView(.vertical, showsIndicators: false){
+            VStack(spacing: 16) {
+                if let food = viewModel.product{
+                    NukeLazyImage(strUrl: food.photo.thumb, resizeHeight: 500, resizingMode: .aspectFit, loadPriority: .high)
+                        .frame(height: 200)
+                    VStack(alignment: .leading, spacing: 10){
+                        Text(food.foodName ?? "non")
+                            .font(.title2.bold())
+                        usedNutritionInfoSection(food)
+                        clamsAndNutritionProductData(food)
+                        
                     }
-                    infoSection(food)
-                       
-                    addButtonView
+                    .padding(.horizontal)
+                }else{
+                    ProgressView()
+                        .padding(.top, 50)
                 }
-                .padding()
-            }else{
-                Spacer()
-                ProgressView()
             }
-            Spacer()
         }
-        .ignoresSafeArea()
+        .onTapGesture(perform: UIApplication.shared.endEditing)
+        .safeAreaInset(edge: .bottom, alignment: .center, spacing: 0) {
+            if viewModel.product != nil{
+                bottomBarView
+            }
+        }
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                menuMealType
+
+            }
+        }
     }
 }
 
 struct DetailsProductView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailsProductView("eggo", mealType: .breakfast)
-            .environmentObject(RootViewModel(mainContext: dev.viewContext))
+        NavigationStack {
+            DetailsProductView("egg", mealType: .breakfast)
+            
+        }
+        .environmentObject(RootViewModel(mainContext: dev.viewContext))
     }
 }
 
 extension DetailsProductView{
-    private func infoSection(_ food: Food) -> some View{
+    @ViewBuilder
+    private func usedNutritionInfoSection(_ food: Food) -> some View{
+        let usedNutrienData = food.calculeteNutritionData(for: viewModel.weight)
         HStack{
-            ProductNutrionLabel(title: food.nfCalories?.toCalories ?? "0", subtitle: "Calories")
-            ProductNutrionLabel(title: food.nfTotalCarbohydrate?.toWeight ?? "0", subtitle: "Carbs")
-            ProductNutrionLabel(title: food.nfProtein?.toWeight ?? "0", subtitle: "Protein")
-            ProductNutrionLabel(title: food.nfTotalFat?.toWeight ?? "0", subtitle: "Fat")
+            ProductNutrionLabel(title: usedNutrienData.cal.toCalories, subtitle: "Calories")
+            ProductNutrionLabel(title: usedNutrienData.carb.toWeight, subtitle: "Carbs")
+            ProductNutrionLabel(title: usedNutrienData.protein.toWeight, subtitle: "Protein")
+            ProductNutrionLabel(title: usedNutrienData.fat.toWeight, subtitle: "Fat")
         }
-        .padding(.vertical, 10)
+        .padding()
+        .background(Color.secondaryBlue.opacity(0.2), in: RoundedRectangle(cornerRadius: 12))
+        .padding(.vertical, 16)
     }
     
     
-    private var addButtonView: some View{
-        Button {
-            if let food = viewModel.product{
-                rootVM.addFood(for: food, userFood: false, mealType: mealType)
-                nc.post(name: .addNewProduct)
-                dismiss()
+    private var bottomBarView: some View{
+        HStack(spacing: 15) {
+            HStack {
+                NumberTextField(value: $viewModel.weight, promt: "weight", label: nil, withDivider: false)
+                Text("g")
             }
-        } label: {
-            Text("Add food")
-                .font(.title3.weight(.bold))
-                .foregroundColor(.white)
-                .padding()
-                .hCenter()
-                .background(Color.accentColor, in: Capsule())
+            .padding()
+            .frame(width: 100)
+            .background(Color(.systemGray4), in: RoundedRectangle(cornerRadius: 12))
+            
+            Button {
+                if let food = viewModel.product, !isUpdateView{
+                    rootVM.addFood(for: food, userFood: false, weight: viewModel.weight, mealType: mealType)
+                    nc.post(name: .addNewProduct)
+                    
+                }else if let foodEntity = viewModel.foodEntity{
+                    
+                    rootVM.updateFood(for: foodEntity, weight: viewModel.weight, mealType: selectedMealtype)
+                }
+                dismiss()
+            } label: {
+                Text(isUpdateView ? "Save" : "Add food")
+                   .font(.title3.weight(.bold))
+            }
+            .buttonStyle(CapsuleButton())
+            .disabled(viewModel.weight <= 0)
         }
-        .padding(.vertical, 10)
+        .padding()
+        .background(Color(.systemGray5))
+        .ignoresSafeArea()
+    }
+    
+    @ViewBuilder
+    private func clamsAndNutritionProductData(_ food: Food) -> some View{
+        let nutritionData = food.nutritionDataForPer100Gramm
+        VStack(alignment: .leading, spacing: 16) {
+            
+            VStack(alignment: .leading, spacing: 16) {
+                Text("Clams")
+                    .font(.headline)
+                Text(food.claims.joined(separator: ", "))
+                    .font(.subheadline)
+            }
+            
+            Text("Nutrition per 100 gramm")
+                .font(.headline)
+            VStack(spacing: 10){
+                nutritionRowView("Calories", nutritionData.cal.toCalories)
+                nutritionRowView("Protein", nutritionData.protein.toWeight)
+                nutritionRowView("Fats", nutritionData.fat.toWeight)
+                nutritionRowView("Carbs", nutritionData.carb.toWeight)
+            }
+        }
+    }
+    
+    private func nutritionRowView(_ title: String, _ value: String) -> some View{
+        HStack{
+            Text(title)
+            Spacer()
+            Text(value)
+        }
+        .font(.subheadline.bold())
+    }
+    
+    @ViewBuilder
+    private var menuMealType: some View{
+        //if isUpdateView{
+        
+            Picker(selection: $selectedMealtype) {
+                ForEach(MealType.allCases, id: \.self) { type in
+                    Text("\(type.emoji) \(type.title)")
+                        .tag(type)
+                    
+                }
+            } label: {
+                Text("\(selectedMealtype.emoji) \(selectedMealtype.title)")
+                    .font(.headline)
+            }
+            .tint(.primaryFont)
+            .pickerStyle(.menu)
+            .padding(.trailing, getRect().width / 3)
+
+        
+        
+//            Menu {
+//                ForEach(MealType.allCases, id: \.self) { type in
+//                    Button("\(type.emoji) \(type.title)") {
+//                        selectedMealtype = type
+//                    }
+//                }
+//            } label: {
+//                HStack {
+//                    Text(selectedMealtype.emoji)
+//                    Text(selectedMealtype.title)
+//                        .font(.headline)
+//                }
+//            }
+        //}
     }
 }
+
+
+

@@ -18,15 +18,16 @@ struct MealsDetailsView: View {
             symmarySection
                 .listRowSeparator(.hidden, edges: .all)
             
-            ForEach(foods){food in
+            ForEach(foods){ food in
                 NavigationLink {
-                    UpdateView(item: food)
+                    DetailsProductView(food.foodNameEditable, foodEntity: food, mealType: viewType)
                 } label: {
                     MealFoodRowView(food: food, onDelete: rootVM.removeFood)
                 }
             }
         }
         .listStyle(.plain)
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .principal) {
                 Text(viewType.title)

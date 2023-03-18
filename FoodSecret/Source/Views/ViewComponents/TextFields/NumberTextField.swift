@@ -10,7 +10,8 @@ import SwiftUI
 struct NumberTextField: View{
     @Binding var value: Double
     let promt: String
-    let label: String
+    let label: String?
+    var withDivider: Bool = true
     let formatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
@@ -19,12 +20,16 @@ struct NumberTextField: View{
     
     var body: some View{
         VStack(alignment: .leading) {
-            Text(label)
-                .font(.headline)
+            if let label{
+                Text(label)
+                    .font(.headline)
+            }
             TextField(promt, value: $value, formatter: formatter)
                 .font(.title3.weight(.medium))
                 .keyboardType(.decimalPad)
-            Divider()
+            if withDivider{
+                Divider()
+            }
         }
     }
 }
@@ -34,3 +39,5 @@ struct NumberTextField_Previews: PreviewProvider {
         NumberTextField(value: .constant(10), promt: "", label: "Height")
     }
 }
+
+

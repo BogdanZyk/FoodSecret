@@ -30,5 +30,6 @@ class ProductEditorViewModel: ObservableObject{
         var protein: Double = .zero
         var fats: Double = .zero
         var carbohydrate: Double = .zero
+        var weight: Double = .zero
     }
 }

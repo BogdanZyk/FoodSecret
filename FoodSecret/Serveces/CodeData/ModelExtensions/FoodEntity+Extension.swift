@@ -20,9 +20,6 @@ extension FoodEntity{
         calories.toCalories
     }
     
-    var represWeight: String{
-        weight.toWeight
-    }
     
     var mealType: MealType{
         get { .init(rawValue: mealType_) ?? .breakfast }
@@ -43,25 +40,32 @@ extension FoodEntity{
     
     static func create(for product: Food,
                        mealType: MealType,
-                       count: Int16,
+                       weight: Double,
                        userFood: Bool,
-                       context: NSManagedObjectContext){
+                       context: NSManagedObjectContext,
+                       date: Date){
         
         let food = FoodEntity(context: context)
+        let nutrientData = product.calculeteNutritionData(for: weight)
         food.id = UUID()
         food.foodName = product.foodName ?? "No name"
-        food.fat = product.nfTotalFat ?? 0
-        food.protein = product.nfProtein ?? 0
-        food.carbohydrate = product.nfTotalCarbohydrate ?? 0
-        food.calories = product.nfCalories ?? 0
-        food.weight = Double(product.servingWeightGrams ?? 0)
-        food.createAt = Date.now
+        food.fat = nutrientData.fat
+        food.protein = nutrientData.protein
+        food.carbohydrate = nutrientData.cal
+        food.calories = nutrientData.cal
+        food.weight = weight
+        food.createAt = date
         food.image = product.photo.thumb
         food.mealType = mealType
         food.userFood = userFood
-        food.count = count
         
         context.saveContext()
+    }
+    
+    static func update(_ item: FoodEntity){
+        if let context = item.managedObjectContext{
+            context.saveContext()
+        }
     }
     
     static func delete(_ item: FoodEntity){
