@@ -70,6 +70,7 @@
 		5A8B706429C4621200379520 /* UserHalfInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B706329C4621200379520 /* UserHalfInfo.swift */; };
 		5A8B706729C4653200379520 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B706629C4653200379520 /* ProfileView.swift */; };
 		5A8B706929C4656E00379520 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B706829C4656E00379520 /* ProfileViewModel.swift */; };
+		5AA36D5729C5F5D100BC72D5 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA36D5629C5F5D100BC72D5 /* HapticManager.swift */; };
 		5AB741B729C1B1FF00821457 /* CoreDataExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741B629C1B1FF00821457 /* CoreDataExt.swift */; };
 		5AB741B929C1B33600821457 /* Persistense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741B829C1B33600821457 /* Persistense.swift */; };
 		5AB741BF29C1B3A200821457 /* CoreDataFoodSecret.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741BD29C1B3A200821457 /* CoreDataFoodSecret.xcdatamodeld */; };
@@ -171,6 +172,7 @@
 		5A8B706329C4621200379520 /* UserHalfInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHalfInfo.swift; sourceTree = "<group>"; };
 		5A8B706629C4653200379520 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		5A8B706829C4656E00379520 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		5AA36D5629C5F5D100BC72D5 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		5AB741B629C1B1FF00821457 /* CoreDataExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataExt.swift; sourceTree = "<group>"; };
 		5AB741B829C1B33600821457 /* Persistense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistense.swift; sourceTree = "<group>"; };
 		5AB741BE29C1B3A200821457 /* CoreDataFoodSecret.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataFoodSecret.xcdatamodel; sourceTree = "<group>"; };
@@ -594,6 +596,7 @@
 			isa = PBXGroup;
 			children = (
 				5AB741DC29C21B9E00821457 /* Helper.swift */,
+				5AA36D5629C5F5D100BC72D5 /* HapticManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -754,6 +757,7 @@
 				5A38A1F129C0EFF800947AEC /* ProductSearchResult.swift in Sources */,
 				5AB741DF29C22DFC00821457 /* MealFoodRowView.swift in Sources */,
 				5A38A1FA29C0F7AE00947AEC /* NutritionixService.swift in Sources */,
+				5AA36D5729C5F5D100BC72D5 /* HapticManager.swift in Sources */,
 				5AB741C729C1DC0B00821457 /* WaterEntity+Extensions.swift in Sources */,
 				5ABAEEBB29C4BC27005EBA3A /* AppGroup.swift in Sources */,
 				5A52A6CC29C27F34002A68E5 /* NukeLazyImage.swift in Sources */,

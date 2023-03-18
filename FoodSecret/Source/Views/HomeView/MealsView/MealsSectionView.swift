@@ -22,7 +22,7 @@ struct MealsSectionView: View {
                         .font(.subheadline.weight(.medium))
                 }
             }
-            VStack(alignment: .leading){
+            VStack(alignment: .leading, spacing: 12){
                 ForEach(MealType.allCases, id: \.self){type in
                     rowView(type)
                     if type != .snack{
@@ -64,7 +64,7 @@ extension MealsSectionView{
                 VStack(alignment: .leading) {
                     Text(type.title)
                         .font(.headline)
-                    Text("\(Int(usedCal))/ \(Int(totalCal)) cal")
+                    Text("\(Int(usedCal)) / \(Int(totalCal)) cal")
                         .font(.caption.weight(.light))
                 }
                 Spacer()
@@ -72,10 +72,11 @@ extension MealsSectionView{
                     rootVM.showAddFoodView(type)
                 } label: {
                     Image(systemName: "plus.circle.fill")
-                        .font(.title3)
+                        .font(.title2)
                         .foregroundColor(Color(uiColor: .systemTeal))
                 }
             }
+            .padding(.vertical, 0)
             .foregroundColor(.primaryFont)
         }
     }

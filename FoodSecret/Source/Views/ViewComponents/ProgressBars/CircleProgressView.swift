@@ -68,12 +68,10 @@ extension ProgressCircleView{
         
         var lineWidth: CGFloat{
             switch self{
-            case .small:
-                return 8
+            case .small, .verySmall:
+                return 6
             case .medium, .large:
                 return 12
-            case .verySmall:
-                return 6
             }
         }
     }

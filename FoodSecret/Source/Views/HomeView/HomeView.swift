@@ -25,6 +25,10 @@ struct HomeView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 calengarButton
             }
+//            ToolbarItem(placement: .navigationBarLeading) {
+//                Text("Today")
+//                    .font(.headline.bold())
+//            }
         }
         .sheet(isPresented: $showCalendarView) {
             DatePickerSheetView()
@@ -38,8 +42,10 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
-            .environmentObject(RootViewModel(mainContext: dev.viewContext))
+        NavigationStack {
+            HomeView()
+                .environmentObject(RootViewModel(mainContext: dev.viewContext))
+        }
     }
 }
 
