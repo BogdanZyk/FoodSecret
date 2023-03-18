@@ -73,6 +73,8 @@
 		5AA36D5729C5F5D100BC72D5 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA36D5629C5F5D100BC72D5 /* HapticManager.swift */; };
 		5AA36D5929C6025A00BC72D5 /* MealsMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA36D5829C6025A00BC72D5 /* MealsMenuView.swift */; };
 		5AA36D5B29C66C5500BC72D5 /* UIApllication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA36D5A29C66C5500BC72D5 /* UIApllication.swift */; };
+		5AA36D5C29C67A8F00BC72D5 /* LineProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52A6D429C28BEF002A68E5 /* LineProgressView.swift */; };
+		5AA36D5D29C67E6500BC72D5 /* GlassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36305729C4FF9F008E7E05 /* GlassView.swift */; };
 		5AB741B729C1B1FF00821457 /* CoreDataExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741B629C1B1FF00821457 /* CoreDataExt.swift */; };
 		5AB741B929C1B33600821457 /* Persistense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741B829C1B33600821457 /* Persistense.swift */; };
 		5AB741BF29C1B3A200821457 /* CoreDataFoodSecret.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741BD29C1B3A200821457 /* CoreDataFoodSecret.xcdatamodeld */; };
@@ -786,6 +788,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AA36D5C29C67A8F00BC72D5 /* LineProgressView.swift in Sources */,
 				5A556F6629C4A67D002DAD54 /* Date+Ext.swift in Sources */,
 				5A556F6529C4A670002DAD54 /* CoreDataFoodSecret.xcdatamodeld in Sources */,
 				5A556F6D29C4A6E9002DAD54 /* NutrientInfo.swift in Sources */,
@@ -800,6 +803,7 @@
 				5A556F6F29C4AF57002DAD54 /* UserHalfInfo.swift in Sources */,
 				5A556F5D29C4A566002DAD54 /* FoodSecretWidget.swift in Sources */,
 				5ABAEEC129C4C0DA005EBA3A /* CircleProgressView.swift in Sources */,
+				5AA36D5D29C67E6500BC72D5 /* GlassView.swift in Sources */,
 				5A556F6829C4A682002DAD54 /* PreviewProvider.swift in Sources */,
 				5ABAEEBF29C4BF1D005EBA3A /* UserSettings.swift in Sources */,
 				5A556F6729C4A67F002DAD54 /* Double+ext.swift in Sources */,

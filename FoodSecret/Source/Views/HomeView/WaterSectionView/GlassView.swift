@@ -23,7 +23,7 @@ struct GlassView: View {
                 if isLast{
                     Image(systemName: "plus")
                         .foregroundColor(.gray)
-                        .vCenter()
+                        .frame(maxHeight: .infinity, alignment: .center)
                 }
             }
             .frame(width: proxy.size.width, height: maxHeight)

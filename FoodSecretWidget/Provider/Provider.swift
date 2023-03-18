@@ -39,11 +39,9 @@ struct Provider: IntentTimelineProvider {
     
     func createWidgetEntry(_ date: Date, configuration: ConfigurationIntent) -> WidgetEntry{
         let foods = coreDataManager.fetchFoods(for: date)
+        let water = coreDataManager.fetchWater(for: date)
         let halfInfo: UserHalfInfo = UserSettings.HalfInfo.info
-        return .init(date: date, totalMacronutrients: .init(halfInfo), usedMacronutrients: .init(foods), configuration: configuration)
+        
+        return .init(date: date, totalMacronutrients: .init(halfInfo), usedMacronutrients: .init(foods), configuration: configuration, water: .init(waterValue: water?.value, numberOfWaterGlasses: water?.glassesCoint))
     }
-    
-//    func fetchWater(){
-//        water = dataManager.fetchWater(for: selectedDate)
-//    }
 }

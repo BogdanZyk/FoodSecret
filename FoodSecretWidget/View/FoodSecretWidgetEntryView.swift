@@ -20,6 +20,8 @@ struct FoodSecretWidgetEntryView : View {
                 macronutrientsTypeView
             case .calSymmary:
                 summaryType
+            case .water:
+                waterType
             }
         }
         .padding()
@@ -33,6 +35,8 @@ struct FoodSecretWidgetEntryView : View {
 struct FitzWidgets_Previews: PreviewProvider {
     static var previews: some View {
         Group {
+            FoodSecretWidgetEntryView(type: .water, entry: WidgetEntry.placeholder())
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
             FoodSecretWidgetEntryView(type: .calSymmary, entry: WidgetEntry(date: Date(), configuration: ConfigurationIntent.init()))
                 .previewContext(WidgetPreviewContext(family: .systemMedium))
             
@@ -72,6 +76,37 @@ extension FoodSecretWidgetEntryView{
             SymmaryCalloriesProgressView(entry: WidgetEntry.placeholder())
                 .redacted(reason: .placeholder)
         }
+    }
+}
+
+
+//MARK: - Water type
+
+extension FoodSecretWidgetEntryView{
+    @ViewBuilder
+    private var waterType: some View{
+        let value = entry.water.waterValue ?? 0
+        let waterTarget = 2
+        let persent = value.calculatePercentage(for: Double(waterTarget))
+        VStack(alignment: .leading, spacing: 10){
+            HStack{
+                Spacer()
+                Image(systemName: "drop.fill")
+                    .imageScale(.large)
+                      .foregroundColor(Color(.systemCyan))
+            }
+            VStack(alignment: .leading){
+                Text(String(format: "%.2f L", value))
+                    .font(.title.weight(.medium))
+                Text("Target \(waterTarget) L")
+                    .font(.caption)
+            }
+            LineProgressView(value: persent)
+                .frame(height: 5)
+                .padding(.top)
+            Spacer()
+        }
+        .padding(.horizontal, 5)
     }
 }
 

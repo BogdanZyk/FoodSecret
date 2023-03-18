@@ -14,5 +14,6 @@ struct FoodSecretWidgetBundle: WidgetBundle {
     var body: some Widget {
         FoodSecretWidget(viewContext: context, widgetType: .macronutrients)
         FoodSecretWidget(viewContext: context, widgetType: .calSymmary)
+        FoodSecretWidget(viewContext: context, widgetType: .water)
     }
 }

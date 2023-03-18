@@ -22,7 +22,7 @@ struct FoodSecretWidget: Widget {
         }
         .configurationDisplayName(widgetType.rawValue)
         .description(widgetType.description)
-        .supportedFamilies([.systemMedium])
+        .supportedFamilies([widgetType.supportedFamilies])
     }
 }
 
@@ -40,6 +40,7 @@ struct FoodSecretWidget_Previews: PreviewProvider {
 enum WidgetType: String, CaseIterable{
     case macronutrients = "Macronutrients"
     case calSymmary = "Symmary"
+    case water = "Water"
     
     var kind: String {"FoodSecretWidget" + self.rawValue}
     
@@ -49,6 +50,17 @@ enum WidgetType: String, CaseIterable{
             return "Monitor your calorie and nutrient intake"
         case .calSymmary:
             return "View how many calories you've consumed and how many you have left"
+        case .water:
+            return "Keep track of your water consumption"
+        }
+    }
+    
+    var supportedFamilies: WidgetFamily{
+        switch self {
+        case .macronutrients, .calSymmary:
+            return .systemMedium
+        case .water:
+            return .systemSmall
         }
     }
 }
