@@ -14,6 +14,7 @@ class RootViewModel: ObservableObject{
     @Published private(set) var foods = [FoodEntity]()
     @Published private(set) var water: WaterEntity?
     @Published var showAddFoodView: Bool = false
+    @Published var showMealsMenu: Bool = false
     @Published var selectedMealType: MealType = .dinner
     @Published var selectedDate: Date = .now
     @Published var curretTab: Tab = .home

@@ -72,9 +72,11 @@ extension WaterSectionView{
         .padding(.horizontal, 10)
         .onTapGesture {
             rootVM.updateWater(value: 0.25)
+            Haptics.shared.notify(.success)
         }
         .onLongPressGesture {
             rootVM.updateWater(value: -0.25)
+            Haptics.shared.play(.heavy)
         }
     }
 }

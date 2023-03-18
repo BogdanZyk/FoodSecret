@@ -18,6 +18,7 @@ struct RootView: View {
             recepiesViewContainer
             profileViewContainer
         }
+        
     }
 }
 
@@ -35,7 +36,18 @@ extension RootView{
         NavigationStack{
             VStack(spacing: 0){
                 HomeView()
+                    .overlay{
+                        overlayView
+                    }
                 tabView
+                    .overlay {
+                        Group{
+                            if rootVM.showMealsMenu{
+                                Color.secondary.opacity(0.5).ignoresSafeArea()
+                            }
+                        }
+                        .animation(.easeInOut(duration: 0.2), value: rootVM.showMealsMenu)
+                    }
             }
         }
         .tag(Tab.home)
@@ -61,4 +73,50 @@ extension RootView{
         }
         .tag(Tab.profile)
     }
+}
+
+extension RootView{
+    
+    @ViewBuilder
+    private var overlayView: some View{
+        Group{
+            if rootVM.showMealsMenu{
+                Color.secondary.opacity(0.5).ignoresSafeArea()
+                    .onTapGesture {
+                        rootVM.showMealsMenu.toggle()
+                    }
+            }
+            if rootVM.curretTab == .home{
+                VStack(alignment: .trailing, spacing: 12) {
+                    
+                    if rootVM.showMealsMenu{
+                        MealMenuView { type in
+                            rootVM.showMealsMenu = false
+                            rootVM.showAddFoodView(type)
+                        }
+                        .padding(.trailing, 10)
+                    }
+                    
+                    ZStack {
+                        Circle()
+                            .fill(Color.accentColor)
+                        Image(systemName: "plus")
+                            .foregroundColor(.white)
+                            .imageScale(.large)
+                            .rotationEffect(.degrees(rootVM.showMealsMenu ? 45 : 0))
+                    }
+                    .frame(width: 55, height: 55)
+                    
+                    //.padding(.bottom, 45)
+                    .onTapGesture {
+                        rootVM.showMealsMenu.toggle()
+                    }
+                }
+                .padding()
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: Alignment(horizontal: .trailing, vertical: .bottom))
+            }
+        }
+        .animation(.easeInOut(duration: 0.2), value: rootVM.showMealsMenu)
+    }
+    
 }

@@ -14,6 +14,7 @@ struct DatePickerSheetView: View {
         VStack(spacing: 32){
             HStack{
                 Button {
+                    Haptics.shared.play(.light)
                     rootVM.selectedDate = Date()
                     dismiss()
                 } label: {
@@ -31,7 +32,8 @@ struct DatePickerSheetView: View {
                 }
             }
             CustomDatePickerView(selectedDate: $rootVM.selectedDate)
-                .onChange(of: rootVM.selectedDate) { newValue in
+                .onChange(of: rootVM.selectedDate) { _ in
+                    Haptics.shared.play(.light)
                     rootVM.fetchCoreData()
                     dismiss()
                 }
