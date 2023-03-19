@@ -40,19 +40,18 @@ struct Food: Codable {
     }
     
     var nutritionDataForPer100Gramm: NutritionData{
-        let weightFactor = Double(100 / (servingWeightGrams ?? 1))
+        let weightFactor = 100.0 / Double(servingWeightGrams ?? 1)
         return calcNutritionData(weightFactor: weightFactor)
     }
     
     func calculeteNutritionData(for weight: Double) -> NutritionData{
         let weightFactor = weight / 100.0
         let dataForPer100Gramm = nutritionDataForPer100Gramm
-        
-        return .init(cal: nutritionDataForPer100Gramm.cal * weightFactor,
-                     fat: nutritionDataForPer100Gramm.cal * weightFactor,
-                     carb: nutritionDataForPer100Gramm.carb * weightFactor,
-                     protein: nutritionDataForPer100Gramm.protein * weightFactor,
-                     sugar: nutritionDataForPer100Gramm.sugar * weightFactor)
+        return .init(cal: dataForPer100Gramm.cal * weightFactor,
+                     fat: dataForPer100Gramm.fat * weightFactor,
+                     carb: dataForPer100Gramm.carb * weightFactor,
+                     protein: dataForPer100Gramm.protein * weightFactor,
+                     sugar: dataForPer100Gramm.sugar * weightFactor)
     }
     
     private func calcNutritionData(weightFactor: Double) -> NutritionData{

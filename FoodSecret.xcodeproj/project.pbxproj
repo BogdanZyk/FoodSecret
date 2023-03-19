@@ -36,6 +36,9 @@
 		5A52A6D729C31440002A68E5 /* SearhFoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52A6D629C31440002A68E5 /* SearhFoodViewModel.swift */; };
 		5A52A6DD29C3222D002A68E5 /* DetailsProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52A6DC29C3222D002A68E5 /* DetailsProductView.swift */; };
 		5A52A6DF29C323CC002A68E5 /* DetailsProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52A6DE29C323CC002A68E5 /* DetailsProductViewModel.swift */; };
+		5A52BEC929C77AE6007129D1 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52BEC829C77AE6007129D1 /* ImagePicker.swift */; };
+		5A52BECB29C77DD1007129D1 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52BECA29C77DD1007129D1 /* FileManager.swift */; };
+		5A52BECC29C77F93007129D1 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52BECA29C77DD1007129D1 /* FileManager.swift */; };
 		5A556F0029C46BD4002DAD54 /* NumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A556EFF29C46BD4002DAD54 /* NumberTextField.swift */; };
 		5A556F0229C46D09002DAD54 /* EditInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A556F0129C46D09002DAD54 /* EditInfoView.swift */; };
 		5A556F0429C47BEB002DAD54 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A556F0329C47BEB002DAD54 /* ButtonStyle.swift */; };
@@ -152,6 +155,8 @@
 		5A52A6D629C31440002A68E5 /* SearhFoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearhFoodViewModel.swift; sourceTree = "<group>"; };
 		5A52A6DC29C3222D002A68E5 /* DetailsProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsProductView.swift; sourceTree = "<group>"; };
 		5A52A6DE29C323CC002A68E5 /* DetailsProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsProductViewModel.swift; sourceTree = "<group>"; };
+		5A52BEC829C77AE6007129D1 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		5A52BECA29C77DD1007129D1 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		5A556EFF29C46BD4002DAD54 /* NumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberTextField.swift; sourceTree = "<group>"; };
 		5A556F0129C46D09002DAD54 /* EditInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoView.swift; sourceTree = "<group>"; };
 		5A556F0329C47BEB002DAD54 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
@@ -335,6 +340,7 @@
 				5A8B706129C461EF00379520 /* UserDefaults.swift */,
 				5A36306029C51F03008E7E05 /* Color.swift */,
 				5AA36D5A29C66C5500BC72D5 /* UIApllication.swift */,
+				5A52BECA29C77DD1007129D1 /* FileManager.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -422,6 +428,14 @@
 				5A556F0329C47BEB002DAD54 /* ButtonStyle.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		5A52BEC729C77AD8007129D1 /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				5A52BEC829C77AE6007129D1 /* ImagePicker.swift */,
+			);
+			path = ImagePicker;
 			sourceTree = "<group>";
 		};
 		5A556EFE29C46BC3002DAD54 /* TextFields */ = {
@@ -580,6 +594,7 @@
 		5AB741CD29C1FD3F00821457 /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				5A52BEC729C77AD8007129D1 /* ImagePicker */,
 				5A36306229C52245008E7E05 /* DatePicker */,
 				5A556EFE29C46BC3002DAD54 /* TextFields */,
 				5A52A6E029C32B27002A68E5 /* Buttons */,
@@ -741,6 +756,7 @@
 				5AB741D829C210D800821457 /* AllMealsFoodView.swift in Sources */,
 				5A556F0929C497A5002DAD54 /* RootView+TabView.swift in Sources */,
 				5AA36D5929C6025A00BC72D5 /* MealsMenuView.swift in Sources */,
+				5A52BEC929C77AE6007129D1 /* ImagePicker.swift in Sources */,
 				5AB741B729C1B1FF00821457 /* CoreDataExt.swift in Sources */,
 				5A36305629C4FE7E008E7E05 /* WaterSectionView.swift in Sources */,
 				5AA36D5B29C66C5500BC72D5 /* UIApllication.swift in Sources */,
@@ -781,6 +797,7 @@
 				5A4EA62129C3705D00CCAF47 /* CoreDataManager.swift in Sources */,
 				5A36305829C4FF9F008E7E05 /* GlassView.swift in Sources */,
 				5AB741C329C1BD0200821457 /* FoodEntity+Extension.swift in Sources */,
+				5A52BECB29C77DD1007129D1 /* FileManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -798,6 +815,7 @@
 				5A556F4A29C4A545002DAD54 /* FoodSecretWidgetBundle.swift in Sources */,
 				5A556F6B29C4A6D8002DAD54 /* CoreDataExt.swift in Sources */,
 				5A556F5C29C4A565002DAD54 /* FoodSecretWidgetEntryView.swift in Sources */,
+				5A52BECC29C77F93007129D1 /* FileManager.swift in Sources */,
 				5A556F6A29C4A6D2002DAD54 /* WaterEntity+Extensions.swift in Sources */,
 				5A556F6329C4A57B002DAD54 /* WidgetEntry.swift in Sources */,
 				5A556F6F29C4AF57002DAD54 /* UserHalfInfo.swift in Sources */,
@@ -959,6 +977,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -994,6 +1013,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -13,12 +13,14 @@ struct ProductEditorView: View {
     let mealType: MealType
     @StateObject private var viewModel = ProductEditorViewModel()
     @FocusState private var isFocused: Bool
+    @State private var showConfirmationDialog: Bool = false
     var body: some View {
         VStack(spacing: 16){
             headerView
             productNameSection
             calloriesTextField
             nutritionInfoSection
+            imageSection
             Spacer()
         }
         .padding()
@@ -26,6 +28,17 @@ struct ProductEditorView: View {
         .onAppear{
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1){
                 isFocused = true
+            }
+        }
+        .imagePicker(pickerType: viewModel.pickerType, show: $viewModel.showPicker, imagesData: $viewModel.imagesData)
+        .confirmationDialog("", isPresented: $showConfirmationDialog) {
+            Button("Camera") {
+                viewModel.pickerType = .camera
+                viewModel.showPicker.toggle()
+            }
+            Button("Photo") {
+                viewModel.pickerType = .photoLib
+                viewModel.showPicker.toggle()
             }
         }
     }
@@ -88,6 +101,33 @@ extension ProductEditorView{
             NumberTextField(value: $viewModel.customProduct.carbohydrate, promt: "0g", label: "Carbs")
             NumberTextField(value: $viewModel.customProduct.fats, promt: "0g", label: "Fat")
         }
+    }
+    
+    private var imageSection: some View{
+        HStack {
+            Button {
+                showConfirmationDialog.toggle()
+            } label: {
+                ZStack{
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(Color(.systemGray5))
+                    Image(systemName: "plus")
+                        .font(.title3.bold())
+                }
+                .frame(width: 100, height: 100)
+            }
+            if let image = viewModel.imagesData.first?.image{
+                Image(uiImage: image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 100, height: 100)
+                    .cornerRadius(12)
+                    .onTapGesture {
+                        viewModel.imagesData = []
+                    }
+            }
+        }
+        .hLeading()
     }
 }
 

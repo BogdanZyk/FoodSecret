@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 import CoreData
 
 
@@ -28,6 +29,17 @@ extension FoodEntity{
         get { .init(rawValue: mealType_) ?? .breakfast }
         set { mealType_ = newValue.rawValue }
     }
+    
+    
+    var uiImage: UIImage{
+        if let image, !image.isEmpty, let uImage = FileManager().retrieveImage(with: image){
+            return uImage
+        }else{
+            return UIImage(systemName: "fork.knife")!
+        }
+    }
+
+    
     
     static func fetchForDate(for date: Date) -> NSFetchRequest<FoodEntity> {
         let request = NSFetchRequest<FoodEntity>(entityName: "FoodEntity")
@@ -87,6 +99,9 @@ extension FoodEntity{
     
     static func delete(_ item: FoodEntity){
         if let context = item.managedObjectContext{
+            if item.userFood, let image = item.image{
+                FileManager().deleteImage(with: image)
+            }
             context.delete(item)
             context.saveContext()
         }

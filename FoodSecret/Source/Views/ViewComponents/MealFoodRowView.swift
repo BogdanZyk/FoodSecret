@@ -12,9 +12,7 @@ struct MealFoodRowView: View {
     let onDelete: (FoodEntity) -> ()
     var body: some View {
         HStack(spacing: 10){
-            NukeLazyImage(strUrl: food.image)
-                .frame(width: 45, height: 45)
-                .cornerRadius(10)
+            image
             VStack(alignment: .leading, spacing: 2) {
                 Text(food.foodNameEditable.capitalized)
                     .font(.headline)
@@ -43,5 +41,25 @@ struct FoodRowView_Previews: PreviewProvider {
         }
         
         .listStyle(.plain)
+    }
+    
+   
+}
+
+
+extension MealFoodRowView{
+    
+    private var image: some View{
+        Group{
+            if food.userFood{
+               Image(uiImage: food.uiImage)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+            }else{
+                NukeLazyImage(strUrl: food.image)
+            }
+        }
+        .frame(width: 45, height: 45)
+        .cornerRadius(10)
     }
 }

@@ -26,8 +26,7 @@ struct DetailsProductView: View {
         ScrollView(.vertical, showsIndicators: false){
             VStack(spacing: 16) {
                 if let food = viewModel.product{
-                    NukeLazyImage(strUrl: food.photo.thumb, resizeHeight: 500, resizingMode: .aspectFit, loadPriority: .high)
-                        .frame(height: 200)
+                    image(food)
                     VStack(alignment: .leading, spacing: 10){
                         Text(food.foodName ?? "non")
                             .font(.title2.bold())
@@ -68,6 +67,22 @@ struct DetailsProductView_Previews: PreviewProvider {
 }
 
 extension DetailsProductView{
+    
+    private func image(_ food: Food) -> some View{
+        Group{
+            if viewModel.foodEntity?.userFood ?? false, let image = viewModel.foodEntity?.uiImage{
+                Image(uiImage: image)
+                     .resizable()
+                     .aspectRatio(contentMode: .fill)
+            }else{
+                NukeLazyImage(strUrl: food.photo.thumb, resizeHeight: 500, resizingMode: .aspectFit, loadPriority: .high)
+            }
+        }
+        .frame(height: 200)
+        .clipped()
+    }
+    
+    
     @ViewBuilder
     private func usedNutritionInfoSection(_ food: Food) -> some View{
         let usedNutrienData = food.calculeteNutritionData(for: viewModel.weight)
