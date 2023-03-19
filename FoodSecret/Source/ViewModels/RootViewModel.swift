@@ -75,8 +75,8 @@ extension RootViewModel{
         fetchWater()
     }
     
-    func updateFood(for food: FoodEntity, weight: Double, mealType: MealType){
-        dataManager.updateFood(for: food, weight: weight, mealType: mealType)
+    func updateFood(for foodEntity: FoodEntity, weight: Double, food: Food, mealType: MealType){
+        dataManager.updateFood(for: foodEntity, weight: weight, food: food, mealType: mealType)
         fetchFoods()
     }
     

@@ -16,7 +16,6 @@ struct NutrientInfo: Codable {
 struct Food: Codable {
     
     let foodName: String?
-    let servingQty: Int?
     let servingWeightGrams: Int?
     let nfCalories, nfTotalFat: Double?
     let nfTotalCarbohydrate: Double?
@@ -27,7 +26,6 @@ struct Food: Codable {
     enum CodingKeys: String, CodingKey {
         
         case foodName = "food_name"
-        case servingQty = "serving_qty"
         case servingWeightGrams = "serving_weight_grams"
         case nfCalories = "nf_calories"
         case nfTotalFat = "nf_total_fat"
@@ -44,8 +42,14 @@ struct Food: Codable {
     }
     
     func calculeteNutritionData(for weight: Double) -> NutritionData{
-        let weightFactor = Double(weight / 100)
-        return calcNutritionData(weightFactor: weightFactor)
+        let weightFactor = weight / 100.0
+        let dataForPer100Gramm = nutritionDataForPer100Gramm
+        
+        return .init(cal: nutritionDataForPer100Gramm.cal * weightFactor,
+                     fat: nutritionDataForPer100Gramm.cal * weightFactor,
+                     carb: nutritionDataForPer100Gramm.carb * weightFactor,
+                     protein: nutritionDataForPer100Gramm.protein * weightFactor,
+                     sugar: nutritionDataForPer100Gramm.sugar * weightFactor)
     }
     
     private func calcNutritionData(weightFactor: Double) -> NutritionData{
@@ -53,7 +57,8 @@ struct Food: Codable {
         let fat = (nfTotalFat ?? 0) * weightFactor
         let carb = (nfTotalCarbohydrate ?? 0) * weightFactor
         let protein = (nfProtein ?? 0) * weightFactor
-        return .init(cal: cal, fat: fat, carb: carb, protein: protein)
+        let sugar = (nfSugars ?? 0) * weightFactor
+        return .init(cal: cal, fat: fat, carb: carb, protein: protein, sugar: sugar)
     }
     
     
@@ -63,6 +68,7 @@ struct Food: Codable {
         var fat: Double
         var carb: Double
         var protein: Double
+        var sugar: Double
     }
 }
 

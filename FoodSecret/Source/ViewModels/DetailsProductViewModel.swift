@@ -29,7 +29,7 @@ class DetailsProductViewModel: ObservableObject{
     
     private func setProductformEntity(_ foodEntity: FoodEntity) {
         
-        let food: Food = .init(foodName: foodEntity.foodNameEditable, servingQty: 0, servingWeightGrams: Int(foodEntity.weight), nfCalories: foodEntity.calories, nfTotalFat: foodEntity.fat, nfTotalCarbohydrate: foodEntity.carbohydrate, nfSugars: 0, nfProtein: foodEntity.protein, photo: .init(thumb: foodEntity.image ?? ""), claims: [])
+        let food: Food = .init(foodName: foodEntity.foodNameEditable, servingWeightGrams: Int(foodEntity.weight), nfCalories: foodEntity.calories, nfTotalFat: foodEntity.fat, nfTotalCarbohydrate: foodEntity.carbohydrate, nfSugars: foodEntity.sugars, nfProtein: foodEntity.protein, photo: .init(thumb: foodEntity.image ?? ""), claims: [])
         weight = foodEntity.weight
         product = food
     }

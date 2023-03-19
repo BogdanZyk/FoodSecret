@@ -13,7 +13,6 @@ struct DetailsProductView: View {
     @StateObject private var viewModel: DetailsProductViewModel
     @State private var selectedMealtype: MealType
     let mealType: MealType
-    
     private var isUpdateView: Bool
     
     init(_ productName: String, foodEntity: FoodEntity? = nil, mealType: MealType){
@@ -36,7 +35,7 @@ struct DetailsProductView: View {
                         clamsAndNutritionProductData(food)
                         
                     }
-                    .padding(.horizontal)
+                    .padding([.horizontal, .bottom])
                 }else{
                     ProgressView()
                         .padding(.top, 50)
@@ -53,7 +52,6 @@ struct DetailsProductView: View {
         .toolbar {
             ToolbarItem(placement: .principal) {
                 menuMealType
-
             }
         }
     }
@@ -96,15 +94,16 @@ extension DetailsProductView{
             .background(Color(.systemGray4), in: RoundedRectangle(cornerRadius: 12))
             
             Button {
-                if let food = viewModel.product, !isUpdateView{
-                    rootVM.addFood(for: food, userFood: false, weight: viewModel.weight, mealType: mealType)
-                    nc.post(name: .addNewProduct)
-                    
-                }else if let foodEntity = viewModel.foodEntity{
-                    
-                    rootVM.updateFood(for: foodEntity, weight: viewModel.weight, mealType: selectedMealtype)
+                if let food = viewModel.product{
+                    if let foodEntity = viewModel.foodEntity, isUpdateView{
+                        rootVM.updateFood(for: foodEntity, weight: viewModel.weight, food: food, mealType: selectedMealtype)
+                    }else{
+                        rootVM.addFood(for: food, userFood: false, weight: viewModel.weight, mealType: mealType)
+                        nc.post(name: .addNewProduct)
+                    }
+                    dismiss()
                 }
-                dismiss()
+                
             } label: {
                 Text(isUpdateView ? "Save" : "Add food")
                    .font(.title3.weight(.bold))
@@ -136,6 +135,7 @@ extension DetailsProductView{
                 nutritionRowView("Protein", nutritionData.protein.toWeight)
                 nutritionRowView("Fats", nutritionData.fat.toWeight)
                 nutritionRowView("Carbs", nutritionData.carb.toWeight)
+                nutritionRowView("Sugar", nutritionData.sugar.toWeight)
             }
         }
     }
@@ -151,8 +151,8 @@ extension DetailsProductView{
     
     @ViewBuilder
     private var menuMealType: some View{
-        //if isUpdateView{
-        
+        if isUpdateView{
+            
             Picker(selection: $selectedMealtype) {
                 ForEach(MealType.allCases, id: \.self) { type in
                     Text("\(type.emoji) \(type.title)")
@@ -166,23 +166,10 @@ extension DetailsProductView{
             .tint(.primaryFont)
             .pickerStyle(.menu)
             .padding(.trailing, getRect().width / 3)
-
-        
-        
-//            Menu {
-//                ForEach(MealType.allCases, id: \.self) { type in
-//                    Button("\(type.emoji) \(type.title)") {
-//                        selectedMealtype = type
-//                    }
-//                }
-//            } label: {
-//                HStack {
-//                    Text(selectedMealtype.emoji)
-//                    Text(selectedMealtype.title)
-//                        .font(.headline)
-//                }
-//            }
-        //}
+        }else{
+            Text("\(selectedMealtype.emoji) \(selectedMealtype.title)")
+                .font(.headline)
+        }
     }
 }
 

@@ -57,13 +57,27 @@ extension FoodEntity{
         food.createAt = date
         food.image = product.photo.thumb
         food.mealType = mealType
+        food.sugars = nutrientData.sugar
+        print(nutrientData.sugar)
         food.userFood = userFood
         
         context.saveContext()
     }
     
-    static func update(_ item: FoodEntity){
-        if let context = item.managedObjectContext{
+    static func update(foodEntity: FoodEntity,
+                       weight: Double,
+                       food: Food,
+                       mealType: MealType){
+        
+        if let context = foodEntity.managedObjectContext{
+            let nutrientData = food.calculeteNutritionData(for: weight)
+            foodEntity.fat = nutrientData.fat
+            foodEntity.protein = nutrientData.protein
+            foodEntity.carbohydrate = nutrientData.cal
+            foodEntity.calories = nutrientData.cal
+            foodEntity.weight = weight
+            foodEntity.sugars = nutrientData.sugar
+            foodEntity.mealType = mealType
             context.saveContext()
         }
     }

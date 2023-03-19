@@ -51,10 +51,8 @@ struct CoreDataManager {
         WaterEntity.update(water, value: value, context: mainContext, date: date)
     }
     
-    func updateFood(for food: FoodEntity, weight: Double, mealType: MealType){
-        food.weight = weight
-        food.mealType = mealType
-        FoodEntity.update(food)
+    func updateFood(for foodEntity: FoodEntity, weight: Double, food: Food, mealType: MealType){
+        FoodEntity.update(foodEntity: foodEntity, weight: weight, food: food, mealType: mealType)
     }
     
     func addFood(food: Food, mealType: MealType, weight: Double, userFood: Bool, date: Date){

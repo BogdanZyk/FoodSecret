@@ -19,7 +19,7 @@ class ProductEditorViewModel: ObservableObject{
     }
     
     func createFood(mealType: MealType) -> Food{
-        return Food(foodName: customProduct.name, servingQty: 0, servingWeightGrams: 0, nfCalories: customProduct.callories, nfTotalFat: customProduct.fats, nfTotalCarbohydrate: customProduct.carbohydrate, nfSugars: 0, nfProtein: customProduct.protein, photo: .init(thumb: ""), claims: [])
+        Food(foodName: customProduct.name, servingWeightGrams: Int(customProduct.weight), nfCalories: customProduct.callories, nfTotalFat: customProduct.fats, nfTotalCarbohydrate: customProduct.carbohydrate, nfSugars: 0, nfProtein: customProduct.protein, photo: .init(thumb: ""), claims: [])
     }
     
     

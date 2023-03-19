@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MealFoodRowView: View {
-    let food: FoodEntity
+    @ObservedObject var food: FoodEntity
     let onDelete: (FoodEntity) -> ()
     var body: some View {
         HStack(spacing: 10){
