@@ -15,7 +15,7 @@ struct AllMealsFoodView: View {
                 Section {
                     ForEach(rootVM.foodForMeals(type)){food in
                         NavigationLink {
-                            UpdateView(item: food)
+                            DetailsProductView(food.foodNameEditable, foodEntity: food, mealType: type)
                         } label: {
                             MealFoodRowView(food: food, onDelete: rootVM.removeFood)
                         }

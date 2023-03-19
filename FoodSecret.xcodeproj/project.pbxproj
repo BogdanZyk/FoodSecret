@@ -39,6 +39,7 @@
 		5A52BEC929C77AE6007129D1 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52BEC829C77AE6007129D1 /* ImagePicker.swift */; };
 		5A52BECB29C77DD1007129D1 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52BECA29C77DD1007129D1 /* FileManager.swift */; };
 		5A52BECC29C77F93007129D1 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52BECA29C77DD1007129D1 /* FileManager.swift */; };
+		5A52BECE29C7960E007129D1 /* RootView+OverlayMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52BECD29C7960E007129D1 /* RootView+OverlayMenu.swift */; };
 		5A556F0029C46BD4002DAD54 /* NumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A556EFF29C46BD4002DAD54 /* NumberTextField.swift */; };
 		5A556F0229C46D09002DAD54 /* EditInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A556F0129C46D09002DAD54 /* EditInfoView.swift */; };
 		5A556F0429C47BEB002DAD54 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A556F0329C47BEB002DAD54 /* ButtonStyle.swift */; };
@@ -157,6 +158,7 @@
 		5A52A6DE29C323CC002A68E5 /* DetailsProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsProductViewModel.swift; sourceTree = "<group>"; };
 		5A52BEC829C77AE6007129D1 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		5A52BECA29C77DD1007129D1 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		5A52BECD29C7960E007129D1 /* RootView+OverlayMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootView+OverlayMenu.swift"; sourceTree = "<group>"; };
 		5A556EFF29C46BD4002DAD54 /* NumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberTextField.swift; sourceTree = "<group>"; };
 		5A556F0129C46D09002DAD54 /* EditInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoView.swift; sourceTree = "<group>"; };
 		5A556F0329C47BEB002DAD54 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
@@ -368,9 +370,9 @@
 		5A38A1FB29C0FB8D00947AEC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5AB741CD29C1FD3F00821457 /* ViewComponents */,
 				5A8B705E29C4610B00379520 /* ProfileView */,
 				5A556F0529C484E5002DAD54 /* RootView */,
-				5AB741CD29C1FD3F00821457 /* ViewComponents */,
 				5AB741C829C1F73F00821457 /* HomeView */,
 			);
 			path = Views;
@@ -452,6 +454,7 @@
 				5A556F0629C484FD002DAD54 /* RootView.swift */,
 				5A556F0829C497A5002DAD54 /* RootView+TabView.swift */,
 				5AA36D5829C6025A00BC72D5 /* MealsMenuView.swift */,
+				5A52BECD29C7960E007129D1 /* RootView+OverlayMenu.swift */,
 			);
 			path = RootView;
 			sourceTree = "<group>";
@@ -789,6 +792,7 @@
 				5A52A6CC29C27F34002A68E5 /* NukeLazyImage.swift in Sources */,
 				5AB741CF29C1FD5600821457 /* CircleProgressView.swift in Sources */,
 				5A8B706729C4653200379520 /* ProfileView.swift in Sources */,
+				5A52BECE29C7960E007129D1 /* RootView+OverlayMenu.swift in Sources */,
 				5A4EA62429C3808F00CCAF47 /* HomeSymmaryView.swift in Sources */,
 				5A8B706229C461EF00379520 /* UserDefaults.swift in Sources */,
 				5A52A6DD29C3222D002A68E5 /* DetailsProductView.swift in Sources */,
