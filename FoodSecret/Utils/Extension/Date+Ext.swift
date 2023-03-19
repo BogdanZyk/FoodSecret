@@ -67,3 +67,10 @@ extension Date {
         return formatter.string(from: self)
     }
 }
+
+
+extension StringProtocol {
+    var words: [SubSequence] {
+        return split { !$0.isLetter }
+    }
+}

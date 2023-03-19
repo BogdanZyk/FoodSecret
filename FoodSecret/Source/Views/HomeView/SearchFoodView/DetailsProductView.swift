@@ -121,11 +121,13 @@ extension DetailsProductView{
         let nutritionData = food.nutritionDataForPer100Gramm
         VStack(alignment: .leading, spacing: 16) {
             
-            VStack(alignment: .leading, spacing: 16) {
-                Text("Clams")
-                    .font(.headline)
-                Text(food.claims.joined(separator: ", "))
-                    .font(.subheadline)
+            if !food.clamsString.isEmpty{
+                VStack(alignment: .leading, spacing: 16) {
+                    Text("Clams")
+                        .font(.headline)
+                    Text(food.clamsString)
+                        .font(.subheadline)
+                }
             }
             
             Text("Nutrition per 100 gramm")

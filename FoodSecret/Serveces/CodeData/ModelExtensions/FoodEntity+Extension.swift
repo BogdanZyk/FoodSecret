@@ -20,6 +20,9 @@ extension FoodEntity{
         calories.toCalories
     }
     
+    var clamsArray: [String]{
+        clams?.words.compactMap({String($0)}) ?? []
+    }
     
     var mealType: MealType{
         get { .init(rawValue: mealType_) ?? .breakfast }
@@ -58,8 +61,8 @@ extension FoodEntity{
         food.image = product.photo.thumb
         food.mealType = mealType
         food.sugars = nutrientData.sugar
-        print(nutrientData.sugar)
         food.userFood = userFood
+        food.clams = product.clamsString
         
         context.saveContext()
     }

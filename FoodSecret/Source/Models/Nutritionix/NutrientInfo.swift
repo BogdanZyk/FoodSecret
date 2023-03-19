@@ -35,6 +35,9 @@ struct Food: Codable {
         case photo, claims
     }
     
+    var clamsString: String{
+        claims.joined(separator: ", ")
+    }
     
     var nutritionDataForPer100Gramm: NutritionData{
         let weightFactor = Double(100 / (servingWeightGrams ?? 1))
