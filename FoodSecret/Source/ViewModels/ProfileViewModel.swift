@@ -18,7 +18,10 @@ class ProfileViewModel: ObservableObject {
         halfInfo = tempInfo
     }
     
-  
+    func saveWater(_ water: WaterInfo){
+        halfInfo.waterInfo = water
+        UserSettings.HalfInfo.info = halfInfo
+    }
 }
 
 

@@ -1,5 +1,5 @@
 //
-//  EditInfoView.swift
+//  ProfilePersonalInformationView.swift
 //  FoodSecret
 //
 //  Created by Bogdan Zykov on 17.03.2023.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct EditInfoView: View {
+struct ProfilePersonalInformationView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var isDisabled: Bool = true
     @State private var tempInfo: UserHalfInfo
     @ObservedObject var profileVM: ProfileViewModel
-    
+    @State private var showInfoAlert: Bool = false
     init(tempInfo: UserHalfInfo, profileVM: ProfileViewModel){
         self._tempInfo = State(wrappedValue: profileVM.halfInfo)
         self._profileVM = ObservedObject(wrappedValue: profileVM)
@@ -26,26 +26,31 @@ struct EditInfoView: View {
             Spacer()
         }
         .padding()
-        .navigationTitle("Edit info")
+        .navigationTitle("Personal Information")
         .navigationBarTitleDisplayMode(.inline)
         .onChange(of: tempInfo) { _ in
             isDisabled = false
         }
-    }
-}
-
-struct EditInfoView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationStack {
-            EditInfoView(tempInfo: .init(weight: 0, gender: .male, age: 0, height: 0, activityLevel: .hight, goal: .gain), profileVM: ProfileViewModel())
+        .alert(alertMessage, isPresented: $showInfoAlert){
+            Button("OK") {
+                dismiss()
+            }
         }
     }
 }
 
-extension EditInfoView{
+struct ProfilePersonalInformationView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationStack {
+            ProfilePersonalInformationView(tempInfo: .init(weight: 0, gender: .male, age: 0, height: 0, activityLevel: .hight, goal: .gain), profileVM: ProfileViewModel())
+        }
+    }
+}
+
+extension ProfilePersonalInformationView{
     
     private var privateInfoSection: some View{
-        HStack(spacing: 20){
+        HStack(spacing: 30){
             NumberTextField(
                 value: Binding(get: {
                 Double(tempInfo.age)
@@ -58,7 +63,7 @@ extension EditInfoView{
     }
     
     private var goalsInfoSection: some View{
-        VStack(alignment: .leading, spacing: 16){
+        VStack(alignment: .leading, spacing: 20){
            
             Picker(selection: $tempInfo.goal) {
                 ForEach(UserHalfInfo.GoalType.allCases, id: \.self){type in
@@ -66,7 +71,7 @@ extension EditInfoView{
                         .tag(type)
                 }
             } label: {
-                Text("Goal")
+                Text("Target")
                     .font(.headline)
             }
             .pickerStyle(.navigationLink)
@@ -92,7 +97,7 @@ extension EditInfoView{
                         .tag(type)
                 }
             } label: {
-                Text("Goal")
+                Text("Activity level")
                     .font(.headline)
             }
             .pickerStyle(.navigationLink)
@@ -105,7 +110,7 @@ extension EditInfoView{
     private var saveButton: some View{
         Button {
             profileVM.saveInfo(tempInfo)
-            dismiss()
+            showInfoAlert.toggle()
         } label: {
             Text("Save")
         }
@@ -113,6 +118,9 @@ extension EditInfoView{
         .disabled(isDisabled)
     }
     
+    private var alertMessage: String{
+        "You have made changes that affect your calorie allowance. Your new calorie allowance is \(profileVM.halfInfo.totalCallories.toCalories)."
+    }
 }
 
 

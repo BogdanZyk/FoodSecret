@@ -16,6 +16,11 @@ struct WaterSectionView: View {
     var numberOfWaterGlasses: Int{
         rootVM.water?.glassesCoint ?? 0
     }
+    
+    var isCompletedWater: Bool{
+        numberOfWaterGlasses == rootVM.halfInfo.waterInfo.glassesCount
+    }
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             Text("Tracking of water you drink")
@@ -47,8 +52,15 @@ extension WaterSectionView{
         VStack(spacing: 0) {
             Text("Water")
                 .font(.headline.bold())
-            Text("Target 2 L")
-                .font(.caption2)
+            Group{
+                if isCompletedWater{
+                    Text("Daily target completed!")
+                }else{
+                    Text("Target \(rootVM.halfInfo.waterInfo.totalValue.treeNumString) L")
+                }
+            }
+            .font(.caption2)
+            
             Text(String(format: "%.2f L", waterValue))
                 .font(.title3.weight(.medium))
                 .padding(.top, 6)
@@ -71,8 +83,10 @@ extension WaterSectionView{
         .frame(height: 55)
         .padding(.horizontal, 10)
         .onTapGesture {
-            rootVM.updateWater(value: 0.25)
-            Haptics.shared.notify(.success)
+            if !isCompletedWater {
+                rootVM.updateWater(value: 0.25)
+                Haptics.shared.notify(.success)
+            }
         }
         .onLongPressGesture {
             rootVM.updateWater(value: -0.25)

@@ -85,9 +85,10 @@ extension FoodSecretWidgetEntryView{
 extension FoodSecretWidgetEntryView{
     @ViewBuilder
     private var waterType: some View{
+        let maxValue = Double(entry.water.maxWaterGlasses) * 0.25
         let value = entry.water.waterValue ?? 0
-        let waterTarget = 2
-        let persent = value.calculatePercentage(for: Double(waterTarget))
+        let persent = value.calculatePercentage(for: maxValue)
+        
         VStack(alignment: .leading, spacing: 10){
             HStack{
                 Spacer()
@@ -98,7 +99,7 @@ extension FoodSecretWidgetEntryView{
             VStack(alignment: .leading){
                 Text(String(format: "%.2f L", value))
                     .font(.title.weight(.medium))
-                Text("Target \(waterTarget) L")
+                Text("Target \(maxValue.treeNumString) L")
                     .font(.caption)
             }
             LineProgressView(value: persent)

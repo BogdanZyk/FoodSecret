@@ -40,8 +40,9 @@
 		5A52BECB29C77DD1007129D1 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52BECA29C77DD1007129D1 /* FileManager.swift */; };
 		5A52BECC29C77F93007129D1 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52BECA29C77DD1007129D1 /* FileManager.swift */; };
 		5A52BECE29C7960E007129D1 /* RootView+OverlayMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52BECD29C7960E007129D1 /* RootView+OverlayMenu.swift */; };
+		5A52BED129C7BB7D007129D1 /* WaterSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A52BED029C7BB7D007129D1 /* WaterSettingsView.swift */; };
 		5A556F0029C46BD4002DAD54 /* NumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A556EFF29C46BD4002DAD54 /* NumberTextField.swift */; };
-		5A556F0229C46D09002DAD54 /* EditInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A556F0129C46D09002DAD54 /* EditInfoView.swift */; };
+		5A556F0229C46D09002DAD54 /* ProfilePersonalInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A556F0129C46D09002DAD54 /* ProfilePersonalInformationView.swift */; };
 		5A556F0429C47BEB002DAD54 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A556F0329C47BEB002DAD54 /* ButtonStyle.swift */; };
 		5A556F0729C484FD002DAD54 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A556F0629C484FD002DAD54 /* RootView.swift */; };
 		5A556F0929C497A5002DAD54 /* RootView+TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A556F0829C497A5002DAD54 /* RootView+TabView.swift */; };
@@ -159,8 +160,9 @@
 		5A52BEC829C77AE6007129D1 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		5A52BECA29C77DD1007129D1 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		5A52BECD29C7960E007129D1 /* RootView+OverlayMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootView+OverlayMenu.swift"; sourceTree = "<group>"; };
+		5A52BED029C7BB7D007129D1 /* WaterSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterSettingsView.swift; sourceTree = "<group>"; };
 		5A556EFF29C46BD4002DAD54 /* NumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberTextField.swift; sourceTree = "<group>"; };
-		5A556F0129C46D09002DAD54 /* EditInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoView.swift; sourceTree = "<group>"; };
+		5A556F0129C46D09002DAD54 /* ProfilePersonalInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePersonalInformationView.swift; sourceTree = "<group>"; };
 		5A556F0329C47BEB002DAD54 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		5A556F0629C484FD002DAD54 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		5A556F0829C497A5002DAD54 /* RootView+TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootView+TabView.swift"; sourceTree = "<group>"; };
@@ -440,6 +442,15 @@
 			path = ImagePicker;
 			sourceTree = "<group>";
 		};
+		5A52BECF29C7B519007129D1 /* ProfileLinksView */ = {
+			isa = PBXGroup;
+			children = (
+				5A556F0129C46D09002DAD54 /* ProfilePersonalInformationView.swift */,
+				5A52BED029C7BB7D007129D1 /* WaterSettingsView.swift */,
+			);
+			path = ProfileLinksView;
+			sourceTree = "<group>";
+		};
 		5A556EFE29C46BC3002DAD54 /* TextFields */ = {
 			isa = PBXGroup;
 			children = (
@@ -526,9 +537,9 @@
 		5A8B705E29C4610B00379520 /* ProfileView */ = {
 			isa = PBXGroup;
 			children = (
+				5A52BECF29C7B519007129D1 /* ProfileLinksView */,
 				5A8B705F29C4611900379520 /* UserSettings.swift */,
 				5A8B706629C4653200379520 /* ProfileView.swift */,
-				5A556F0129C46D09002DAD54 /* EditInfoView.swift */,
 			);
 			path = ProfileView;
 			sourceTree = "<group>";
@@ -746,6 +757,7 @@
 				5AB741D329C206C100821457 /* MealsDetailsView.swift in Sources */,
 				5A38A1F629C0F45F00947AEC /* NutritionixEndpoint.swift in Sources */,
 				5A556F0029C46BD4002DAD54 /* NumberTextField.swift in Sources */,
+				5A52BED129C7BB7D007129D1 /* WaterSettingsView.swift in Sources */,
 				5A52A6DF29C323CC002A68E5 /* DetailsProductViewModel.swift in Sources */,
 				5A38A1B929C0802600947AEC /* ContentView.swift in Sources */,
 				5AB741C529C1DAE100821457 /* Double+ext.swift in Sources */,
@@ -766,7 +778,7 @@
 				5A36306129C51F03008E7E05 /* Color.swift in Sources */,
 				5A556F0729C484FD002DAD54 /* RootView.swift in Sources */,
 				5A38A20029C101CC00947AEC /* NutitionixProduct.swift in Sources */,
-				5A556F0229C46D09002DAD54 /* EditInfoView.swift in Sources */,
+				5A556F0229C46D09002DAD54 /* ProfilePersonalInformationView.swift in Sources */,
 				5A52A6D729C31440002A68E5 /* SearhFoodViewModel.swift in Sources */,
 				5A556F5229C4A546002DAD54 /* FoodSecretWidget.intentdefinition in Sources */,
 				5AB741D629C2096B00821457 /* SearchFoodView.swift in Sources */,

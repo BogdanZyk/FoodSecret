@@ -21,7 +21,7 @@ struct WidgetEntry: TimelineEntry {
        var entry = WidgetEntry(date: Date(), configuration: ConfigurationIntent())
         entry.usedMacronutrients = .init(callories: 930, fats: 43, proteins: 77, carbs: 120)
         entry.totalMacronutrients = .init(callories: 1500, fats: 60, proteins: 100, carbs: 200)
-        entry.water = .init(waterValue: 0.5, numberOfWaterGlasses: 2)
+        entry.water = .init(waterValue: 0.5, numberOfWaterGlasses: 2, maxWaterGlasses: 8)
         
         return entry
     }
@@ -33,7 +33,7 @@ extension WidgetEntry{
     struct Water{
         var waterValue: Double? = 0
         var numberOfWaterGlasses: Int? = 0
-        let maxWaterGlasses: Int = 8
+        var maxWaterGlasses: Int = 8
     }
     
     struct Macronutrients{

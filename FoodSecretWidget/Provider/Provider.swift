@@ -42,6 +42,6 @@ struct Provider: IntentTimelineProvider {
         let water = coreDataManager.fetchWater(for: date)
         let halfInfo: UserHalfInfo = UserSettings.HalfInfo.info
         
-        return .init(date: date, totalMacronutrients: .init(halfInfo), usedMacronutrients: .init(foods), configuration: configuration, water: .init(waterValue: water?.value, numberOfWaterGlasses: water?.glassesCoint))
+        return .init(date: date, totalMacronutrients: .init(halfInfo), usedMacronutrients: .init(foods), configuration: configuration, water: .init(waterValue: water?.value, numberOfWaterGlasses: water?.glassesCoint, maxWaterGlasses: halfInfo.waterInfo.glassesCount))
     }
 }

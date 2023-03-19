@@ -18,6 +18,7 @@ struct UserHalfInfo: Codable, Equatable{
     var activityLevel: ActivityLevel
     var goal: GoalType
     var macronutrients: Macronutrients = .init()
+    var waterInfo = WaterInfo()
     
     enum Gender: String, Codable, CaseIterable{
         case male, female
@@ -89,5 +90,14 @@ struct Macronutrients: Codable{
         let fat = Int(callories * persentFat) / 9
         
         return (protein, carb, fat)
+    }
+}
+
+struct WaterInfo: Codable{
+    
+    var totalValue: Double = 2.0
+    
+    var glassesCount: Int{
+        Int(totalValue / 0.25)
     }
 }
