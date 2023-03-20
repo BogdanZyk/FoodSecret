@@ -39,6 +39,10 @@ struct Food: Codable {
         claims.joined(separator: ", ")
     }
     
+    var freindlyFoodName: String{
+        (foodName ?? "no name").capitalized
+    }
+    
     var nutritionDataForPer100Gramm: NutritionData{
         let weightFactor = 100.0 / Double(servingWeightGrams ?? 1)
         return calcNutritionData(weightFactor: weightFactor)

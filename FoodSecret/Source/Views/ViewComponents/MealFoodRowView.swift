@@ -14,7 +14,7 @@ struct MealFoodRowView: View {
         HStack(spacing: 10){
             image
             VStack(alignment: .leading, spacing: 2) {
-                Text(food.foodNameEditable.capitalized)
+                Text(food.foodNameEditable)
                     .font(.headline)
                 Text(food.weight.toWeight)
                     .font(.callout)

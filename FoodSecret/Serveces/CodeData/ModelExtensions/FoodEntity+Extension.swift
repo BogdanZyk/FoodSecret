@@ -63,7 +63,7 @@ extension FoodEntity{
         let food = FoodEntity(context: context)
         let nutrientData = product.calculeteNutritionData(for: weight)
         food.id = UUID()
-        food.foodName = product.foodName ?? "No name"
+        food.foodName = product.freindlyFoodName
         food.fat = nutrientData.fat
         food.protein = nutrientData.protein
         food.carbohydrate = nutrientData.cal

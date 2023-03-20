@@ -28,7 +28,7 @@ struct DetailsProductView: View {
                 if let food = viewModel.product{
                     image(food)
                     VStack(alignment: .leading, spacing: 10){
-                        Text(food.foodName ?? "non")
+                        Text(food.freindlyFoodName)
                             .font(.title2.bold())
                         usedNutritionInfoSection(food)
                         clamsAndNutritionProductData(food)

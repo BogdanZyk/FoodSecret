@@ -37,11 +37,14 @@ struct HomeSymmaryView: View{
                         Text("cal left")
                             .font(.caption)
                     }
+                    .withoutAnimation()
                 }
                 .frame(width: 110)
                 .padding(.top, 6)
                 callLable(label: "Burned", value: burnedCal)
             }
+            .padding(.top, 6)
+            
             HStack(spacing: 10){
                 let macronut = rootVM.halfInfo.macronutrientsInGramm
                 lineProgress(summaryData.carbohyd, title: "Carbs", total: macronut.carb)

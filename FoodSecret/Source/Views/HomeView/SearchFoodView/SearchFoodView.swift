@@ -71,7 +71,7 @@ extension SearchFoodView{
                         NukeLazyImage(strUrl: food.photo.thumb, resizeHeight: 100, resizingMode: .center, loadPriority: .normal)
                             .frame(width: 40, height: 40)
                             .cornerRadius(12)
-                        Text(food.foodName ?? "non")
+                        Text(food.foodName?.capitalized ?? "no name")
                             .lineLimit(1)
                             .font(.headline)
                     }
