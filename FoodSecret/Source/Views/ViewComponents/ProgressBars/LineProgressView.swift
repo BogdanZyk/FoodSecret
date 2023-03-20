@@ -9,14 +9,16 @@ import SwiftUI
 
 struct LineProgressView: View {
     var value: CGFloat
+    var colorBgLine = Color(UIColor.systemTeal).opacity(0.3)
+    var colorLine = Color.accentColor
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
                 Rectangle().frame(width: geometry.size.width , height: geometry.size.height)
-                    .foregroundColor(Color(UIColor.systemTeal).opacity(0.3))
+                    .foregroundColor(colorBgLine)
                 
-                Rectangle().frame(width: min(value * geometry.size.width, geometry.size.width), height: geometry.size.height)
-                    .foregroundColor(Color.accentColor)
+                Capsule().frame(width: min(value * geometry.size.width, geometry.size.width), height: geometry.size.height)
+                    .foregroundColor(colorLine)
             }.cornerRadius(45.0)
         }
         .animation(.spring(response: 3), value: value)

@@ -95,6 +95,9 @@
 		5AB741DA29C2149B00821457 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741D929C2149B00821457 /* PreviewProvider.swift */; };
 		5AB741DD29C21B9E00821457 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741DC29C21B9E00821457 /* Helper.swift */; };
 		5AB741DF29C22DFC00821457 /* MealFoodRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741DE29C22DFC00821457 /* MealFoodRowView.swift */; };
+		5AB83DDA29C84C610069A349 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB83DD929C84C610069A349 /* HealthKitManager.swift */; };
+		5AB83DDC29C84D770069A349 /* HealthKitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB83DDB29C84D770069A349 /* HealthKitViewModel.swift */; };
+		5AB83DDF29C84F560069A349 /* StepsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB83DDE29C84F560069A349 /* StepsSectionView.swift */; };
 		5ABAEEBB29C4BC27005EBA3A /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABAEEBA29C4BC27005EBA3A /* AppGroup.swift */; };
 		5ABAEEBE29C4BED3005EBA3A /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABAEEBA29C4BC27005EBA3A /* AppGroup.swift */; };
 		5ABAEEBF29C4BF1D005EBA3A /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B705F29C4611900379520 /* UserSettings.swift */; };
@@ -203,6 +206,9 @@
 		5AB741D929C2149B00821457 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		5AB741DC29C21B9E00821457 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		5AB741DE29C22DFC00821457 /* MealFoodRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealFoodRowView.swift; sourceTree = "<group>"; };
+		5AB83DD929C84C610069A349 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		5AB83DDB29C84D770069A349 /* HealthKitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitViewModel.swift; sourceTree = "<group>"; };
+		5AB83DDE29C84F560069A349 /* StepsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsSectionView.swift; sourceTree = "<group>"; };
 		5ABAEEBA29C4BC27005EBA3A /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -298,6 +304,7 @@
 		5A38A1C429C0802C00947AEC /* Serveces */ = {
 			isa = PBXGroup;
 			children = (
+				5AB83DD829C84C540069A349 /* HealthKit */,
 				5AB741B429C1B1C400821457 /* CodeData */,
 				5A38A1F429C0F44B00947AEC /* NutritionixAPI */,
 			);
@@ -388,6 +395,7 @@
 				5A52A6DE29C323CC002A68E5 /* DetailsProductViewModel.swift */,
 				5A4EA61A29C344CE00CCAF47 /* ProductEditorViewModel.swift */,
 				5A8B706829C4656E00379520 /* ProfileViewModel.swift */,
+				5AB83DDB29C84D770069A349 /* HealthKitViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -594,6 +602,7 @@
 		5AB741C829C1F73F00821457 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
+				5AB83DDD29C84F3C0069A349 /* HealfKit */,
 				5A36306529C52756008E7E05 /* DatePickerSheet */,
 				5A36305429C4FE6D008E7E05 /* WaterSectionView */,
 				5A4EA62229C3808700CCAF47 /* HomeSymmaryView */,
@@ -636,6 +645,22 @@
 				5AA36D5629C5F5D100BC72D5 /* HapticManager.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		5AB83DD829C84C540069A349 /* HealthKit */ = {
+			isa = PBXGroup;
+			children = (
+				5AB83DD929C84C610069A349 /* HealthKitManager.swift */,
+			);
+			path = HealthKit;
+			sourceTree = "<group>";
+		};
+		5AB83DDD29C84F3C0069A349 /* HealfKit */ = {
+			isa = PBXGroup;
+			children = (
+				5AB83DDE29C84F560069A349 /* StepsSectionView.swift */,
+			);
+			path = HealfKit;
 			sourceTree = "<group>";
 		};
 		5ABAEEC229C4C218005EBA3A /* Widgets */ = {
@@ -761,9 +786,11 @@
 				5A52A6DF29C323CC002A68E5 /* DetailsProductViewModel.swift in Sources */,
 				5A38A1B929C0802600947AEC /* ContentView.swift in Sources */,
 				5AB741C529C1DAE100821457 /* Double+ext.swift in Sources */,
+				5AB83DDA29C84C610069A349 /* HealthKitManager.swift in Sources */,
 				5A8B706029C4611900379520 /* UserSettings.swift in Sources */,
 				5A38A1B729C0802600947AEC /* FoodSecretApp.swift in Sources */,
 				5AB741CC29C1F9EF00821457 /* MealsSectionView.swift in Sources */,
+				5AB83DDC29C84D770069A349 /* HealthKitViewModel.swift in Sources */,
 				5A556F0429C47BEB002DAD54 /* ButtonStyle.swift in Sources */,
 				5A556F3429C4A026002DAD54 /* MealType.swift in Sources */,
 				5AB741B929C1B33600821457 /* Persistense.swift in Sources */,
@@ -799,6 +826,7 @@
 				5AB741DF29C22DFC00821457 /* MealFoodRowView.swift in Sources */,
 				5A38A1FA29C0F7AE00947AEC /* NutritionixService.swift in Sources */,
 				5AA36D5729C5F5D100BC72D5 /* HapticManager.swift in Sources */,
+				5AB83DDF29C84F560069A349 /* StepsSectionView.swift in Sources */,
 				5AB741C729C1DC0B00821457 /* WaterEntity+Extensions.swift in Sources */,
 				5ABAEEBB29C4BC27005EBA3A /* AppGroup.swift in Sources */,
 				5A52A6CC29C27F34002A68E5 /* NukeLazyImage.swift in Sources */,

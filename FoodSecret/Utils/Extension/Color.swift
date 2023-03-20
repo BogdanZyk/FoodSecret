@@ -12,4 +12,5 @@ extension Color{
     static let primaryFont = Color("primaryFont")
     static let secondaryBlue = Color("secondaryBlue")
     static let reversedFont = Color("reversedFont")
+    static let primaryOrange = Color("primaryOrange")
 }

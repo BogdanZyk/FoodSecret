@@ -16,6 +16,7 @@ struct HomeView: View {
                 summarySection
                 mealsSection
                 waterSectionView
+                StepsSectionView()
             }
             .padding(.horizontal)
             .padding(.bottom, 30)
@@ -25,10 +26,6 @@ struct HomeView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 calengarButton
             }
-//            ToolbarItem(placement: .navigationBarLeading) {
-//                Text("Today")
-//                    .font(.headline.bold())
-//            }
         }
         .sheet(isPresented: $showCalendarView) {
             DatePickerSheetView()
