@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject var healthKit = HealthKitViewModel()
     @EnvironmentObject var rootVM: RootViewModel
     @State private var showCalendarView: Bool = false
     var body: some View {
@@ -16,7 +17,7 @@ struct HomeView: View {
                 summarySection
                 mealsSection
                 waterSectionView
-                StepsSectionView()
+                stepSection
             }
             .padding(.horizontal)
             .padding(.bottom, 30)
@@ -50,9 +51,12 @@ struct HomeView_Previews: PreviewProvider {
 extension HomeView{
     
     private var summarySection: some View{
-        HomeSymmaryView(foods: rootVM.foods)
+        HomeSymmaryView(healKit: healthKit, foods: rootVM.foods)
     }
     
+    private var stepSection: some View{
+        StepsSectionView(viewModel: healthKit)
+    }
     
     private var mealsSection: some View{
         MealsSectionView()

@@ -9,13 +9,13 @@ import SwiftUI
 
 struct StepsSectionView: View {
     @EnvironmentObject var rootVM: RootViewModel
-    @StateObject var viewModel = HealthKitViewModel()
+    @ObservedObject var viewModel: HealthKitViewModel
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             Text("Steps")
                 .font(.title3.bold())
             VStack {
-                if viewModel.isAuthorized {
+                if viewModel.isSetUpHealth {
                     VStack(spacing: 16) {
                         stepsSection
                         progressSection
@@ -40,11 +40,8 @@ struct StepsSectionView: View {
             .padding()
             .background(Color.primaryOrange)
             .cornerRadius(12)
-            .onChange(of: viewModel.isAuthorized) { _ in
-                viewModel.readStepsTakenToday(rootVM.selectedDate)
-            }
             .onChange(of: rootVM.selectedDate) { newDay in
-                viewModel.readStepsTakenToday(newDay)
+                viewModel.fetchHealfData(newDay)
             }
         }
     }
@@ -52,7 +49,7 @@ struct StepsSectionView: View {
 
 struct StepsSectionView_Previews: PreviewProvider {
     static var previews: some View {
-        StepsSectionView()
+        StepsSectionView(viewModel: HealthKitViewModel())
             .padding()
             .environmentObject(RootViewModel(mainContext: dev.viewContext))
     }
@@ -64,7 +61,10 @@ extension StepsSectionView{
         VStack{
             Text("\(viewModel.userStepCount) steps")
                 .font(.title3.bold())
+            Text("\(viewModel.callories) cal")
+                .font(.subheadline)
         }
+        .foregroundColor(.white)
     }
     
     @ViewBuilder

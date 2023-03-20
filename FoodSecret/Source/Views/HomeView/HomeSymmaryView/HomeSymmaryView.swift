@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeSymmaryView: View{
+    @ObservedObject var healKit: HealthKitViewModel
     @EnvironmentObject var rootVM: RootViewModel
     let foods: [FoodEntity]
     var summaryData: (cal: Double, carbohyd: Double, protein: Double, fat: Double){
@@ -17,19 +18,30 @@ struct HomeSymmaryView: View{
     var leftCallories: String{
         "\(Int(rootVM.halfInfo.totalCallories - summaryData.cal))"
     }
+    var eatenCal: String{
+        "\(Int(summaryData.cal))"
+    }
+    
+    var burnedCal: String{
+        healKit.callories
+    }
     
     var body: some View{
         VStack(spacing: 20) {
-            ProgressCircleView(persentage: summaryData.cal.calculatePercentage(for: rootVM.halfInfo.totalCallories), size: .large, circleOutline: Color.accentColor, circleTrack: Color(UIColor.systemTeal).opacity(0.3)) {
-                VStack {
-                    Text(leftCallories)
-                        .font(.headline.bold())
-                    Text("cal left")
-                        .font(.caption)
+            HStack(spacing: 45) {
+                callLable(label: "Eaten", value: eatenCal)
+                ProgressCircleView(persentage: summaryData.cal.calculatePercentage(for: rootVM.halfInfo.totalCallories), size: .large, circleOutline: Color.accentColor, circleTrack: Color(UIColor.systemTeal).opacity(0.3)) {
+                    VStack {
+                        Text(leftCallories)
+                            .font(.headline.bold())
+                        Text("cal left")
+                            .font(.caption)
+                    }
                 }
+                .frame(width: 110)
+                .padding(.top, 6)
+                callLable(label: "Burned", value: burnedCal)
             }
-            .frame(width: 110)
-            .padding(.top, 6)
             HStack(spacing: 10){
                 let macronut = rootVM.halfInfo.macronutrientsInGramm
                 lineProgress(summaryData.carbohyd, title: "Carbs", total: macronut.carb)
@@ -45,7 +57,7 @@ struct HomeSymmaryView: View{
 
 struct HomeSymmaryView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeSymmaryView(foods: dev.simpleFoods)
+        HomeSymmaryView(healKit: HealthKitViewModel(), foods: dev.simpleFoods)
             .padding()
             .environmentObject(RootViewModel(mainContext: dev.viewContext))
     }
@@ -69,4 +81,12 @@ extension HomeSymmaryView{
         }
     }
     
+    private func callLable(label: String, value: String) -> some View{
+        VStack{
+            Text(value)
+                .font(.headline.bold())
+            Text(label)
+                .font(.caption)
+        }
+    }
 }
