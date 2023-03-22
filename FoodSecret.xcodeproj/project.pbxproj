@@ -103,6 +103,9 @@
 		5ABAEEBF29C4BF1D005EBA3A /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B705F29C4611900379520 /* UserSettings.swift */; };
 		5ABAEEC029C4BF8B005EBA3A /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B706129C461EF00379520 /* UserDefaults.swift */; };
 		5ABAEEC129C4C0DA005EBA3A /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741CE29C1FD5600821457 /* CircleProgressView.swift */; };
+		5AF6B7DC29CB43290053ECEA /* EdamamEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B7DB29CB43290053ECEA /* EdamamEndpoint.swift */; };
+		5AF6B7DE29CB44D80053ECEA /* EdamamAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B7DD29CB44D80053ECEA /* EdamamAPIService.swift */; };
+		5AF6B7E029CB4B680053ECEA /* EmamSearchRecepiesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B7DF29CB4B680053ECEA /* EmamSearchRecepiesResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -210,6 +213,9 @@
 		5AB83DDB29C84D770069A349 /* HealthKitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitViewModel.swift; sourceTree = "<group>"; };
 		5AB83DDE29C84F560069A349 /* StepsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsSectionView.swift; sourceTree = "<group>"; };
 		5ABAEEBA29C4BC27005EBA3A /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
+		5AF6B7DB29CB43290053ECEA /* EdamamEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamEndpoint.swift; sourceTree = "<group>"; };
+		5AF6B7DD29CB44D80053ECEA /* EdamamAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamAPIService.swift; sourceTree = "<group>"; };
+		5AF6B7DF29CB4B680053ECEA /* EmamSearchRecepiesResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmamSearchRecepiesResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,6 +310,7 @@
 		5A38A1C429C0802C00947AEC /* Serveces */ = {
 			isa = PBXGroup;
 			children = (
+				5AF6B7DA29CB42F90053ECEA /* EdamamAPI */,
 				5AB83DD829C84C540069A349 /* HealthKit */,
 				5AB741B429C1B1C400821457 /* CodeData */,
 				5A38A1F429C0F44B00947AEC /* NutritionixAPI */,
@@ -359,6 +366,7 @@
 		5A38A1EF29C0EFE700947AEC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5AF6B7D729CB3ECB0053ECEA /* Edamam */,
 				5A556F3229C4A01A002DAD54 /* MealType */,
 				5A8B706529C4621800379520 /* UserHalfInfo */,
 				5AB741C029C1B72800821457 /* Nutritionix */,
@@ -671,6 +679,23 @@
 			path = Widgets;
 			sourceTree = "<group>";
 		};
+		5AF6B7D729CB3ECB0053ECEA /* Edamam */ = {
+			isa = PBXGroup;
+			children = (
+				5AF6B7DF29CB4B680053ECEA /* EmamSearchRecepiesResult.swift */,
+			);
+			path = Edamam;
+			sourceTree = "<group>";
+		};
+		5AF6B7DA29CB42F90053ECEA /* EdamamAPI */ = {
+			isa = PBXGroup;
+			children = (
+				5AF6B7DB29CB43290053ECEA /* EdamamEndpoint.swift */,
+				5AF6B7DD29CB44D80053ECEA /* EdamamAPIService.swift */,
+			);
+			path = EdamamAPI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -796,7 +821,9 @@
 				5AB741B929C1B33600821457 /* Persistense.swift in Sources */,
 				5A4EA61B29C344CE00CCAF47 /* ProductEditorViewModel.swift in Sources */,
 				5AB741D829C210D800821457 /* AllMealsFoodView.swift in Sources */,
+				5AF6B7E029CB4B680053ECEA /* EmamSearchRecepiesResult.swift in Sources */,
 				5A556F0929C497A5002DAD54 /* RootView+TabView.swift in Sources */,
+				5AF6B7DC29CB43290053ECEA /* EdamamEndpoint.swift in Sources */,
 				5AA36D5929C6025A00BC72D5 /* MealsMenuView.swift in Sources */,
 				5A52BEC929C77AE6007129D1 /* ImagePicker.swift in Sources */,
 				5AB741B729C1B1FF00821457 /* CoreDataExt.swift in Sources */,
@@ -828,6 +855,7 @@
 				5AA36D5729C5F5D100BC72D5 /* HapticManager.swift in Sources */,
 				5AB83DDF29C84F560069A349 /* StepsSectionView.swift in Sources */,
 				5AB741C729C1DC0B00821457 /* WaterEntity+Extensions.swift in Sources */,
+				5AF6B7DE29CB44D80053ECEA /* EdamamAPIService.swift in Sources */,
 				5ABAEEBB29C4BC27005EBA3A /* AppGroup.swift in Sources */,
 				5A52A6CC29C27F34002A68E5 /* NukeLazyImage.swift in Sources */,
 				5AB741CF29C1FD5600821457 /* CircleProgressView.swift in Sources */,

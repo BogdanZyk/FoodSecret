@@ -29,6 +29,7 @@ class RootViewModel: ObservableObject{
     init(mainContext: NSManagedObjectContext){
         self.dataManager = CoreDataManager(mainContext: mainContext)
         fetchCoreData()
+        fetchEdamam()
     }
     
     var navTitle: String{
@@ -40,6 +41,24 @@ class RootViewModel: ObservableObject{
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1){
             self.showAddFoodView.toggle()
         }
+    }
+    
+    
+    func fetchEdamam(){
+       let service = EdamamAPIService()
+        service.searchRecepies(nil)
+            .sink { completion in
+                switch completion{
+                    
+                case .finished:
+                    break
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            } receiveValue: { result in
+                print(result.hits.first?.recipe)
+            }
+            .store(in: &cancellable)
     }
 }
 
