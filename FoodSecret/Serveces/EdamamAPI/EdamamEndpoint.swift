@@ -56,24 +56,11 @@ extension EdamamEndpoint {
 /// API endpoints
 extension EdamamEndpoint {
     
-    static func searchRecepies(_ query: String?) -> Self{
+    static var searchRecepies: Self{
         return EdamamEndpoint(path: "/recipes/v2",
                               queryItems: [URLQueryItem(name: "type", value: "public"),
-                                           URLQueryItem(name: "diet", value: "balanced"),
-                                           URLQueryItem(name: "health", value: "vegetarian"),
-                                           URLQueryItem(name: "cuisineType", value: "British"),
-                                           URLQueryItem(name: "mealType", value: "Breakfast"),
                                            URLQueryItem(name: "random", value: "true"),
-                                          URLQueryItem(name: "imageSize", value: "REGULAR")])
+                                           URLQueryItem(name: "imageSize", value: "REGULAR")])
     }
-    
-    //    static var nutrients: Self{
-//        return EdamamEndpoint(path: "/natural/nutrients")
-//    }
-    
 }
 
-//https://api.edamam.com/api/recipes/v2?type=public&diet=balanced&health=vegetarian&cuisineType=British&mealType=Breakfast&random=true&app_id=4a3e63e1&app_key=3298b52bdf3cb75b62b5f8aabcb2a9a4&field=uri&field=label&field=image&field=images&field=source&field=url&field=shareAs&field=yield&field=dietLabels&field=healthLabels&field=cautions&field=ingredientLines&field=ingredients&field=calories&field=glycemicIndex&field=totalCO2Emissions&field=co2EmissionsClass&field=totalWeight&field=cuisineType&field=mealType&field=dishType&field=instructions&field=tags&field=externalID
-
-
-//https://api.edamam.com/api/recipes/v2?type=public&app_id=2d16cbff&app_key=7f1d9ee7b324a3b33e3ea506d9ba2110&diet=balanced&health=alcohol-free&cuisineType=British&mealType=Breakfast&imageSize=REGULAR&random=true&field=uri&field=label&field=image&field=images&field=source&field=url&field=shareAs&field=yield&field=dietLabels&field=healthLabels&field=cautions&field=ingredientLines&field=ingredients&field=calories&field=glycemicIndex&field=totalCO2Emissions&field=co2EmissionsClass&field=totalWeight&field=totalTime&field=cuisineType&field=mealType&field=dishType&field=totalNutrients&field=totalDaily&field=digest&field=tags&field=externalId
