@@ -35,5 +35,7 @@ enum EdamamDietType: String, EdamamQueryTypeProtocol{
         }
     }
     
+    var typeTitle: String { "Diets type" }
+    
     var title: String { rawValue.capitalized }
 }

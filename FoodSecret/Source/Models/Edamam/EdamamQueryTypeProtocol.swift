@@ -13,6 +13,7 @@ protocol EdamamQueryTypeProtocol: CaseIterable, Hashable {
     var uRLQueryItem: URLQueryItem { get }
     var emoji: String { get }
     var title: String { get }
+    var typeTitle: String { get }
     
 }
 

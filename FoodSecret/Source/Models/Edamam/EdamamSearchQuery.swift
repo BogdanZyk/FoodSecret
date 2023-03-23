@@ -11,12 +11,8 @@ import Foundation
 struct EdamamSearchQuery{
     
     var query: String = ""
-    var cuisineType: EdamamCuisineType?
-    var dishType: EdamamDishType?
-    var mealType: EdamamMealType?
-    var dietType: EdamamDietType?
-    var healthType: EdamamHealthType?
-    var caloriesType: EdamamCaloriesType?
+    var categories: [any EdamamQueryTypeProtocol] = []
+
     
     
     var urlQueryItems: [URLQueryItem]{
@@ -25,31 +21,13 @@ struct EdamamSearchQuery{
         if !query.isEmpty{
             items.append(.init(name: "q", value: query))
         }
-        if let cuisineType{
-            items.append(cuisineType.uRLQueryItem)
-        }
-        if let dishType{
-            items.append(dishType.uRLQueryItem)
-        }
-        if let dietType{
-            items.append(dietType.uRLQueryItem)
-        }
-        if let mealType{
-            items.append(mealType.uRLQueryItem)
-        }
-        if let healthType{
-            items.append(healthType.uRLQueryItem)
-        }
+        let uRLQueryItems = categories.map { $0.uRLQueryItem }
+        items.append(contentsOf: uRLQueryItems)
         return items
     }
     
    mutating func reset(){
         query = ""
-        cuisineType = nil
-        dishType = nil
-        mealType = nil
-        dietType = nil
-        healthType = nil
-        caloriesType = nil
+        categories = []
     }
 }

@@ -38,6 +38,7 @@ enum EdamamCaloriesType: String, EdamamQueryTypeProtocol{
         }
     }
     
-    
+    var typeTitle: String { "Calories type" }
+
     var title: String{ rawValue.capitalized }
 }

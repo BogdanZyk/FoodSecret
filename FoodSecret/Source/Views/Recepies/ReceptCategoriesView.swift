@@ -15,24 +15,32 @@ struct ReceptCategoriesView<T: EdamamQueryTypeProtocol> : View where T.AllCases:
     var withLabel: Bool = true
     var viewType: ViewType = .hStack
     var withOutAnimation: Bool = false
+    var isNavLink: Bool = true
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             if let label{
                 Text(label)
                     .font(.headline.bold())
             }
-            ScrollView(.horizontal, showsIndicators: false) {
-                Group{
-                    switch viewType{
-                    case .hStack:
-                        hsStackSection
-                    case .grid:
-                        grigSection
+            ScrollViewReader { proxy in
+                ScrollView(.horizontal, showsIndicators: false) {
+                    Group{
+                        switch viewType{
+                        case .hStack:
+                            hsStackSection(proxy)
+                        case .grid:
+                            grigSection(proxy)
+                        }
+                    }
+                    .padding(.horizontal)
+                }
+                .padding(.horizontal, -16)
+                .onAppear{
+                    if let selectedType{
+                        proxy.scrollTo(selectedType.emoji, anchor: .center)
                     }
                 }
-                .padding(.horizontal)
             }
-            .padding(.horizontal, -16)
         }
         .animation(withOutAnimation ? nil : .easeIn(duration: 0.2), value: selectedType)
     }
@@ -73,22 +81,42 @@ extension ReceptCategoriesView{
     }
     
     
-    private var hsStackSection: some View{
+    private func hsStackSection(_ proxy: ScrollViewProxy) -> some View{
         LazyHStack{
-            ForEach(types.allCases, id:\.self) { type in
-                rowView(type)
-            }
+            contentSection(proxy)
         }
         .frame(height: viewType.frameSize)
     }
     
-    private var grigSection: some View{
-        LazyHGrid(rows: [.init(.fixed(viewType.frameSize)), .init(.fixed(viewType.frameSize))], alignment: .center, spacing: 10) {
-            ForEach(types.allCases, id:\.self) { type in
-                rowView(type)
-            }
+    private func grigSection(_ proxy: ScrollViewProxy) -> some View{
+        LazyHGrid(rows: [.init(.fixed(viewType.frameSize)), .init(.fixed(viewType.frameSize))], alignment: .center, spacing: 8) {
+            contentSection(proxy)
         }
         .frame(height: viewType.frameSize * 2 + 20)
+    }
+    
+    
+    private func contentSection(_ proxy: ScrollViewProxy) -> some View{
+        ForEach(types.allCases, id:\.self) { type in
+            Group{
+                if isNavLink{
+                    NavigationLink {
+                        RecepiesListView(types: T.self, selectedType: type)
+                    } label: {
+                        rowView(type)
+                    }
+                }else{
+                    rowView(type)
+                        .onTapGesture {
+                            withAnimation {
+                                proxy.scrollTo(type.emoji, anchor: .center)
+                            }
+                            selectedType = type
+                        }
+                }
+            }
+            .id(type.emoji)
+        }
     }
     
     private func rowView(_ type: T) -> some View{
@@ -111,8 +139,6 @@ extension ReceptCategoriesView{
         }
         .frame(width: viewType == .grid ? 110 : nil, height: viewType.frameSize)
         .cornerRadius(12)
-        .onTapGesture {
-            selectedType = type
-        }
+        .foregroundColor(.primaryFont)
     }
 }

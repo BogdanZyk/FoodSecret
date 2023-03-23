@@ -26,7 +26,10 @@ struct Hit: Codable {
 
 
 // MARK: - Recipe
-struct Recipe: Codable {
+struct Recipe: Codable, Identifiable {
+    
+    var id: String { label + uri }
+    
     let uri, label, image: String
     let images: Images?
     let source, url, shareAs: String?

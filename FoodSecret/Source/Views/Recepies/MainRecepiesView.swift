@@ -34,18 +34,18 @@ struct MainRecepiesView_Previews: PreviewProvider {
 
 extension MainRecepiesView{
     private var popularCategoriesSectionView: some View{
-        ReceptCategoriesView(selectedType: $viewModel.query.dietType, label: "Popular categories", types: EdamamDietType.self, withOutAnimation: true)
+        ReceptCategoriesView(selectedType: .constant(nil), label: "Popular categories", types: EdamamDietType.self, withOutAnimation: true)
     }
     
     private var calloriesCategorySectionView: some View{
-        ReceptCategoriesView(selectedType: $viewModel.query.caloriesType, label: "Calorie counter", types: EdamamCaloriesType.self, viewType: .grid, withOutAnimation: true)
+        ReceptCategoriesView(selectedType:  .constant(nil), label: "Calorie counter", types: EdamamCaloriesType.self, viewType: .grid, withOutAnimation: true)
     }
     
     private var mealsTypeCategorySectionView: some View{
-        ReceptCategoriesView(selectedType: $viewModel.query.mealType, label: "Meals type", types: EdamamMealType.self, withOutAnimation: true)
+        ReceptCategoriesView(selectedType: .constant(nil), label: "Meals type", types: EdamamMealType.self, withOutAnimation: true)
     }
     
     private var dishTypeCategorySectionView: some View{
-        ReceptCategoriesView(selectedType: $viewModel.query.dishType, label: "Dish type", types: EdamamDishType.self, withOutAnimation: true)
+        ReceptCategoriesView(selectedType: .constant(nil), label: "Dish type", types: EdamamDishType.self, withOutAnimation: true)
     }
 }

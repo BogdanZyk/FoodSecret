@@ -16,6 +16,7 @@ enum EdamamCuisineType: String, EdamamQueryTypeProtocol{
     }
     
     var title: String { rawValue.capitalized }
+    var typeTitle: String { "Cuisines type" }
     
     var emoji: String {
         return ""

@@ -56,7 +56,7 @@ extension RootView{
     private var recepiesViewContainer: some View{
         NavigationStack {
             VStack(spacing: 0){
-                Text("recepies")
+                MainRecepiesView()
                 Spacer()
                 tabView
             }

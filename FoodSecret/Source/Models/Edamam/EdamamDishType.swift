@@ -9,6 +9,7 @@ import Foundation
 
 enum EdamamDishType: String, EdamamQueryTypeProtocol{
     
+    
    
     case desserts
     case drinks
@@ -32,6 +33,8 @@ enum EdamamDishType: String, EdamamQueryTypeProtocol{
     case bread
     case condimentsAndSauces = "sauces"
     
+    var typeTitle: String { "Dishes type" }
+
     var title: String { rawValue.capitalized }
     
     var uRLQueryItem: URLQueryItem{

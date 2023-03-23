@@ -117,6 +117,9 @@
 		5AF6B7F529CC563B0053ECEA /* MainRecepiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B7F429CC563B0053ECEA /* MainRecepiesView.swift */; };
 		5AF6B7F729CC56760053ECEA /* ReceptCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B7F629CC56760053ECEA /* ReceptCategoriesView.swift */; };
 		5AF6B7F929CC66660053ECEA /* RecepiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B7F829CC66660053ECEA /* RecepiesViewModel.swift */; };
+		5AF6B7FB29CC83FE0053ECEA /* RecepiesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B7FA29CC83FE0053ECEA /* RecepiesListView.swift */; };
+		5AF6B7FD29CC88E80053ECEA /* RecepiesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B7FC29CC88E80053ECEA /* RecepiesListViewModel.swift */; };
+		5AF6B7FF29CC8E100053ECEA /* ReceptRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B7FE29CC8E100053ECEA /* ReceptRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -238,6 +241,9 @@
 		5AF6B7F429CC563B0053ECEA /* MainRecepiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRecepiesView.swift; sourceTree = "<group>"; };
 		5AF6B7F629CC56760053ECEA /* ReceptCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceptCategoriesView.swift; sourceTree = "<group>"; };
 		5AF6B7F829CC66660053ECEA /* RecepiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecepiesViewModel.swift; sourceTree = "<group>"; };
+		5AF6B7FA29CC83FE0053ECEA /* RecepiesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecepiesListView.swift; sourceTree = "<group>"; };
+		5AF6B7FC29CC88E80053ECEA /* RecepiesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecepiesListViewModel.swift; sourceTree = "<group>"; };
+		5AF6B7FE29CC8E100053ECEA /* ReceptRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceptRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -428,6 +434,7 @@
 				5A8B706829C4656E00379520 /* ProfileViewModel.swift */,
 				5AB83DDB29C84D770069A349 /* HealthKitViewModel.swift */,
 				5AF6B7F829CC66660053ECEA /* RecepiesViewModel.swift */,
+				5AF6B7FC29CC88E80053ECEA /* RecepiesListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -733,6 +740,8 @@
 			children = (
 				5AF6B7F429CC563B0053ECEA /* MainRecepiesView.swift */,
 				5AF6B7F629CC56760053ECEA /* ReceptCategoriesView.swift */,
+				5AF6B7FA29CC83FE0053ECEA /* RecepiesListView.swift */,
+				5AF6B7FE29CC8E100053ECEA /* ReceptRowView.swift */,
 			);
 			path = Recepies;
 			sourceTree = "<group>";
@@ -890,7 +899,9 @@
 				5A52A6D529C28BEF002A68E5 /* LineProgressView.swift in Sources */,
 				5A38A1CA29C0807000947AEC /* View+extension.swift in Sources */,
 				5A8B706929C4656E00379520 /* ProfileViewModel.swift in Sources */,
+				5AF6B7FD29CC88E80053ECEA /* RecepiesListViewModel.swift in Sources */,
 				5A36306729C5276A008E7E05 /* DatePickerSheetView.swift in Sources */,
+				5AF6B7FB29CC83FE0053ECEA /* RecepiesListView.swift in Sources */,
 				5AF6B7F729CC56760053ECEA /* ReceptCategoriesView.swift in Sources */,
 				5AF6B7F929CC66660053ECEA /* RecepiesViewModel.swift in Sources */,
 				5A4EA61929C344C300CCAF47 /* ProductEditorView.swift in Sources */,
@@ -916,6 +927,7 @@
 				5A8B706229C461EF00379520 /* UserDefaults.swift in Sources */,
 				5A52A6DD29C3222D002A68E5 /* DetailsProductView.swift in Sources */,
 				5AF6B7E829CC42E70053ECEA /* EdamamDietType.swift in Sources */,
+				5AF6B7FF29CC8E100053ECEA /* ReceptRowView.swift in Sources */,
 				5AB741DD29C21B9E00821457 /* Helper.swift in Sources */,
 				5A38A1CC29C080F500947AEC /* Date+Ext.swift in Sources */,
 				5A4EA62129C3705D00CCAF47 /* CoreDataManager.swift in Sources */,
