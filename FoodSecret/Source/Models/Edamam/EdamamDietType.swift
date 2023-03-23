@@ -7,7 +7,9 @@
 
 import Foundation
 
-enum EdamamDietType: String, CaseIterable{
+enum EdamamDietType: String, EdamamQueryTypeProtocol{
+   
+    
     
     case balanced = "Balanced"
     case highFiber = "High-Fiber"
@@ -20,4 +22,18 @@ enum EdamamDietType: String, CaseIterable{
         .init(name: "dietType", value: rawValue.lowercased())
     }
     
+    var emoji: String{
+        
+        switch self{
+            
+        case .balanced: return "⚖️"
+        case .highFiber: return "🍠"
+        case .highProtein: return "🍗"
+        case .lowCarb: return "🥜"
+        case .lowFat: return "🥦"
+        case .lowSodium: return "🫙"
+        }
+    }
+    
+    var title: String { rawValue.capitalized }
 }

@@ -7,7 +7,8 @@
 
 import Foundation
 
-enum EdamamHealthType: String, CaseIterable{
+enum EdamamHealthType: String{
+   
     
     case vegan = "Vegan"
     case vegetarian = "Vegetarian"
@@ -38,10 +39,11 @@ enum EdamamHealthType: String, CaseIterable{
     case treeNutFree = "Tree-Nut-Free"
     
     
-    
     var uRLQueryItem: URLQueryItem{
         .init(name: "health", value: rawValue.lowercased())
     }
+    
+    var emoji: String {return ""}
 }
 
 

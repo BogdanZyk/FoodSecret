@@ -7,21 +7,17 @@
 
 import Foundation
 
-enum EdamamDishType: String, CaseIterable{
+enum EdamamDishType: String, EdamamQueryTypeProtocol{
     
-    case biscuitsAndCookies = "biscuits and cookies"
-    case bread
-    case cereals
-    case condimentsAndSauces = "condiments and sauces"
+   
     case desserts
     case drinks
     case egg
-    case iceCreamAndCustard = "ice cream and custard"
-    case mainCourse = "main course"
+    case iceCreamAndCustard = "ice cream"
     case pancake
     case pasta
     case pastry
-    case piesAndTarts = "pies and tarts"
+    case piesAndTarts = "pies"
     case pizza
     case preps
     case preserve
@@ -30,13 +26,41 @@ enum EdamamDishType: String, CaseIterable{
     case seafood
     case sideDish = "side dish"
     case soup
-    case specialOccasions = "special occasions"
     case starter
     case sweets
+    case biscuitsAndCookies = "cookies"
+    case bread
+    case condimentsAndSauces = "sauces"
     
+    var title: String { rawValue.capitalized }
     
     var uRLQueryItem: URLQueryItem{
         .init(name: "dishType", value: rawValue)
     }
     
+    var emoji: String{
+        switch self {
+        case .biscuitsAndCookies: return "🍪"
+        case .bread: return "🍞"
+        case .condimentsAndSauces: return "🥫"
+        case .desserts:  return "🍮"
+        case .drinks: return "🍸"
+        case .egg: return "🥚"
+        case .iceCreamAndCustard: return "🍨"
+        case .pancake: return "🥞"
+        case .pasta: return "🍝"
+        case .pastry: return "🥐"
+        case .piesAndTarts: return "🥧"
+        case .pizza: return "🍕"
+        case .preps: return "🥡"
+        case .preserve: return "🥕"
+        case .salad: return "🥗"
+        case .sandwiches: return "🥪"
+        case .seafood: return "🍤"
+        case .sideDish: return "🧆"
+        case .soup: return "🥘"
+        case .starter: return "🧃"
+        case .sweets: return "🍬"
+        }
+    }
 }

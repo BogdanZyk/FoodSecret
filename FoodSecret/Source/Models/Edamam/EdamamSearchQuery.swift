@@ -16,6 +16,7 @@ struct EdamamSearchQuery{
     var mealType: EdamamMealType?
     var dietType: EdamamDietType?
     var healthType: EdamamHealthType?
+    var caloriesType: EdamamCaloriesType?
     
     
     var urlQueryItems: [URLQueryItem]{
@@ -49,5 +50,6 @@ struct EdamamSearchQuery{
         mealType = nil
         dietType = nil
         healthType = nil
+        caloriesType = nil
     }
 }

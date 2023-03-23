@@ -7,15 +7,26 @@
 
 import Foundation
 
-enum EdamamMealType: String, CaseIterable{
+enum EdamamMealType: String, EdamamQueryTypeProtocol{
     
     case breakfast
     case brunch
-    case lunchDinner = "lunch/dinner"
+    case dinner = "lunch/dinner"
     case snack
-    case teatime
+
+    var title: String { rawValue.capitalized }
     
     var uRLQueryItem: URLQueryItem{
         .init(name: "mealType", value: rawValue)
+    }
+    
+    
+    var emoji: String{
+        switch self {
+        case .breakfast: return "☕️"
+        case .brunch: return "🍲"
+        case .dinner: return "🍝"
+        case .snack: return "🍌"
+        }
     }
 }

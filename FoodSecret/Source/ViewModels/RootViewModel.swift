@@ -29,7 +29,7 @@ class RootViewModel: ObservableObject{
     init(mainContext: NSManagedObjectContext){
         self.dataManager = CoreDataManager(mainContext: mainContext)
         fetchCoreData()
-        fetchEdamam()
+        //fetchEdamam()
     }
     
     var navTitle: String{
@@ -46,7 +46,7 @@ class RootViewModel: ObservableObject{
     
     func fetchEdamam(){
        let service = EdamamAPIService()
-        service.searchRecepies(nil)
+        service.searchRecepies(searchQuery: .init(cuisineType: .american, dishType: .bread, mealType: .breakfast, dietType: .balanced, healthType: .alcoholDree))
             .sink { completion in
                 switch completion{
                     
