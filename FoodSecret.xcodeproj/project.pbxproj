@@ -121,6 +121,11 @@
 		5AF6B7FD29CC88E80053ECEA /* RecepiesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B7FC29CC88E80053ECEA /* RecepiesListViewModel.swift */; };
 		5AF6B7FF29CC8E100053ECEA /* ReceptRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B7FE29CC8E100053ECEA /* ReceptRowView.swift */; };
 		5AF6B81629CDA3C20053ECEA /* MocksEdamam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B81529CDA3C20053ECEA /* MocksEdamam.swift */; };
+		5AF6B81929CDAE0A0053ECEA /* ImageSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B81829CDAE0A0053ECEA /* ImageSlider.swift */; };
+		5AF6B81B29CDB21E0053ECEA /* ReceptDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B81A29CDB21E0053ECEA /* ReceptDetailsView.swift */; };
+		5AF6B81D29CDB2DF0053ECEA /* GeaometryReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B81C29CDB2DF0053ECEA /* GeaometryReader.swift */; };
+		5AF6B82129CDBA3E0053ECEA /* TagLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B82029CDBA3E0053ECEA /* TagLayoutView.swift */; };
+		5AF6B82329CDC2840053ECEA /* CircleIconButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B82229CDC2840053ECEA /* CircleIconButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -246,6 +251,11 @@
 		5AF6B7FC29CC88E80053ECEA /* RecepiesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecepiesListViewModel.swift; sourceTree = "<group>"; };
 		5AF6B7FE29CC8E100053ECEA /* ReceptRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceptRowView.swift; sourceTree = "<group>"; };
 		5AF6B81529CDA3C20053ECEA /* MocksEdamam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocksEdamam.swift; sourceTree = "<group>"; };
+		5AF6B81829CDAE0A0053ECEA /* ImageSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSlider.swift; sourceTree = "<group>"; };
+		5AF6B81A29CDB21E0053ECEA /* ReceptDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceptDetailsView.swift; sourceTree = "<group>"; };
+		5AF6B81C29CDB2DF0053ECEA /* GeaometryReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeaometryReader.swift; sourceTree = "<group>"; };
+		5AF6B82029CDBA3E0053ECEA /* TagLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagLayoutView.swift; sourceTree = "<group>"; };
+		5AF6B82229CDC2840053ECEA /* CircleIconButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleIconButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -389,6 +399,7 @@
 				5A36306029C51F03008E7E05 /* Color.swift */,
 				5AA36D5A29C66C5500BC72D5 /* UIApllication.swift */,
 				5A52BECA29C77DD1007129D1 /* FileManager.swift */,
+				5AF6B81C29CDB2DF0053ECEA /* GeaometryReader.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -479,6 +490,7 @@
 			isa = PBXGroup;
 			children = (
 				5A556F0329C47BEB002DAD54 /* ButtonStyle.swift */,
+				5AF6B82229CDC2840053ECEA /* CircleIconButtonView.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -658,6 +670,7 @@
 		5AB741CD29C1FD3F00821457 /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				5AF6B81729CDADFE0053ECEA /* Image */,
 				5A52BEC729C77AD8007129D1 /* ImagePicker */,
 				5A36306229C52245008E7E05 /* DatePicker */,
 				5A556EFE29C46BC3002DAD54 /* TextFields */,
@@ -665,6 +678,7 @@
 				5A52A6D329C28BDB002A68E5 /* ProgressBars */,
 				5AB741DE29C22DFC00821457 /* MealFoodRowView.swift */,
 				5A52A6CB29C27F34002A68E5 /* NukeLazyImage.swift */,
+				5AF6B82029CDBA3E0053ECEA /* TagLayoutView.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -745,8 +759,17 @@
 				5AF6B7F629CC56760053ECEA /* ReceptCategoriesView.swift */,
 				5AF6B7FA29CC83FE0053ECEA /* RecepiesListView.swift */,
 				5AF6B7FE29CC8E100053ECEA /* ReceptRowView.swift */,
+				5AF6B81A29CDB21E0053ECEA /* ReceptDetailsView.swift */,
 			);
 			path = Recepies;
+			sourceTree = "<group>";
+		};
+		5AF6B81729CDADFE0053ECEA /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				5AF6B81829CDAE0A0053ECEA /* ImageSlider.swift */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -865,6 +888,7 @@
 				5A38A1B929C0802600947AEC /* ContentView.swift in Sources */,
 				5AB741C529C1DAE100821457 /* Double+ext.swift in Sources */,
 				5AB83DDA29C84C610069A349 /* HealthKitManager.swift in Sources */,
+				5AF6B82329CDC2840053ECEA /* CircleIconButtonView.swift in Sources */,
 				5A8B706029C4611900379520 /* UserSettings.swift in Sources */,
 				5A38A1B729C0802600947AEC /* FoodSecretApp.swift in Sources */,
 				5AB741CC29C1F9EF00821457 /* MealsSectionView.swift in Sources */,
@@ -907,6 +931,7 @@
 				5A36306729C5276A008E7E05 /* DatePickerSheetView.swift in Sources */,
 				5AF6B7FB29CC83FE0053ECEA /* RecepiesListView.swift in Sources */,
 				5AF6B7F729CC56760053ECEA /* ReceptCategoriesView.swift in Sources */,
+				5AF6B81D29CDB2DF0053ECEA /* GeaometryReader.swift in Sources */,
 				5AF6B7F929CC66660053ECEA /* RecepiesViewModel.swift in Sources */,
 				5A4EA61929C344C300CCAF47 /* ProductEditorView.swift in Sources */,
 				5A8B706429C4621200379520 /* UserHalfInfo.swift in Sources */,
@@ -918,6 +943,7 @@
 				5AF6B7EE29CC4D670053ECEA /* EdamamCaloriesType.swift in Sources */,
 				5AA36D5729C5F5D100BC72D5 /* HapticManager.swift in Sources */,
 				5AB83DDF29C84F560069A349 /* StepsSectionView.swift in Sources */,
+				5AF6B81B29CDB21E0053ECEA /* ReceptDetailsView.swift in Sources */,
 				5AB741C729C1DC0B00821457 /* WaterEntity+Extensions.swift in Sources */,
 				5AF6B7F029CC53180053ECEA /* EdamamQueryTypeProtocol.swift in Sources */,
 				5AF6B7DE29CB44D80053ECEA /* EdamamAPIService.swift in Sources */,
@@ -929,6 +955,8 @@
 				5AF6B7F529CC563B0053ECEA /* MainRecepiesView.swift in Sources */,
 				5A4EA62429C3808F00CCAF47 /* HomeSymmaryView.swift in Sources */,
 				5A8B706229C461EF00379520 /* UserDefaults.swift in Sources */,
+				5AF6B82129CDBA3E0053ECEA /* TagLayoutView.swift in Sources */,
+				5AF6B81929CDAE0A0053ECEA /* ImageSlider.swift in Sources */,
 				5A52A6DD29C3222D002A68E5 /* DetailsProductView.swift in Sources */,
 				5AF6B7E829CC42E70053ECEA /* EdamamDietType.swift in Sources */,
 				5AF6B7FF29CC8E100053ECEA /* ReceptRowView.swift in Sources */,

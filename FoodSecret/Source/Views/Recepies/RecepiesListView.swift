@@ -43,7 +43,9 @@ struct RecepiesListView<T: EdamamQueryTypeProtocol> : View where T.AllCases: Ran
 
 struct RecepiesListView_Previews: PreviewProvider {
     static var previews: some View {
-        RecepiesListView(types: EdamamDishType.self, selectedType: .bread)
+        NavigationStack {
+            RecepiesListView(types: EdamamDishType.self, selectedType: .bread)
+        }
     }
 }
 
@@ -57,7 +59,11 @@ extension RecepiesListView{
     private var recepiesSection: some View{
         if !viewModel.recepies.isEmpty{
             ForEach(viewModel.recepies) { recept in
-                ReceptRowView(recept: recept)
+                NavigationLink {
+                    ReceptDetailsView(recept: recept)
+                } label: {
+                    ReceptRowView(recept: recept)
+                }
             }
         }else{
            Text("Empty result")

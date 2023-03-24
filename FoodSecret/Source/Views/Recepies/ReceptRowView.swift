@@ -12,23 +12,25 @@ struct ReceptRowView: View {
     let recept: Recipe
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            NukeLazyImage(strUrl: recept.image, resizingMode: .center)
+            NukeLazyImage(strUrl: recept.image, resizingMode: .aspectFill)
                 .hCenter()
             VStack(alignment: .leading, spacing: 4) {
                 Text(recept.label)
                     .font(.subheadline.bold())
+                    .multilineTextAlignment(.leading)
                 HStack {
                     Text(recept.calories?.toCalories ?? "")
                     Text(recept.timeFriedly)
                 }
-                .font(.footnote.weight(.light))
+                .font(.footnote.weight(.medium))
             }
+            .foregroundColor(.primaryFont)
             .padding(.horizontal)
             .padding(.vertical, 8)
         }
         .hLeading()
         .background(Color(.systemGray6))
-        .frame(height: 220)
+        .frame(height: getRect().height / 3)
         .cornerRadius(12)
         .shadow(color: .black.opacity(0.15), radius: 5)
         .overlay(alignment: .topTrailing) {
@@ -46,14 +48,8 @@ struct ReceptRowView_Previews: PreviewProvider {
 
 extension ReceptRowView{
     private var favoriteButton: some View{
-        Button {
+        CircleIconButtonView(icon: isFavorite ? "heart.fill" : "heart") {
             isFavorite.toggle()
-        } label: {
-            Image(systemName: isFavorite ? "heart.fill" : "heart")
-                .foregroundColor(.white)
-                .imageScale(.medium)
-                .padding(10)
-                .background(Material.ultraThin, in: Circle())
         }
         .padding()
     }

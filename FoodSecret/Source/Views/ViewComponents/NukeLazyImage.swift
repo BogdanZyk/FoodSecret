@@ -38,6 +38,7 @@ struct NukeLazyImage: View{
                 LazyImage(source: url) { state in
                     if let image = state.image {
                         image
+                            .resizingMode(resizingMode)
                     }else  if state.isLoading{
                         Color.secondary.opacity(0.5)// Acts as a placeholder
                     }else if let _ = state.error{

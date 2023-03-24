@@ -68,11 +68,17 @@ struct ResepiesImage: Codable {
 }
 
 // MARK: - Ingredient
-struct Ingredient: Codable {
+struct Ingredient: Codable, Identifiable {
+    
+    var id: String { foodId ?? UUID().uuidString }
+    
     let text: String?
     let quantity: Double?
     let measure, food: String?
     let weight: Double?
     let foodId: String?
 
+    var friedlyQuantityStr: String{
+        "\(quantity?.twoNumString ?? "0") \(measure ?? "")"
+    }
 }

@@ -75,7 +75,7 @@ extension DetailsProductView{
                      .resizable()
                      .aspectRatio(contentMode: .fill)
             }else{
-                NukeLazyImage(strUrl: food.photo.thumb, resizeHeight: 500, resizingMode: .aspectFit, loadPriority: .high)
+                NukeLazyImage(strUrl: food.photo.thumb, resizeHeight: 500, resizingMode: .fill, loadPriority: .high)
             }
         }
         .frame(height: 200)

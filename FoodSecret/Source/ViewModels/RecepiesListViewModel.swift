@@ -41,7 +41,6 @@ class RecepiesListViewModel: ObservableObject{
             } receiveValue: {[weak self] recipies in
                 guard let self = self else {return}
                 self.recepies = recipies
-                print(self.recepies.first)
             }
             .store(in: &cancellable)
     }

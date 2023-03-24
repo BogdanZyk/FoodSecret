@@ -68,12 +68,16 @@ extension SearchFoodView{
                     }
                 } label: {
                     HStack{
-                        NukeLazyImage(strUrl: food.photo.thumb, resizeHeight: 100, resizingMode: .center, loadPriority: .normal)
+                        NukeLazyImage(strUrl: food.photo.thumb, resizeHeight: 100, resizingMode: .aspectFit, loadPriority: .normal)
                             .frame(width: 40, height: 40)
                             .cornerRadius(12)
                         Text(food.foodName?.capitalized ?? "no name")
                             .lineLimit(1)
                             .font(.headline)
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .imageScale(.small)
+                            .foregroundColor(.secondary)
                     }
                 }
             }
