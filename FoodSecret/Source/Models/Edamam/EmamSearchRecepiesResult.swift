@@ -37,11 +37,15 @@ struct Recipe: Codable, Identifiable {
     let dietLabels, healthLabels, cautions, ingredientLines: [String?]
     let ingredients: [Ingredient]
     let calories: Double?
-    let totalWeight: Double?
-    let cuisineType, mealType, dishType: [String?]
+    let totalWeight, totalTime: Double?
+    let cuisineType, mealType, dishType: [String]
     let externalId: String?
 
 
+    var timeFriedly: String{
+        let time = Int(totalTime ?? 15)
+        return "\(time) min"
+    }
 }
 
 

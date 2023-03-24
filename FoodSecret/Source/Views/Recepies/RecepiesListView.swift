@@ -22,7 +22,7 @@ struct RecepiesListView<T: EdamamQueryTypeProtocol> : View where T.AllCases: Ran
         VStack(spacing: 16) {
             categoryHeader
             ScrollView(.vertical, showsIndicators: false) {
-                VStack(spacing: 32) {
+                LazyVStack(spacing: 16) {
                     if !viewModel.showLoader{
                         recepiesSection
                     }else{
@@ -55,7 +55,7 @@ extension RecepiesListView{
     
     @ViewBuilder
     private var recepiesSection: some View{
-        if viewModel.recepies.isEmpty{
+        if !viewModel.recepies.isEmpty{
             ForEach(viewModel.recepies) { recept in
                 ReceptRowView(recept: recept)
             }

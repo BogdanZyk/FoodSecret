@@ -40,13 +40,13 @@ extension EdamamEndpoint {
     
     private var apiKeys: [URLQueryItem]{
          [
-            URLQueryItem(name: "app_id", value: "2d16cbff"),
-            URLQueryItem(name: "app_key", value: "7f1d9ee7b324a3b33e3ea506d9ba2110"),
+            URLQueryItem(name: "app_id", value: "4e1c8ec0"),
+            URLQueryItem(name: "app_key", value: "085b574baec0ab50964005b48d6fbd17"),
         ]
     }
     
     private var fields: [URLQueryItem]{
-        let values = ["uri", "label", "image", "images", "source", "url", "shareAs", "yield", "dietLabels", "healthLabels", "cautions", "ingredientLines", "ingredients", "calories", "totalWeight", "cuisineType", "mealType", "dishType", "tags", "externalID"]
+        let values = ["uri", "label", "image", "images", "source", "url", "shareAs", "yield", "dietLabels", "healthLabels", "cautions", "ingredientLines", "ingredients", "calories", "totalWeight", "totalTime", "cuisineType", "mealType", "dishType", "tags", "externalID"]
         return values.map({URLQueryItem(name: "field", value: $0)})
 
 

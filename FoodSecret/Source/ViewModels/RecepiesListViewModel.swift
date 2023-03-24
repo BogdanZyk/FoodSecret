@@ -34,11 +34,14 @@ class RecepiesListViewModel: ObservableObject{
                 case .finished:
                     self.showLoader = false
                 case .failure(let error):
+                    self.showLoader = false
                     self.error = error
+                    print(error.localizedDescription)
                 }
             } receiveValue: {[weak self] recipies in
                 guard let self = self else {return}
                 self.recepies = recipies
+                print(self.recepies.first)
             }
             .store(in: &cancellable)
     }

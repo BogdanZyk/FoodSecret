@@ -120,6 +120,7 @@
 		5AF6B7FB29CC83FE0053ECEA /* RecepiesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B7FA29CC83FE0053ECEA /* RecepiesListView.swift */; };
 		5AF6B7FD29CC88E80053ECEA /* RecepiesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B7FC29CC88E80053ECEA /* RecepiesListViewModel.swift */; };
 		5AF6B7FF29CC8E100053ECEA /* ReceptRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B7FE29CC8E100053ECEA /* ReceptRowView.swift */; };
+		5AF6B81629CDA3C20053ECEA /* MocksEdamam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B81529CDA3C20053ECEA /* MocksEdamam.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -244,6 +245,7 @@
 		5AF6B7FA29CC83FE0053ECEA /* RecepiesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecepiesListView.swift; sourceTree = "<group>"; };
 		5AF6B7FC29CC88E80053ECEA /* RecepiesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecepiesListViewModel.swift; sourceTree = "<group>"; };
 		5AF6B7FE29CC8E100053ECEA /* ReceptRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceptRowView.swift; sourceTree = "<group>"; };
+		5AF6B81529CDA3C20053ECEA /* MocksEdamam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocksEdamam.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -731,6 +733,7 @@
 			children = (
 				5AF6B7DB29CB43290053ECEA /* EdamamEndpoint.swift */,
 				5AF6B7DD29CB44D80053ECEA /* EdamamAPIService.swift */,
+				5AF6B81529CDA3C20053ECEA /* MocksEdamam.swift */,
 			);
 			path = EdamamAPI;
 			sourceTree = "<group>";
@@ -899,6 +902,7 @@
 				5A52A6D529C28BEF002A68E5 /* LineProgressView.swift in Sources */,
 				5A38A1CA29C0807000947AEC /* View+extension.swift in Sources */,
 				5A8B706929C4656E00379520 /* ProfileViewModel.swift in Sources */,
+				5AF6B81629CDA3C20053ECEA /* MocksEdamam.swift in Sources */,
 				5AF6B7FD29CC88E80053ECEA /* RecepiesListViewModel.swift in Sources */,
 				5A36306729C5276A008E7E05 /* DatePickerSheetView.swift in Sources */,
 				5AF6B7FB29CC83FE0053ECEA /* RecepiesListView.swift in Sources */,
