@@ -13,6 +13,7 @@ class SearhFoodViewModel: ObservableObject{
     
     let service = NutritionixService()
     var cancellable = Set<AnyCancellable>()
+    @Published var error: NetworkError?
     @Published var searchState: SearchState = .waiting
     @Published var foods = [ProductSearchResult.Product]()
     @Published var query: String = ""
@@ -51,24 +52,22 @@ class SearhFoodViewModel: ObservableObject{
     private func search(_ query: String){
         searchState = .loading
         service.search(query)
-            .receive(on: DispatchQueue.main)
-            .map({$0.common + $0.branded})
-            .sink { [weak self] completion in
+            .sink {[weak self] response in
                 guard let self = self else {return}
-                
-                switch completion{
-                case .finished: break
-                case .failure(let error):
-                    print("Error load", error.localizedDescription)
+                if let error = response.error{
+                    self.error = error
                     self.searchState = .empty
+                    print(error)
+                }else{
+                    guard let foods = response.value.map({$0.common + $0.branded}) else {
+                        self.searchState = .empty
+                        return
+                    }
+                    self.searchState = foods.isEmpty ? .empty : .load
+                    self.foods = foods
                 }
-            } receiveValue: {[weak self] foods in
-                guard let self = self else {return}
-                self.searchState = foods.isEmpty ? .empty : .load
-                self.foods = foods
             }
             .store(in: &cancellable)
-        
     }
 }
 

@@ -7,41 +7,34 @@
 
 import Foundation
 import Combine
-
+import Alamofire
 
 protocol NutritionixServiceProtocol: AnyObject{
 
-    func search(_ query: String) -> AnyPublisher<ProductSearchResult, Error>
-    func getNutrientInfo(for params: NutrientParams) -> AnyPublisher<NutrientInfo, Error>
+    func getNutrientInfo(for body: NutrientParams) -> AnyPublisher<DataResponse<NutrientInfo, NetworkError>, Never>
+    func search(_ query: String) -> AnyPublisher<DataResponse<ProductSearchResult, NetworkError>, Never>
 }
 
 
 final class NutritionixService: NutritionixServiceProtocol{
     
+    
+    func getNutrientInfo(for body: NutrientParams) -> AnyPublisher<DataResponse<NutrientInfo, NetworkError>, Never>{
+        AF.execute(type: NutrientInfo.self, urlRequest: NutritionixRouter.nutrients(body: body))
+    }
+    
+    func search(_ query: String) -> AnyPublisher<DataResponse<ProductSearchResult, NetworkError>, Never>{
+        AF.execute(type: ProductSearchResult.self, urlRequest: NutritionixRouter.search(query: query))
+    }
+}
 
-    let networkManager = NetworkManager.share
-    let headers = NutritionixEndpoint.headers
-    
-    func search(_ query: String) -> AnyPublisher<ProductSearchResult, Error> {
-        let endpoint = NutritionixEndpoint.search(query)
-        var request = URLRequest(url: endpoint.url)
-        request.allHTTPHeaderFields = headers
-        return networkManager.execute(type: ProductSearchResult.self, urlRequest: request)
-    }
-    
-    func getNutrientInfo(for params: NutrientParams) -> AnyPublisher<NutrientInfo, Error>{
-        
-        guard let postData = try? JSONEncoder().encode(params) else {
-            print("Error encode NutrientParams")
-            return Fail(error: NetworkingError.unknow).eraseToAnyPublisher()
-        }
-        
-       
-        let endpoint = NutritionixEndpoint.nutrients
-        var request = URLRequest(url: endpoint.url)
-        request.httpMethod = "POST"
-        request.allHTTPHeaderFields = headers
-        request.httpBody = postData
-        return networkManager.execute(type: NutrientInfo.self, urlRequest: request)
-    }
+
+
+struct NetworkError: Error {
+  let initialError: AFError
+  let backendError: BackendError?
+}
+
+struct BackendError: Codable, Error {
+    var message: String
 }

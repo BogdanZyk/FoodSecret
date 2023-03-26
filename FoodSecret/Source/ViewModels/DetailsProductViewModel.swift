@@ -13,6 +13,7 @@ class DetailsProductViewModel: ObservableObject{
     
     @Published var weight: Double = 100.0
     @Published var product: Food?
+    @Published var error: NetworkError?
     let service = NutritionixService()
     var cancellable = Set<AnyCancellable>()
     var foodEntity: FoodEntity?
@@ -37,16 +38,14 @@ class DetailsProductViewModel: ObservableObject{
     private func fetchInfo(for productName: String){
         service.getNutrientInfo(for: .init(query: productName))
             .receive(on: DispatchQueue.main)
-            .sink { completion in
-                switch completion{
-                case .finished: break
-                case .failure(let error):
-                    print("Error load", error.localizedDescription)
-                }
-            } receiveValue: {[weak self] nutrientInfo in
+            .sink {[weak self] response in
                 guard let self = self else {return}
-                self.product = nutrientInfo.foods.first
-                self.weight = Double(self.product?.servingWeightGrams ?? 100)
+                if let error = response.error{
+                    self.error = error
+                }else{
+                    self.product = response.value?.foods.first
+                    self.weight = Double(self.product?.servingWeightGrams ?? 100)
+                }
             }
             .store(in: &cancellable)
     }

@@ -20,8 +20,6 @@
 		5A38A1CC29C080F500947AEC /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38A1CB29C080F500947AEC /* Date+Ext.swift */; };
 		5A38A1F129C0EFF800947AEC /* ProductSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38A1F029C0EFF800947AEC /* ProductSearchResult.swift */; };
 		5A38A1F329C0F0F400947AEC /* NutrientInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38A1F229C0F0F400947AEC /* NutrientInfo.swift */; };
-		5A38A1F629C0F45F00947AEC /* NutritionixEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38A1F529C0F45F00947AEC /* NutritionixEndpoint.swift */; };
-		5A38A1F829C0F66200947AEC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38A1F729C0F66200947AEC /* NetworkManager.swift */; };
 		5A38A1FA29C0F7AE00947AEC /* NutritionixService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38A1F929C0F7AE00947AEC /* NutritionixService.swift */; };
 		5A38A20029C101CC00947AEC /* NutitionixProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38A1FF29C101CC00947AEC /* NutitionixProduct.swift */; };
 		5A4EA61929C344C300CCAF47 /* ProductEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4EA61829C344C300CCAF47 /* ProductEditorView.swift */; };
@@ -126,6 +124,9 @@
 		5AF6B81D29CDB2DF0053ECEA /* GeaometryReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B81C29CDB2DF0053ECEA /* GeaometryReader.swift */; };
 		5AF6B82129CDBA3E0053ECEA /* TagLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B82029CDBA3E0053ECEA /* TagLayoutView.swift */; };
 		5AF6B82329CDC2840053ECEA /* CircleIconButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B82229CDC2840053ECEA /* CircleIconButtonView.swift */; };
+		5AF6B85229D0DB840053ECEA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5AF6B85129D0DB840053ECEA /* Alamofire */; };
+		5AF6B85429D0E42D0053ECEA /* NutritionixRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B85329D0E42D0053ECEA /* NutritionixRouter.swift */; };
+		5AF6B85829D0E9F30053ECEA /* Alamofire+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B85729D0E9F30053ECEA /* Alamofire+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,8 +169,6 @@
 		5A38A1EE29C0D9A200947AEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5A38A1F029C0EFF800947AEC /* ProductSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSearchResult.swift; sourceTree = "<group>"; };
 		5A38A1F229C0F0F400947AEC /* NutrientInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientInfo.swift; sourceTree = "<group>"; };
-		5A38A1F529C0F45F00947AEC /* NutritionixEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionixEndpoint.swift; sourceTree = "<group>"; };
-		5A38A1F729C0F66200947AEC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		5A38A1F929C0F7AE00947AEC /* NutritionixService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionixService.swift; sourceTree = "<group>"; };
 		5A38A1FF29C101CC00947AEC /* NutitionixProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutitionixProduct.swift; sourceTree = "<group>"; };
 		5A4EA61829C344C300CCAF47 /* ProductEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductEditorView.swift; sourceTree = "<group>"; };
@@ -256,6 +255,8 @@
 		5AF6B81C29CDB2DF0053ECEA /* GeaometryReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeaometryReader.swift; sourceTree = "<group>"; };
 		5AF6B82029CDBA3E0053ECEA /* TagLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagLayoutView.swift; sourceTree = "<group>"; };
 		5AF6B82229CDC2840053ECEA /* CircleIconButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleIconButtonView.swift; sourceTree = "<group>"; };
+		5AF6B85329D0E42D0053ECEA /* NutritionixRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionixRouter.swift; sourceTree = "<group>"; };
+		5AF6B85729D0E9F30053ECEA /* Alamofire+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alamofire+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A52A6D229C280EE002A68E5 /* NukeUI in Frameworks */,
+				5AF6B85229D0DB840053ECEA /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +402,7 @@
 				5AA36D5A29C66C5500BC72D5 /* UIApllication.swift */,
 				5A52BECA29C77DD1007129D1 /* FileManager.swift */,
 				5AF6B81C29CDB2DF0053ECEA /* GeaometryReader.swift */,
+				5AF6B85729D0E9F30053ECEA /* Alamofire+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -418,9 +421,8 @@
 		5A38A1F429C0F44B00947AEC /* NutritionixAPI */ = {
 			isa = PBXGroup;
 			children = (
-				5A38A1F529C0F45F00947AEC /* NutritionixEndpoint.swift */,
-				5A38A1F729C0F66200947AEC /* NetworkManager.swift */,
 				5A38A1F929C0F7AE00947AEC /* NutritionixService.swift */,
+				5AF6B85329D0E42D0053ECEA /* NutritionixRouter.swift */,
 			);
 			path = NutritionixAPI;
 			sourceTree = "<group>";
@@ -792,6 +794,7 @@
 			name = FoodSecret;
 			packageProductDependencies = (
 				5A52A6D129C280EE002A68E5 /* NukeUI */,
+				5AF6B85129D0DB840053ECEA /* Alamofire */,
 			);
 			productName = FoodSecret;
 			productReference = 5A38A1B329C0802600947AEC /* FoodSecret.app */;
@@ -843,6 +846,7 @@
 			mainGroup = 5A38A1AA29C0802600947AEC;
 			packageReferences = (
 				5A52A6D029C280EE002A68E5 /* XCRemoteSwiftPackageReference "NukeUI" */,
+				5AF6B85029D0DB840053ECEA /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 5A38A1B429C0802600947AEC /* Products */;
 			projectDirPath = "";
@@ -881,7 +885,6 @@
 			files = (
 				5A36306429C52254008E7E05 /* CustomDatePicker.swift in Sources */,
 				5AB741D329C206C100821457 /* MealsDetailsView.swift in Sources */,
-				5A38A1F629C0F45F00947AEC /* NutritionixEndpoint.swift in Sources */,
 				5A556F0029C46BD4002DAD54 /* NumberTextField.swift in Sources */,
 				5A52BED129C7BB7D007129D1 /* WaterSettingsView.swift in Sources */,
 				5A52A6DF29C323CC002A68E5 /* DetailsProductViewModel.swift in Sources */,
@@ -892,6 +895,7 @@
 				5A8B706029C4611900379520 /* UserSettings.swift in Sources */,
 				5A38A1B729C0802600947AEC /* FoodSecretApp.swift in Sources */,
 				5AB741CC29C1F9EF00821457 /* MealsSectionView.swift in Sources */,
+				5AF6B85429D0E42D0053ECEA /* NutritionixRouter.swift in Sources */,
 				5AB83DDC29C84D770069A349 /* HealthKitViewModel.swift in Sources */,
 				5A556F0429C47BEB002DAD54 /* ButtonStyle.swift in Sources */,
 				5A556F3429C4A026002DAD54 /* MealType.swift in Sources */,
@@ -921,8 +925,8 @@
 				5AF6B7EA29CC464E0053ECEA /* EdamamHealthType.swift in Sources */,
 				5AB741DA29C2149B00821457 /* PreviewProvider.swift in Sources */,
 				5AB741CA29C1F75E00821457 /* HomeView.swift in Sources */,
+				5AF6B85829D0E9F30053ECEA /* Alamofire+Ext.swift in Sources */,
 				5AB741BF29C1B3A200821457 /* CoreDataFoodSecret.xcdatamodeld in Sources */,
-				5A38A1F829C0F66200947AEC /* NetworkManager.swift in Sources */,
 				5A52A6D529C28BEF002A68E5 /* LineProgressView.swift in Sources */,
 				5A38A1CA29C0807000947AEC /* View+extension.swift in Sources */,
 				5A8B706929C4656E00379520 /* ProfileViewModel.swift in Sources */,
@@ -1297,6 +1301,14 @@
 				minimumVersion = 0.8.3;
 			};
 		};
+		5AF6B85029D0DB840053ECEA /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1304,6 +1316,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5A52A6D029C280EE002A68E5 /* XCRemoteSwiftPackageReference "NukeUI" */;
 			productName = NukeUI;
+		};
+		5AF6B85129D0DB840053ECEA /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AF6B85029D0DB840053ECEA /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 
