@@ -38,6 +38,7 @@ struct RecepiesListView<T: EdamamQueryTypeProtocol> : View where T.AllCases: Ran
         .onChange(of: selectedType) { type in
             viewModel.fetch(type)
         }
+        .animation(.easeInOut, value: viewModel.showLoader)
     }
 }
 

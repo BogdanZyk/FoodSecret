@@ -12,8 +12,10 @@ struct ReceptRowView: View {
     let recept: Recipe
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            NukeLazyImage(strUrl: recept.image, resizingMode: .aspectFill)
-                .hCenter()
+            ZStack{
+                Color.white
+                NukeLazyImage(strUrl: recept.image, resizingMode: .aspectFill)
+            }
             VStack(alignment: .leading, spacing: 4) {
                 Text(recept.label)
                     .font(.subheadline.bold())

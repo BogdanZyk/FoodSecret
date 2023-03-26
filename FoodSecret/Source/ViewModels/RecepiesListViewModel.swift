@@ -5,7 +5,7 @@
 //  Created by Bogdan Zykov on 23.03.2023.
 //
 
-import Foundation
+import SwiftUI
 import Combine
 
 class RecepiesListViewModel: ObservableObject{
@@ -29,7 +29,6 @@ class RecepiesListViewModel: ObservableObject{
             .receive(on: DispatchQueue.main)
             .sink{ [weak self] response in
                 guard let self = self else {return}
-                self.showLoader = false
                 if let error = response.error{
                     self.error = error
                 }else{
@@ -37,6 +36,7 @@ class RecepiesListViewModel: ObservableObject{
                         self.recepies = recepies
                     }
                 }
+                self.showLoader = false
             }
             .store(in: &cancellable)
     }
