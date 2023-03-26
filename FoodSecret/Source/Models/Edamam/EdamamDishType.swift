@@ -37,8 +37,8 @@ enum EdamamDishType: String, EdamamQueryTypeProtocol{
 
     var title: String { rawValue.capitalized }
     
-    var uRLQueryItem: URLQueryItem{
-        .init(name: "dishType", value: rawValue)
+    var params: [String: String]{
+        ["dishType": rawValue]
     }
     
     var emoji: String{

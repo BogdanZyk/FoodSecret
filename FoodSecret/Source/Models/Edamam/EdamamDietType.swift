@@ -18,8 +18,8 @@ enum EdamamDietType: String, EdamamQueryTypeProtocol{
     case lowFat = "Low-Fat"
     case lowSodium = "Low-Sodium"
     
-    var uRLQueryItem: URLQueryItem{
-        .init(name: "dietType", value: rawValue.lowercased())
+    var params: [String: String]{
+        ["dietType": rawValue.lowercased()]
     }
     
     var emoji: String{

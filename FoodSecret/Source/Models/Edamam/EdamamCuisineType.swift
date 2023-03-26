@@ -11,8 +11,8 @@ enum EdamamCuisineType: String, EdamamQueryTypeProtocol{
     
     case american, asian, british, caribbean, central, europe, chinese, eastern, french, greek, indian, italian, japanese, korean, kosher, mediterranean, mexican, middle, nordic, south, east, world
     
-    var uRLQueryItem: URLQueryItem{
-        .init(name: "cuisineType", value: rawValue)
+    var params: [String: String]{
+        ["cuisineType": rawValue]
     }
     
     var title: String { rawValue.capitalized }

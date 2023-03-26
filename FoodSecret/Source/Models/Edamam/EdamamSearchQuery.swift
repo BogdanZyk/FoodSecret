@@ -15,15 +15,19 @@ struct EdamamSearchQuery{
 
     
     
-    var urlQueryItems: [URLQueryItem]{
-        var items = [URLQueryItem]()
+    var urlQueryItems: [String: String]{
+        
+        var items: [String: String] = [:]
         
         if !query.isEmpty{
-            items.append(.init(name: "q", value: query))
+            items["q"] = query
         }
-        let uRLQueryItems = categories.map { $0.uRLQueryItem }
-        items.append(contentsOf: uRLQueryItems)
-        return items
+        
+        let itemParams = categories.reduce(items) { partialResult, item in
+            partialResult.merging(item.params) { (_, new) in new }
+        }
+
+        return itemParams
     }
     
    mutating func reset(){

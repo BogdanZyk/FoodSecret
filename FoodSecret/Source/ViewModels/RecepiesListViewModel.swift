@@ -10,7 +10,7 @@ import Combine
 
 class RecepiesListViewModel: ObservableObject{
     
-    @Published var error: Error?
+    @Published var error: NetworkError?
     @Published var recepies = [Recipe]()
     @Published var showLoader: Bool = false
     let servece = EdamamAPIService()
@@ -27,20 +27,16 @@ class RecepiesListViewModel: ObservableObject{
         let query = EdamamSearchQuery(categories: [type])
         servece.searchRecepies(searchQuery: query)
             .receive(on: DispatchQueue.main)
-            .map({$0.hits.map({$0.recipe})})
-            .sink {[weak self] completion in
+            .sink{ [weak self] response in
                 guard let self = self else {return}
-                switch completion{
-                case .finished:
-                    self.showLoader = false
-                case .failure(let error):
-                    self.showLoader = false
+                self.showLoader = false
+                if let error = response.error{
                     self.error = error
-                    print(error.localizedDescription)
+                }else{
+                    if let recepies = response.value?.hits.compactMap({$0.recipe}){
+                        self.recepies = recepies
+                    }
                 }
-            } receiveValue: {[weak self] recipies in
-                guard let self = self else {return}
-                self.recepies = recipies
             }
             .store(in: &cancellable)
     }

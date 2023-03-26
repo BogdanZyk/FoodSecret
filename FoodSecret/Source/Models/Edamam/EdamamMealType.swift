@@ -17,8 +17,8 @@ enum EdamamMealType: String, EdamamQueryTypeProtocol{
     var title: String { rawValue.capitalized }
     var typeTitle: String { "Meals type" }
     
-    var uRLQueryItem: URLQueryItem{
-        .init(name: "mealType", value: rawValue)
+    var params: [String: String]{
+        ["mealType": rawValue]
     }
     
     

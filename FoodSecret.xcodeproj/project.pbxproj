@@ -101,7 +101,6 @@
 		5ABAEEBF29C4BF1D005EBA3A /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B705F29C4611900379520 /* UserSettings.swift */; };
 		5ABAEEC029C4BF8B005EBA3A /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B706129C461EF00379520 /* UserDefaults.swift */; };
 		5ABAEEC129C4C0DA005EBA3A /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741CE29C1FD5600821457 /* CircleProgressView.swift */; };
-		5AF6B7DC29CB43290053ECEA /* EdamamEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B7DB29CB43290053ECEA /* EdamamEndpoint.swift */; };
 		5AF6B7DE29CB44D80053ECEA /* EdamamAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B7DD29CB44D80053ECEA /* EdamamAPIService.swift */; };
 		5AF6B7E029CB4B680053ECEA /* EmamSearchRecepiesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B7DF29CB4B680053ECEA /* EmamSearchRecepiesResult.swift */; };
 		5AF6B7E229CC40540053ECEA /* EdamamCuisineType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B7E129CC40540053ECEA /* EdamamCuisineType.swift */; };
@@ -127,6 +126,7 @@
 		5AF6B85229D0DB840053ECEA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5AF6B85129D0DB840053ECEA /* Alamofire */; };
 		5AF6B85429D0E42D0053ECEA /* NutritionixRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B85329D0E42D0053ECEA /* NutritionixRouter.swift */; };
 		5AF6B85829D0E9F30053ECEA /* Alamofire+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B85729D0E9F30053ECEA /* Alamofire+Ext.swift */; };
+		5AF6B85A29D0F0D90053ECEA /* EdamamRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B85929D0F0D90053ECEA /* EdamamRoute.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -232,7 +232,6 @@
 		5AB83DDB29C84D770069A349 /* HealthKitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitViewModel.swift; sourceTree = "<group>"; };
 		5AB83DDE29C84F560069A349 /* StepsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsSectionView.swift; sourceTree = "<group>"; };
 		5ABAEEBA29C4BC27005EBA3A /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
-		5AF6B7DB29CB43290053ECEA /* EdamamEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamEndpoint.swift; sourceTree = "<group>"; };
 		5AF6B7DD29CB44D80053ECEA /* EdamamAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamAPIService.swift; sourceTree = "<group>"; };
 		5AF6B7DF29CB4B680053ECEA /* EmamSearchRecepiesResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmamSearchRecepiesResult.swift; sourceTree = "<group>"; };
 		5AF6B7E129CC40540053ECEA /* EdamamCuisineType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamCuisineType.swift; sourceTree = "<group>"; };
@@ -257,6 +256,7 @@
 		5AF6B82229CDC2840053ECEA /* CircleIconButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleIconButtonView.swift; sourceTree = "<group>"; };
 		5AF6B85329D0E42D0053ECEA /* NutritionixRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionixRouter.swift; sourceTree = "<group>"; };
 		5AF6B85729D0E9F30053ECEA /* Alamofire+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alamofire+Ext.swift"; sourceTree = "<group>"; };
+		5AF6B85929D0F0D90053ECEA /* EdamamRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamRoute.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,7 +334,7 @@
 				5A38A1C729C0803B00947AEC /* App */,
 				5A38A1C629C0803400947AEC /* Source */,
 				5A38A1C529C0803100947AEC /* Utils */,
-				5A38A1C429C0802C00947AEC /* Serveces */,
+				5A38A1C429C0802C00947AEC /* Services */,
 				5A38A1BA29C0802800947AEC /* Assets.xcassets */,
 				5A38A1BC29C0802800947AEC /* Preview Content */,
 			);
@@ -349,7 +349,7 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		5A38A1C429C0802C00947AEC /* Serveces */ = {
+		5A38A1C429C0802C00947AEC /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				5AF6B7DA29CB42F90053ECEA /* EdamamAPI */,
@@ -357,7 +357,7 @@
 				5AB741B429C1B1C400821457 /* CodeData */,
 				5A38A1F429C0F44B00947AEC /* NutritionixAPI */,
 			);
-			path = Serveces;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		5A38A1C529C0803100947AEC /* Utils */ = {
@@ -747,9 +747,9 @@
 		5AF6B7DA29CB42F90053ECEA /* EdamamAPI */ = {
 			isa = PBXGroup;
 			children = (
-				5AF6B7DB29CB43290053ECEA /* EdamamEndpoint.swift */,
 				5AF6B7DD29CB44D80053ECEA /* EdamamAPIService.swift */,
 				5AF6B81529CDA3C20053ECEA /* MocksEdamam.swift */,
+				5AF6B85929D0F0D90053ECEA /* EdamamRoute.swift */,
 			);
 			path = EdamamAPI;
 			sourceTree = "<group>";
@@ -904,7 +904,6 @@
 				5AB741D829C210D800821457 /* AllMealsFoodView.swift in Sources */,
 				5AF6B7E029CB4B680053ECEA /* EmamSearchRecepiesResult.swift in Sources */,
 				5A556F0929C497A5002DAD54 /* RootView+TabView.swift in Sources */,
-				5AF6B7DC29CB43290053ECEA /* EdamamEndpoint.swift in Sources */,
 				5AA36D5929C6025A00BC72D5 /* MealsMenuView.swift in Sources */,
 				5A52BEC929C77AE6007129D1 /* ImagePicker.swift in Sources */,
 				5AB741B729C1B1FF00821457 /* CoreDataExt.swift in Sources */,
@@ -963,6 +962,7 @@
 				5AF6B81929CDAE0A0053ECEA /* ImageSlider.swift in Sources */,
 				5A52A6DD29C3222D002A68E5 /* DetailsProductView.swift in Sources */,
 				5AF6B7E829CC42E70053ECEA /* EdamamDietType.swift in Sources */,
+				5AF6B85A29D0F0D90053ECEA /* EdamamRoute.swift in Sources */,
 				5AF6B7FF29CC8E100053ECEA /* ReceptRowView.swift in Sources */,
 				5AB741DD29C21B9E00821457 /* Helper.swift in Sources */,
 				5A38A1CC29C080F500947AEC /* Date+Ext.swift in Sources */,

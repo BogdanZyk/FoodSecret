@@ -20,8 +20,8 @@ enum EdamamCaloriesType: String, EdamamQueryTypeProtocol{
     case veryLarge = "600-700"
     case fastfood = "700-1000"
     
-    var uRLQueryItem: URLQueryItem{
-        .init(name: "calories", value: rawValue)
+    var params: [String: String]{
+        ["calories": rawValue]
     }
     
     var emoji: String{

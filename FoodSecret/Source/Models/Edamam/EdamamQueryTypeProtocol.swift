@@ -10,7 +10,7 @@ import Foundation
 protocol EdamamQueryTypeProtocol: CaseIterable, Hashable {
     
 
-    var uRLQueryItem: URLQueryItem { get }
+    var params: [String: String] { get }
     var emoji: String { get }
     var title: String { get }
     var typeTitle: String { get }
