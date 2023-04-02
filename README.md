@@ -1,5 +1,5 @@
 # FoodSecret
- <img src="screenshots/chats.png" height="350" alt="Screenshot"/>
+ <img src="screenshots/appIcon.jpg" height="80" alt="app icon"/>
 FoodSecret is an iOS app that helps you track your food consumption, monitor your calorie intake, and stay hydrated throughout the day. The app syncs with the Health app, making it easy for you to monitor your progress and reach your health goals.
 
 ## Features
@@ -38,14 +38,31 @@ FoodSecret is an iOS app that helps you track your food consumption, monitor you
 ## Screenshots 📷
 
  <div align="center">
- <img src="screenshots/chats.png" height="350" alt="Screenshot"/>
- <img src="screenshots/selected-chat.png" height="350" alt="Screenshot"/>
-<img src="screenshots/dialog.png" height="350" alt="Screenshot"/>
-<img src="screenshots/selected-message.png" height="350" alt="Screenshot"/>
-<img src="screenshots/dialog2.png" height="350" alt="Screenshot"/>
-<img src="screenshots/dialog3.png" height="350" alt="Screenshot"/>
-<img src="screenshots/dialog4.png" height="350" alt="Screenshot"/>
-<img src="screenshots/pin-video.png" height="350" alt="Screenshot"/>
+ <img src="screenshots/home_dark.jpeg" height="350" alt="Screenshot"/>
+ <img src="screenshots/home2_dark.jpeg" height="350" alt="Screenshot"/>
+  <img src="screenshots/calebdar.jpeg" height="350" alt="Screenshot"/>
+ <img src="screenshots/meals_dark.jpeg" height="350" alt="Screenshot"/>
+<img src="screenshots/product.jpeg" height="350" alt="Screenshot"/>
+<img src="screenshots/profile_dark.jpeg" height="350" alt="Screenshot"/>
+<img src="screenshots/userInfo.jpeg" height="350" alt="Screenshot"/>
+<img src="screenshots/waterInfo.jpeg" height="350" alt="Screenshot"/>
+<img src="screenshots/recepies_dark.jpeg" height="350" alt="Screenshot"/>
+<img src="screenshots/recept_dark.jpeg" height="350" alt="Screenshot"/>
+<img src="screenshots/photo_2023-04-02 16.01.47.jpeg" height="350" alt="Screenshot"/>
+<img src="screenshots/home_light.png" height="350" alt="Screenshot"/>
+<img src="screenshots/meals_light.png" height="350" alt="Screenshot"/>
+<img src="screenshots/profile_light.png" height="350" alt="Screenshot"/>
+<img src="screenshots/recepies_light.png" height="350" alt="Screenshot"/>
+
+   </div>
+   
+   ## Widgets 
+
+ <div align="center">
+ <img src="screenshots/widget1.png" height="350" alt="Screenshot"/>
+ <img src="screenshots/widget2.png" height="350" alt="Screenshot"/>
+<img src="screenshots/widget3.png" height="350" alt="Screenshot"/>
+<img src="screenshots/allWidgets.png" height="350" alt="Screenshot"/>
    </div>
 
 ## Author
