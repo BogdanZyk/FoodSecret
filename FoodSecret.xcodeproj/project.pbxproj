@@ -102,6 +102,7 @@
 		5ABAEEC029C4BF8B005EBA3A /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B706129C461EF00379520 /* UserDefaults.swift */; };
 		5ABAEEC129C4C0DA005EBA3A /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741CE29C1FD5600821457 /* CircleProgressView.swift */; };
 		5AD358DD29D998DF0035E1D3 /* FoodStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD358DC29D998DF0035E1D3 /* FoodStore.swift */; };
+		5AD358DF29D9ADE20035E1D3 /* .env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD358DE29D9ADE20035E1D3 /* .env.swift */; };
 		5AF6B7DE29CB44D80053ECEA /* EdamamAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B7DD29CB44D80053ECEA /* EdamamAPIService.swift */; };
 		5AF6B7E029CB4B680053ECEA /* EmamSearchRecepiesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B7DF29CB4B680053ECEA /* EmamSearchRecepiesResult.swift */; };
 		5AF6B7E229CC40540053ECEA /* EdamamCuisineType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B7E129CC40540053ECEA /* EdamamCuisineType.swift */; };
@@ -234,6 +235,7 @@
 		5AB83DDE29C84F560069A349 /* StepsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsSectionView.swift; sourceTree = "<group>"; };
 		5ABAEEBA29C4BC27005EBA3A /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
 		5AD358DC29D998DF0035E1D3 /* FoodStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodStore.swift; sourceTree = "<group>"; };
+		5AD358DE29D9ADE20035E1D3 /* .env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = .env.swift; sourceTree = "<group>"; };
 		5AF6B7DD29CB44D80053ECEA /* EdamamAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamAPIService.swift; sourceTree = "<group>"; };
 		5AF6B7DF29CB4B680053ECEA /* EmamSearchRecepiesResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmamSearchRecepiesResult.swift; sourceTree = "<group>"; };
 		5AF6B7E129CC40540053ECEA /* EdamamCuisineType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamCuisineType.swift; sourceTree = "<group>"; };
@@ -387,6 +389,7 @@
 			children = (
 				5A38A1B829C0802600947AEC /* ContentView.swift */,
 				5A38A1B629C0802600947AEC /* FoodSecretApp.swift */,
+				5AD358DE29D9ADE20035E1D3 /* .env.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -938,6 +941,7 @@
 				5A36306729C5276A008E7E05 /* DatePickerSheetView.swift in Sources */,
 				5AF6B7FB29CC83FE0053ECEA /* RecepiesListView.swift in Sources */,
 				5AF6B7F729CC56760053ECEA /* ReceptCategoriesView.swift in Sources */,
+				5AD358DF29D9ADE20035E1D3 /* .env.swift in Sources */,
 				5AF6B81D29CDB2DF0053ECEA /* GeaometryReader.swift in Sources */,
 				5AF6B7F929CC66660053ECEA /* RecepiesViewModel.swift in Sources */,
 				5A4EA61929C344C300CCAF47 /* ProductEditorView.swift in Sources */,

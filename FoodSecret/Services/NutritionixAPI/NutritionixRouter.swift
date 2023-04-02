@@ -29,8 +29,8 @@ enum NutritionixRouter: URLRequestConvertible
     private var headers: HTTPHeaders {
         return [
             "Content-Type": "application/json",
-            "x-app-id": "32c930a8",
-            "x-app-key": "79d0599b813d098e7fcd4e68baf2b40a"
+            "x-app-id": NUTRITION_APP_ID,
+            "x-app-key": NUTRITION_APP_KEY
         ]
     }
 

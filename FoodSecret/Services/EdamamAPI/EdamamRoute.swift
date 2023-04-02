@@ -39,8 +39,8 @@ enum EdamamRoute: URLRequestConvertible
         
     private var defaultParams: Parameters{
         [
-            "app_id": "4e1c8ec0",
-            "app_key": "085b574baec0ab50964005b48d6fbd17",
+            "app_id": EDAMAM_APP_ID,
+            "app_key": EDAMAM_APP_KEY,
             "field": requiredFields,
             "type": "public",
             "random": "true",
