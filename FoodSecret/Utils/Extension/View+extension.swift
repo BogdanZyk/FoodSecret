@@ -69,6 +69,3 @@ extension UIViewController {
             .first?.rootViewController?.present(self, animated: animated, completion: completion)
     }
 }
-
-/// client id    5f3fbc236bdc46f9bec75207947ae17b
-///secret key   11a3e1963ac84f6385bef1df593f8558

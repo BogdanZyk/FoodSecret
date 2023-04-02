@@ -101,6 +101,7 @@
 		5ABAEEBF29C4BF1D005EBA3A /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B705F29C4611900379520 /* UserSettings.swift */; };
 		5ABAEEC029C4BF8B005EBA3A /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B706129C461EF00379520 /* UserDefaults.swift */; };
 		5ABAEEC129C4C0DA005EBA3A /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB741CE29C1FD5600821457 /* CircleProgressView.swift */; };
+		5AD358DD29D998DF0035E1D3 /* FoodStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD358DC29D998DF0035E1D3 /* FoodStore.swift */; };
 		5AF6B7DE29CB44D80053ECEA /* EdamamAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B7DD29CB44D80053ECEA /* EdamamAPIService.swift */; };
 		5AF6B7E029CB4B680053ECEA /* EmamSearchRecepiesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B7DF29CB4B680053ECEA /* EmamSearchRecepiesResult.swift */; };
 		5AF6B7E229CC40540053ECEA /* EdamamCuisineType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6B7E129CC40540053ECEA /* EdamamCuisineType.swift */; };
@@ -232,6 +233,7 @@
 		5AB83DDB29C84D770069A349 /* HealthKitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitViewModel.swift; sourceTree = "<group>"; };
 		5AB83DDE29C84F560069A349 /* StepsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsSectionView.swift; sourceTree = "<group>"; };
 		5ABAEEBA29C4BC27005EBA3A /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
+		5AD358DC29D998DF0035E1D3 /* FoodStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodStore.swift; sourceTree = "<group>"; };
 		5AF6B7DD29CB44D80053ECEA /* EdamamAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamAPIService.swift; sourceTree = "<group>"; };
 		5AF6B7DF29CB4B680053ECEA /* EmamSearchRecepiesResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmamSearchRecepiesResult.swift; sourceTree = "<group>"; };
 		5AF6B7E129CC40540053ECEA /* EdamamCuisineType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamCuisineType.swift; sourceTree = "<group>"; };
@@ -631,6 +633,7 @@
 				5AB741B629C1B1FF00821457 /* CoreDataExt.swift */,
 				5AB741B829C1B33600821457 /* Persistense.swift */,
 				5A4EA62029C3705D00CCAF47 /* CoreDataManager.swift */,
+				5AD358DC29D998DF0035E1D3 /* FoodStore.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -898,6 +901,7 @@
 				5AF6B85429D0E42D0053ECEA /* NutritionixRouter.swift in Sources */,
 				5AB83DDC29C84D770069A349 /* HealthKitViewModel.swift in Sources */,
 				5A556F0429C47BEB002DAD54 /* ButtonStyle.swift in Sources */,
+				5AD358DD29D998DF0035E1D3 /* FoodStore.swift in Sources */,
 				5A556F3429C4A026002DAD54 /* MealType.swift in Sources */,
 				5AB741B929C1B33600821457 /* Persistense.swift in Sources */,
 				5A4EA61B29C344CE00CCAF47 /* ProductEditorViewModel.swift in Sources */,

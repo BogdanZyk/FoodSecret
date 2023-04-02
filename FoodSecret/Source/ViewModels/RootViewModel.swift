@@ -22,12 +22,15 @@ class RootViewModel: ObservableObject{
     var halfInfo: UserHalfInfo{
         UserSettings.HalfInfo.info
     }
-    
+    private let foodStore: FoodStore
     private var cancellable = Set<AnyCancellable>()
     private let dataManager: CoreDataManager
     
     init(mainContext: NSManagedObjectContext){
         self.dataManager = CoreDataManager(mainContext: mainContext)
+        self.foodStore = FoodStore(context: mainContext)
+        
+        startFoodSubs()
         fetchCoreData()
     }
     
@@ -47,6 +50,14 @@ class RootViewModel: ObservableObject{
 extension RootViewModel{
     
     
+    private func startFoodSubs(){
+        foodStore.foods
+            .sink { foods in
+                self.foods = foods
+            }
+            .store(in: &cancellable)
+    }
+    
     func fetchCoreData(){
         fetchFoods()
         fetchWater()
@@ -57,7 +68,7 @@ extension RootViewModel{
     }
     
     func fetchFoods(){
-        foods = dataManager.fetchFoods(for: selectedDate)
+        foodStore.fetch(selectedDate)
     }
     
     func fetchWater(){
@@ -66,7 +77,6 @@ extension RootViewModel{
     
     func removeFood(_ food: FoodEntity){
         dataManager.removeFood(for: food)
-        fetchFoods()
     }
     
     
@@ -77,12 +87,10 @@ extension RootViewModel{
     
     func updateFood(for foodEntity: FoodEntity, weight: Double, food: Food, mealType: MealType){
         dataManager.updateFood(for: foodEntity, weight: weight, food: food, mealType: mealType)
-        fetchFoods()
     }
     
     func addFood(for food: Food, userFood: Bool, weight: Double, mealType: MealType){
         dataManager.addFood(food: food, mealType: mealType, weight: weight, userFood: userFood, date: selectedDate)
-        fetchFoods()
     }
     
 }
