@@ -29,10 +29,8 @@ FoodSecret is an iOS app that helps you track your food consumption, monitor you
 - Two api are used (nutritionix.com, api.edamam.com)
 
 
-## Video 📷
-
-[Link to video demo](https://youtu.be/nqbsoBvWAAE)
-
+## 📹 Video 
+[![Preview](http://img.youtube.com/vi/nqbsoBvWAAE/0.jpg)](https://www.youtube.com/watch?v=nqbsoBvWAAE)
 
 
 ## Screenshots 📷
